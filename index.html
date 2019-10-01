@@ -35,14 +35,14 @@ html{
   background-color: #3e3249;
 }
 .wrap,.wrap2{
-	width: 599px;
+	width: 40%;
 	height: auto;
 	margin: 70px 25px;
 	float: left;
-  border: 3px solid black; */
+  /*border: 3px solid black; */
 }
 .wrap2{
-	width: 620px !important;
+	width: 40% !important;
   float: right;
   display: inline-block;
 }
@@ -334,7 +334,7 @@ function Delete(button) {
   </style>
   <div id="sketch">
     <button type="button" style="background-color: transparent;color: #fff;" onclick="Delete(this) ")>x</button>
-    <canvas id="paint"></canvas>
+    <canvas style="width:100%;" id="paint"></canvas>
 
 <br>
 <font color="#fff">
@@ -377,8 +377,6 @@ var ctx = canvas.getContext('2d');
 
 var sketch = document.getElementById('sketch');
 var sketch_style = getComputedStyle(sketch);
-canvas.width = 510.5;
-canvas.height = 250;
 
 var mouse = {x: 0, y: 0};
 
