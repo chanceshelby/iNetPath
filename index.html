@@ -2,15 +2,23 @@
 <br>
 <h1 class="Start">&nbsp;&nbsp;iNet<font color="#6a9ef3">Path</font></h1><small style="color:#cb0038">BETA</small>
 <center>
-<form method="get" action="http://www.google.com/search">
-<div>
-<table border="0" align="" cellpadding="0">
-<tr><td>
-<input type="text"   name="q" size="50" style="margin: 0px 25px;;color:#808080;height:30px;font-size:20px;border: 3px solid #fff"
-maxlength="255" value="Google Search"
-onfocus="if(this.value==this.defaultValue)this.value=''; this.style.color='black';" onblur="if(this.value=='')this.value=this.defaultValue; "/>
-<input style="font-size:20px;height:30px;background-color:#e5e4e5;border:3px solid #e5e4e5" type="submit" value="Go" />
-</table>
+
+<style>
+input {
+  margin: 0px25px;
+  color:#808080;
+  height:30px;
+  font-size:20px;
+  border: 3px solid #fff;
+  width: 40%;
+}
+</style>
+<form action="https://www.google.com/search" class="searchform" method="get" name="searchform" target="_blank">
+<input name="sitesearch" type="hidden" value="">
+<input autocomplete="on" class="form-control search" name="q" placeholder="Google Search" required="required"  type="text">
+<button style="font-size:20px;height:30px;background-color:#e5e4e5;border:3px solid #e5e4e5" class="button" type="submit">Search</button>
+</form>
+
 </div>
 
 </form>
@@ -106,7 +114,7 @@ div[class^="metro"]:active{
 .reddit{background: #fff;}
 .wiki{background: #000;}
 .fox{background: #cb0038;}
-.twitter{background: #74bef1;}
+.twitter{background: #00aced;}
 .espn{background: #fff;}
 .fb{background: #4a6ea9;}
 .cnn{background: #fe0000;}
@@ -136,7 +144,7 @@ div[class^="icon"]{
 .icon-etsy{background: url('http://icons.iconarchive.com/icons/limav/flat-gradient-social/256/Etsy-icon.png');}
 .icon-fb{background: url('http://icons.iconarchive.com/icons/danleech/simple/256/facebook-icon.png');}
 .icon-insta{background: url('http://icons.iconarchive.com/icons/uiconstock/socialmedia/256/Instagram-icon.png');}
-.icon-twitter{background: url('http://icons.iconarchive.com/icons/limav/flat-gradient-social/256/Twitter-icon.png');}
+.icon-twitter{background: url('https://www.charlestonacademy.co.uk/wp-content/uploads/2013/02/twitter-bird-white-on-blue-e1365769304265.png');}
 .icon-tube{background: url('http://icons.iconarchive.com/icons/dakirby309/windows-8-metro/256/Web-Browsers-Google-Chrome-Metro-icon.png');}
 .icon-reddit{background: url('http://icons.iconarchive.com/icons/uiconstock/socialmedia/256/Reddit-icon.png');}
 .icon-wiki{background: url('http://icons.iconarchive.com/icons/danleech/simple/256/wikipedia-icon.png');}
@@ -331,9 +339,9 @@ function Delete(button) {
 
 </style>
 </head>
-<div clss="notes">
+<div class="notes">
 <button type="button" style="background-color: transparent;color: #fff;" onclick="Delete(this) ")>x</button>
-<textarea style="height:250px;" placeholder="Type here and see it later"  id="notepad">
+<textarea style="height:211px;" placeholder="Type here and see it later"  id="notepad">
 <!--
   you could do any element w/ contentEditable, but that doesn't fire onchange
 -->
@@ -356,7 +364,6 @@ new e("session")}();
 	window.onunload = s();
 </script>
 </body>
-</html>
 </div>
 <br>
   <style>
@@ -371,7 +378,7 @@ new e("session")}();
   </style>
   <div id="sketch">
     <button type="button" style="background-color: transparent;color: #fff;" onclick="Delete(this) ")>x</button>
-    <canvas style="width:100%;" id="paint"></canvas>
+    <canvas style="width:100%;height:211px;" id="paint"></canvas>
 
 <br>
 <font color="#fff">
@@ -610,9 +617,10 @@ hexNumber2 = prefix+num2hex(rnum1)+num2hex(rnum2)+num2hex(gnum1)+num2hex(gnum2)+
 }
 // End -->
 </SCRIPT>
+
 <CENTER>
 <FORM METHOD="POST" NAME="background">
-<TABLE WIDTH=350 BORDER="3" CELLPADDING="3">
+<TABLE BORDER="3" CELLPADDING="3">
 </TABLE>
 <TABLE WIDTH=350 BORDER="3" CELLPADDING="3">
 <TR><TD><center>Background Color Changer</center></TD>
