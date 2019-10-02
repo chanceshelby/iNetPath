@@ -359,14 +359,23 @@ function Delete(button) {
 			    <a href="http://espn.com"><div class="icon-espn"></div></a>
 			<span style="color:#000;" class="label bottom">ESPN</span>
 		</div>
-
+<style>
+textarea {
+  color:#ccc;
+  resize: none;
+  width: 80;
+  line-height: 100%;
+  background-color:transparent;
+    border-radius: 0px;
+}
+</style>
       <script src="https://www.googletagservices.com/activeview/js/current/osd.js?cb=%2Fr20100101"></script><script src="https://pagead2.googlesyndication.com/pagead/js/r20190925/r20190131/show_ads_impl.js" id="google_shimpl"></script><script type="text/javascript">
 function demo_insert_div_block()
 {
 	var block_to_insert ;
 	var container_block ;
 	block_to_insert = document.createElement('div');
-	block_to_insert.innerHTML = '<div class="metro-small flix"><button type="button" style="background-color: #ccc;border: 2px solid #000;" onclick="Delete(this) ")>&nbsp&nbsp&nbsp</button>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</button><a href=""><div class="icon-"></div></a><span class="label bottom">Blank</span></div>' ;
+	block_to_insert.innerHTML = '<div class="metro-small flix"><button type="button" style="background-color: #ccc;" onclick="Delete(this) ")>&nbsp...&nbsp</button>&nbsp&nbsp&nbsp</button>&nbsp...&nbsp</button><a href=""><div class="icon-"></div></a><span class="label bottom"><textarea>Blank</textarea></span></div>' ;
 	block_to_insert.id = 'inserted_block_id' ;
 	container_block = document.getElementById('democontainer');
 	container_block.appendChild( block_to_insert );
