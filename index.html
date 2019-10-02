@@ -126,6 +126,7 @@ div[class^="metro"]:active{
 .new{background: #e5e4e5;}
 .flix{background: #000;}
 .gmail{background: #fff;}
+.test{background: #fff;}
 
 div[class^="icon"]{
 	width: 45px;
@@ -157,6 +158,8 @@ div[class^="icon"]{
 .icon-nfl{background: url('https://cdn.iconscout.com/icon/free/png-512/nfl-2-555991.png');}
 .icon-nba{background: url('https://assets.materialup.com/uploads/347c48be-3ed3-4e80-87a0-3353405f0239/0x0ss-85.jpg');}
 .icon-tube{background: url('http://icons.iconarchive.com/icons/dakirby309/windows-8-metro/256/Web-YouTube-alt-1-Metro-icon.png');}
+.icon-test{background:
+url('test_icon.png');}
 .icon-gmail{background: url('https://upload.wikimedia.org/wikipedia/commons/4/4e/Gmail_Icon.png');}
 .icon-target{background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Target_Corporation_logo_%28vector%29.svg/1200px-Target_Corporation_logo_%28vector%29.svg.png');
 }
@@ -305,9 +308,49 @@ function Delete(button) {
 			<span style="color:#000;" class="label bottom">ESPN</span>
 		</div>
 
-		<div class="metro-small new">
-			    <div class="new-new"></div></a>
-			<span style="color:#000;" class="label bottom">New</span>
+      <script src="https://www.googletagservices.com/activeview/js/current/osd.js?cb=%2Fr20100101"></script><script src="https://pagead2.googlesyndication.com/pagead/js/r20190925/r20190131/show_ads_impl.js" id="google_shimpl"></script><script type="text/javascript">
+function demo_insert_div_block()
+{
+	var block_to_insert ;
+	var container_block ;
+	block_to_insert = document.createElement('div');
+	block_to_insert.innerHTML = '<div class="metro-small test"><div class="icon-test"></div></a><span style="color:#000;" class="label bottom">Test</span>' ;
+	block_to_insert.id = 'inserted_block_id' ;
+	container_block = document.getElementById('democontainer');
+	container_block.appendChild( block_to_insert );
+}
+</script>
+
+<style>
+.democontainer {
+  float: left;
+	margin: 0 10px 10px 0;
+	height: 95px;
+  width: 95px;
+	position: relative;
+	cursor: pointer;
+	transition: all .4s ease;
+  user-drag: element;
+  border: solid 2px transparent;
+}
+</style>
+
+<div id="democontainer">
+<form action="/dontcrawl/">
+<input style="  float: left;
+	margin: 0 10px 10px 0;
+	height: 95px;
+  width: 95px;
+	position: relative;
+	cursor: pointer;
+	transition: all .4s ease;
+  user-drag: element;
+  border: solid 2px transparent;"type="submit" onclick="demo_insert_div_block(); return false;" name="demo" id="demo" value="+">
+</form></div>
+
+
+
+
 
 
 
