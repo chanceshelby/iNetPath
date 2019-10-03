@@ -1,3 +1,4 @@
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
 <title>iNetPath | Your Path to the Internet</title>
 <body bgcolor="#413d63">
 <br>
@@ -21,12 +22,22 @@ input {
   margin: 0 auto;
   background: #fff;
   width: 100%;
-  height: 247px;
-  max-height: 500px;
+  height: 150px;
+  max-height: 150px;
 }
 .window:before {
 border: 3px solid #ccc;
 }
+.Weatherwindow {
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+  border: 1px solid #adadad;
+  max-width: 100%;
+  box-shadow: 0 20px 70px rgba(0, 0, 0, 0.55);
+  margin: 0 auto;
+  background: #fff;
+  width: 100%;
+  height: 106px;
+  max-height: 106px;
 </style>
 <form action="https://www.google.com/search" class="searchform" method="get" name="searchform" target="_blank">
 <input name="sitesearch" type="hidden" value="">
@@ -161,7 +172,7 @@ div[class^="icon"]{
 .icon-ebay{background: url('https://4.bp.blogspot.com/-3UG8vPdtupY/Wv2acYZ1UEI/AAAAAAAABVE/dpTUVmNz94wOZEHWvV96gp4W3c51Cfj_ACLcBGAs/s1600/eBay%2Balt.png');}
 .icon-etsy{background: url('http://icons.iconarchive.com/icons/limav/flat-gradient-social/256/Etsy-icon.png');}
 .icon-fb{background: url('http://icons.iconarchive.com/icons/danleech/simple/256/facebook-icon.png');}
-.icon-insta{background: url('http://icons.iconarchive.com/icons/uiconstock/socialmedia/256/Instagram-icon.png');}
+.icon-insta{background: url('https://i1.wp.com/blog.fossasia.org/wp-content/uploads/2016/07/unnamed.png?fit=300%2C300&ssl=1');}
 .icon-twitter{background: url('https://www.charlestonacademy.co.uk/wp-content/uploads/2013/02/twitter-bird-white-on-blue-e1365769304265.png');}
 .icon-tube{background: url('http://icons.iconarchive.com/icons/dakirby309/windows-8-metro/256/Web-Browsers-Google-Chrome-Metro-icon.png');}
 .icon-reddit{background: url('http://icons.iconarchive.com/icons/uiconstock/socialmedia/256/Reddit-icon.png');}
@@ -426,15 +437,9 @@ function demo_insert_div_block()
 
 <div class="wrap2">
 
-  <div class="window">
+  <div class="Weatherwindow">
       <button type="button" style="background-color: #ccc;" onclick="Delete(this) ")>&nbsp...&nbsp</button>
-    <a class="weatherwidget-io" href="https://forecast7.com/en/29d76n95d37/houston/?unit=us" data-label_1="HOUSTON" data-label_2="WEATHER" data-theme="pure" >HOUSTON WEATHER</a>
-    <script>
-    !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
-    </script>
-<script>
-!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
-</script>
+<div style="width: 100%;"><iframe style="display: block;" src="https://cdnres.willyweather.com/widget/loadView.html?id=115404" width="100%" height="92" frameborder="0" scrolling="no"></iframe><a style="width: 20px;text-indent: -9999em;z-index: 1;margin: -92px 0 0 0;float: right;height: 92px;position: relative" href="https://www.willyweather.com/tx/harris-county/houston.html" rel="nofollow">Houston Weather</a></div>
 
 </div>
 <br>
@@ -443,7 +448,7 @@ function demo_insert_div_block()
 
 <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 <style>
-#notepad{height:230px;width:100%;font-size:100%;line-height:125%;font-family:-apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;color: #000;}
+#notepad{height:135px;width:100%;font-size:100%;line-height:125%;font-family:-apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;color: #000;}
 </style>
 
 </head>
@@ -487,27 +492,21 @@ new e("session")}();
   <div class="window">
       <button type="button" style="background-color: #ccc;" onclick="Delete(this) ")>&nbsp...&nbsp</button>
   <div id="sketch">
-    <canvas style="width:100%;" id="paint"></canvas>
-
-<br><br>
-<font color="#fff">
-  <div id="settings"> Colors:
-    <button style="font-size:13px;height:23px;background-color:#e5e4e5;border: 3px solid #e5e4e5;" onclick="getColor('blue');">Blue</button>
-    <button style="font-size:13px;height:23px;background-color:#e5e4e5;border: 3px solid #e5e4e5;" onclick="getColor('red');">Red</button>
-    <button style="font-size:13px;height:23px;background-color:#e5e4e5;border: 3px solid #e5e4e5;" onclick="getColor('green');">Green</button>
-    <button style="font-size:13px;height:23px;background-color:#e5e4e5;border: 3px solid #e5e4e5;" onclick="getColor('white');">White</button>
-    <button style="font-size:13px;height:23px;background-color:#e5e4e5;border: 3px solid #e5e4e5;" onclick="getColor('#fff');">Eraser</button>
-  </div>
+    <canvas style="width:100%;height:135px" id="paint"></canvas>
 <br>
-  <div id="settings"> Brush Size:
-    <button style="font-size:13px;height:23px;background-color:#e5e4e5;border: 3px solid #e5e4e5;" onclick="getSize('2');">Small</button>
-    <button style="font-size:13px;height:23px;background-color:#e5e4e5;border: 3px solid #e5e4e5;" onclick="getSize('5');">Med</button>
-    <button style="font-size:13px;height:23px;background-color:#e5e4e5;border: 3px solid #e5e4e5;" onclick="getSize('10');">Large</button>
-    <button style="font-size:13px;height:23px;background-color:#e5e4e5;border: 3px solid #e5e4e5;" onclick="getSize('20');">X Large</button>
+  <div style="background-color:#e5e4e5;width:50%;border-radius: 0px;" id="settings">
+    <button style="border-radius: 0px;font-size:13px;height:23px;background-color:blue;border: 3px solid blue;" onclick="getColor('blue');">&nbsp&nbsp&nbsp&nbsp</button>
+    <button style="border-radius: 0px;font-size:13px;height:23px;background-color:red;border: 3px solid red;" onclick="getColor('red');">&nbsp&nbsp&nbsp&nbsp</button>
+    <button style="border-radius: 0px;font-size:13px;height:23px;background-color:green;border: 3px solid green;" onclick="getColor('green');">&nbsp&nbsp&nbsp&nbsp</button>
+    <button style="border-radius: 0px;font-size:13px;height:23px;background-color:white;border: 3px solid white;" onclick="getColor('white');">&nbsp&nbsp&nbsp&nbsp</button>
+  </div>
+  <div style="background-color:#e5e4e5;width:50%;border-radius: 0px;" id="settings">
+    <button style="border-radius: 0px;font-size:13px;height:23px;background-color:#e5e4e5;border: 3px solid #e5e4e5;" onclick="getSize('2');">Small</button>
+    <button style="border-radius: 0px;font-size:13px;height:23px;background-color:#e5e4e5;border: 3px solid #e5e4e5;" onclick="getSize('5');">Med</button>
+    <button style="border-radius: 0px;font-size:13px;height:23px;background-color:#e5e4e5;border: 3px solid #e5e4e5;" onclick="getSize('10');">Large</button>
 
   </div>
 </div>
-</font>
 
 
 <!--
@@ -531,7 +530,7 @@ var ctx = canvas.getContext('2d');
 var sketch = document.getElementById('sketch');
 var sketch_style = getComputedStyle(sketch);
 canvas.width = 542;
-canvas.height = 230;
+canvas.height = 140;
 
 var mouse = {x: 0, y: 0};
 
@@ -648,7 +647,7 @@ hexNumber2 = prefix+num2hex(rnum1)+num2hex(rnum2)+num2hex(gnum1)+num2hex(gnum2)+
 // End -->
 </script>
 </div>
-<br><br><br><br><br><br><br><br>
+<br><br><br><br><br>
 <div>
 <div style="background-color:#fff;border: 4px solid #000;" class="bg-picker">
       <button type="button" style="background-color: #ccc;" onclick="Delete(this) ")>&nbsp...&nbsp</button>
