@@ -420,12 +420,12 @@
       console.log(items.length);
       let html = '';
       items.forEach((i, index) => {
-        html += `<div class="metro-small" style="background-color: #${i.color}" >
+        html += `<div class="metro-small" style="background-color: #${i.color}">
           <button type="button" style="background-color: #ccc;" onclick="Delete(${index}) " )>&nbsp...&nbsp</button>
-          <a href="${i.link}">
-            ${(i.image !==null && i.image !==undefined) ? `<img src=${i.image} style="width: 85%; height:85%;"></img>` : '<div></div>'}
-          </a>
+          <div onclick="window.location.href = '${i.link}'">
+            ${(i.image !==null && i.image !==undefined) ? `<img src=${i.image} style="width: 85%; height:85%;"></img>` : '<div style="width: 85%; height:85%;"></div>'}
           <span class="label bottom">${i.name}</span>
+          </div>
         </div>`;
       });
       return html;
@@ -584,7 +584,9 @@
 
         links.push({
           "name": name,
-          "link": link
+          "link": link,
+          "color": "000",
+          "icon": link
         });
 
         saveLinks();
