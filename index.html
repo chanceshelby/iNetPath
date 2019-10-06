@@ -1,379 +1,561 @@
-<title>iNetPath | Your Path to the Internet</title>
+<html>
+
+<head>
+  <title>iNetPath | Your Path to the Internet</title>
+  <style>
+    input {
+      margin: 0px25px;
+      color: #808080;
+      height: 30px;
+      font-size: 20px;
+      border: 3px solid #fff;
+      width: 40%;
+    }
+
+    .window {
+      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+      border: 1px solid #adadad;
+      max-width: 100%;
+      box-shadow: 0 20px 70px rgba(0, 0, 0, 0.55);
+      margin: 0 auto;
+      background: #fff;
+      width: 100%;
+      height: 150px;
+      max-height: 150px;
+    }
+
+    .window:before {
+      border: 3px solid #ccc;
+    }
+
+    .Weatherwindow {
+      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+      border: 1px solid #adadad;
+      max-width: 100%;
+      box-shadow: 0 20px 70px rgba(0, 0, 0, 0.55);
+      margin: 0 auto;
+      background: #fff;
+      width: 100%;
+      height: 106px;
+      max-height: 106px;
+    }
+  </style>
+  <style>
+    @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,200);
+
+    * {
+      margin: 0;
+      padding: 0;
+      outline: none;
+      border: none;
+      box-sizing: border-box;
+      border-radius: 10px;
+    }
+
+    *:before,
+    *:after {
+      box-sizing: border-box;
+    }
+
+    html {
+      width: 100%;
+    }
+
+    .wrap,
+    .wrap2 {
+      width: 40%;
+      height: auto;
+      margin: 70px 25px;
+      float: left;
+      /*border: 3px solid black; */
+    }
+
+    .wrap2 {
+      width: 40% !important;
+      float: right;
+      display: inline-block;
+    }
+
+    div[class^="metro"] {
+      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+      float: left;
+      margin: 0 10px 10px 0;
+      height: 95px;
+      position: relative;
+      cursor: pointer;
+      transition: all .4s ease;
+      user-drag: element;
+      border: solid 2px transparent;
+      box-shadow: 0 20px 70px rgba(0, 0, 0, 0.55);
+    }
+
+    div[class^="metro"]:hover {
+      border: solid 2px mintcream;
+
+    }
+
+    div[class^="metro"]:active {
+      transform: scale(.98, .98);
+    }
+
+    .metro-big {
+      width: 200px;
+    }
+
+    .metro-small {
+      width: 95px;
+    }
+
+    .last {
+      margin-right: 0 !important;
+    }
+
+    .Start {
+      color: white;
+      font: normal 50px -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+      ;
+      margin: 0 25;
+      cursor: pointer;
+      user-select: none;
+      display: inline-block;
+      transition: all .3s ease;
+    }
+
+    .Start:hover {
+      text-shadow: 0 0 4px #ccc;
+    }
+
+    .space {
+      width: 350px;
+      height: auto;
+
+      float: left;
+      border: 3px solid black;
+      display: inline-block;
+    }
+
+    .label {
+      position: absolute;
+      color: white;
+      font: 500 12px sans-serif;
+      left: 10px;
+      user-select: none;
+    }
+
+    .bottom {
+      bottom: 5px;
+    }
+
+    .top {
+      top: 5px;
+    }
+
+    .chat {
+      background: #df0024;
+    }
+
+    .calendar {
+      background: #00a9ec;
+    }
+
+    .amazon {
+      background: #fff;
+    }
+
+    .ebay {
+      background: #e5e4e5;
+    }
+
+    .etsy {
+      background: #e9711c;
+    }
+
+    .insta {
+      background: #fff;
+    }
+
+    .reddit {
+      background: #fff;
+    }
+
+    .wiki {
+      background: #000;
+    }
+
+    .twitter {
+      background: #00aced;
+    }
+
+    .espn {
+      background: #fff;
+    }
+
+    .fb {
+      background: #4a6ea9;
+    }
+
+    .cnn {
+      background: #fe0000;
+    }
+
+    .pga {
+      background: #013e7d;
+    }
+
+    .nfl {
+      background: #fff;
+    }
+
+    .nba {
+      background: #fff;
+    }
+
+    .target {
+      background: #fff;
+    }
+
+    .new {
+      background: #e5e4e5;
+    }
+
+    .flix {
+      background: #000;
+    }
+
+    .gmail {
+      background: #fff;
+    }
+
+    .test {
+      background: #fff;
+    }
+
+    div[class^="icon"] {
+      width: 45px;
+      height: 45px;
+      margin: 6px auto;
+      background-size: 45px 45px;
+    }
+
+    div[class^="new"] {
+      width: 45px;
+      height: 45px;
+      margin: 20px auto;
+      background-size: 45px 45px;
+    }
+
+    .icon-etsy {
+      background: url('http://icons.iconarchive.com/icons/limav/flat-gradient-social/256/Etsy-icon.png');
+    }
+
+    .icon-reddit {
+      background: url('http://icons.iconarchive.com/icons/uiconstock/socialmedia/256/Reddit-icon.png');
+    }
+
+    .icon-cnn {
+      background: url('http://icons.iconarchive.com/icons/dakirby309/windows-8-metro/128/Web-Google-plus-Metro-icon.png');
+    }
+
+    .new-new {
+      background: url('https://cdn4.iconfinder.com/data/icons/user-interface-131/32/add-512.png');
+    }
+
+    .icon-pga {
+      background: url('https://lh3.googleusercontent.com/VyGWzl5rXKScX4yiiBqda6XhsGtJ9a2O8wJbY8Rz-zBVyyZiva-mxQm9chXnrIfbSWs');
+    }
+
+    .icon-nfl {
+      background: url('https://cdn.iconscout.com/icon/free/png-512/nfl-2-555991.png');
+    }
+
+    .icon-nba {
+      background: url('https://assets.materialup.com/uploads/347c48be-3ed3-4e80-87a0-3353405f0239/0x0ss-85.jpg');
+    }
+
+    .icon-test {
+      background:
+        url('test_icon.png');
+    }
+
+    ::-webkit-scrollbar {
+      width: 10px;
+      height: 10px;
+      cursor: pointer;
+    }
+
+    ::-webkit-scrollbar-track {
+      -webkit-box-shadow: inset 0 0 6px 2px rgba(0, 0, 0, 0.3);
+      background: #007491;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #002f3b;
+      -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+      cursor: pointer;
+    }
+
+    ::selection {
+      background: mintcream;
+    }
+
+    @keyframes flip {
+      0% {
+        transform: rotateX(0deg);
+      }
+
+      15% {
+        transform: rotateX(360deg);
+      }
+
+      100% {
+        transform: rotateX(360deg);
+      }
+    }
+
+    .photo img {
+      top: -4px;
+      left: -4px;
+      position: absolute;
+      opacity: 0;
+      animation: fade 8s ease-in-out infinite 8s;
+      z-index: 0;
+      border: solid 2px transparent;
+      transition: all .3s ease;
+    }
+
+    .photo img:hover {
+      border: solid 2px mintcream;
+    }
+
+    @keyframes fade {
+      0% {
+        opacity: 0;
+      }
+
+      10% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 1;
+      }
+
+      60% {
+        opacity: 0;
+      }
+    }
+
+    .dropbtn {
+      background-color: transparent;
+      color: #413d63;
+      border: solid 1px #fff;
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f1f1f1;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
+
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #ddd;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .dropdown:hover .dropbtn {
+      background-color: transparent;
+    }
+  </style>
+</head>
+
 <body bgcolor="#413d63">
-<br>
-<h1 class="Start">iNet<font color="#00aced">Path</font></h1><br><small style="color:#fff;margin: 0 25;display:inline-block;">Your path to the Internet.</small>
-<center>
+  <br>
+  <h1 class="Start">iNet<font color="#00aced">Path</font>
+  </h1><br><small style="color:#fff;margin: 0 25;display:inline-block;">Your path to the Internet.</small>
+  <center>
+    <form action="https://www.google.com/search" class="searchform" method="get" name="searchform" target="_blank">
+      <input name="sitesearch" type="hidden" value="">
+      <input style="box-shadow: 0 20px 70px rgba(0, 0, 0, 0.55);" autocomplete="on" class="form-control search" name="q" placeholder="Google Search" required="required" type="text">
+      <button style="font-size:20px;height:30px;background-color:#e5e4e5;border:3px solid #e5e4e5;box-shadow: 0 20px 70px rgba(0, 0, 0, 0.55);" class="button" type="submit">Search</button>
+    </form>
+  </center>
 
-<style>
-input {
-  margin: 0px25px;
-  color:#808080;
-  height:30px;
-  font-size:20px;
-  border: 3px solid #fff;
-  width: 40%;
-}
-.window {
-  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
-  border: 1px solid #adadad;
-  max-width: 100%;
-  box-shadow: 0 20px 70px rgba(0, 0, 0, 0.55);
-  margin: 0 auto;
-  background: #fff;
-  width: 100%;
-  height: 150px;
-  max-height: 150px;
-}
-.window:before {
-border: 3px solid #ccc;
-}
-.Weatherwindow {
-  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
-  border: 1px solid #adadad;
-  max-width: 100%;
-  box-shadow: 0 20px 70px rgba(0, 0, 0, 0.55);
-  margin: 0 auto;
-  background: #fff;
-  width: 100%;
-  height: 106px;
-  max-height: 106px;
-</style>
-<form action="https://www.google.com/search" class="searchform" method="get" name="searchform" target="_blank">
-<input name="sitesearch" type="hidden" value="">
-<input style="box-shadow: 0 20px 70px rgba(0, 0, 0, 0.55);" autocomplete="on" class="form-control search" name="q" placeholder="Google Search" required="required"  type="text">
-<button style="font-size:20px;height:30px;background-color:#e5e4e5;border:3px solid #e5e4e5;box-shadow: 0 20px 70px rgba(0, 0, 0, 0.55);" class="button" type="submit">Search</button>
-</form>
+  <script>
+    function Delete(button) {
+      if (typeof button === 'number') {
+        links.splice(button, 1);
+        saveLinks();
+        let element = document.getElementById('tiles');
+        element.innerHTML = htmlForLinks(links);
+      } else {
+        var parent = button.parentNode;
+        var grand_father = parent.parentNode;
+        grand_father.removeChild(parent);
+      }
+    }
+  </script>
 
-</div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-</form>
-</div>
-</center>
-<style>
-@import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,200);
+  <script>
+    function htmlForLinks(items) {
+      console.log(items.length);
+      let html = '';
+      items.forEach((i, index) => {
+        html += `<div class="metro-small" style="background-color: #${i.color}" >
+          <button type="button" style="background-color: #ccc;" onclick="Delete(${index}) " )>&nbsp...&nbsp</button>
+          <a href="${i.link}">
+            ${(i.image !==null && i.image !==undefined) ? `<img src=${i.image} style="width: 85%; height:85%;"></img>` : '<div></div>'}
+          </a>
+          <span class="label bottom">${i.name}</span>
+        </div>`;
+      });
+      return html;
+    }
+    links = [];
 
-*{
-  margin: 0;
-  padding: 0;
-  outline: none;
-  border: none;
-  box-sizing: border-box;
-  border-radius: 10px;
-}
-*:before,
-*:after{
-  box-sizing: border-box;
-}
-html{
-	width: 100%;
-}
-.wrap,.wrap2{
-	width: 40%;
-	height: auto;
-	margin: 70px 25px;
-	float: left;
-  /*border: 3px solid black; */
-}
-.wrap2{
-	width: 40% !important;
-  float: right;
-  display: inline-block;
-}
-div[class^="metro"]{
-  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
-	float: left;
-	margin: 0 10px 10px 0;
-	height: 95px;
-	position: relative;
-	cursor: pointer;
-	transition: all .4s ease;
-  user-drag: element;
-  border: solid 2px transparent;
-  box-shadow: 0 20px 70px rgba(0, 0, 0, 0.55);
-}
-div[class^="metro"]:hover{
-	border: solid 2px mintcream;
+    function loadLinks() {
+      if (document.getElementById('tiles') === null) {
+        setTimeout(() => loadLinks(), 1000);
+        return;
+      }
+      let tmplinks = localStorage.getItem('links');
 
-}
-div[class^="metro"]:active{
-	transform: scale(.98,.98);
-}
-.metro-big{width: 200px;}
-.metro-small{width: 95px;}
-.last{margin-right: 0 !important;}
-.Start{
-	color: white;
-	font: normal 50px -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;;
-	margin: 0 25;
-  cursor: pointer;
-  user-select: none;
-  display: inline-block;
-  transition: all .3s ease;
-}
-.Start:hover{
-  text-shadow: 0 0 4px #ccc;
-}
-.space{
-  width: 350px;
-	height: auto;
+      if (tmplinks === undefined || tmplinks === null || tmplinks === '') {
+        tmplinks = '[]';
+      }
+      let json = JSON.parse(tmplinks);
 
-	float: left;
-  border: 3px solid black;
-  display: inline-block;
-}
-.label{
-	position: absolute;
-	color: white;
-	font: 500 12px sans-serif;
-	left: 10px;
-  user-select: none;
-}
-.bottom{bottom: 5px;}
-.top{top: 5px;}
-.chat{background: #df0024;}
-.calendar{
-  background: #00a9ec;
-}
-.amazon{background: #fff;}
-.ebay{background: #e5e4e5;}
-.etsy{background: #e9711c;}
-.insta{background: #fff;}
-.reddit{background: #fff;}
-.wiki{background: #000;}
-.fox{background: #cb0038;}
-.twitter{background: #00aced;}
-.espn{background: #fff;}
-.fb{background: #4a6ea9;}
-.cnn{background: #fe0000;}
-.pga{background: #013e7d;}
-.nfl{background: #fff;}
-.nba{background: #fff;}
-.target{background: #fff;}
-.tube{background: #c8312b;}
-.new{background: #e5e4e5;}
-.flix{background: #000;}
-.gmail{background: #fff;}
-.test{background: #fff;}
+      if (localStorage.getItem('createdDefaults') !== 'true') {
+        json.push({
+          "name": "Amazon",
+          "image": "http://icons.iconarchive.com/icons/uiconstock/socialmedia/256/Amazon-icon.png",
+          "color": "ccc",
+          "link": "http://amazon.com"
+        });
 
-div[class^="icon"]{
-	width: 45px;
-	height: 45px;
-	margin: 6px auto;
-	background-size: 45px 45px;
-}
-  div[class^="new"]{
-  	width: 45px;
-  	height: 45px;
-  	margin: 20px auto;
-  	background-size: 45px 45px;
-}
-.icon-amazon{background: url('http://icons.iconarchive.com/icons/uiconstock/socialmedia/256/Amazon-icon.png');}
-.icon-ebay{background: url('https://4.bp.blogspot.com/-3UG8vPdtupY/Wv2acYZ1UEI/AAAAAAAABVE/dpTUVmNz94wOZEHWvV96gp4W3c51Cfj_ACLcBGAs/s1600/eBay%2Balt.png');}
-.icon-etsy{background: url('http://icons.iconarchive.com/icons/limav/flat-gradient-social/256/Etsy-icon.png');}
-.icon-fb{background: url('http://icons.iconarchive.com/icons/danleech/simple/256/facebook-icon.png');}
-.icon-insta{background: url('https://i1.wp.com/blog.fossasia.org/wp-content/uploads/2016/07/unnamed.png?fit=300%2C300&ssl=1');}
-.icon-twitter{background: url('https://www.charlestonacademy.co.uk/wp-content/uploads/2013/02/twitter-bird-white-on-blue-e1365769304265.png');}
-.icon-tube{background: url('http://icons.iconarchive.com/icons/dakirby309/windows-8-metro/256/Web-Browsers-Google-Chrome-Metro-icon.png');}
-.icon-reddit{background: url('http://icons.iconarchive.com/icons/uiconstock/socialmedia/256/Reddit-icon.png');}
-.icon-wiki{background: url('http://icons.iconarchive.com/icons/danleech/simple/256/wikipedia-icon.png');}
-.icon-flix{background: url('https://cdn.vox-cdn.com/thumbor/AwKSiDyDnwy_qoVdLPyoRPUPo00=/39x0:3111x2048/1400x1400/filters:focal(39x0:3111x2048):format(png)/cdn.vox-cdn.com/uploads/chorus_image/image/49901753/netflixlogo.0.0.png');}
-.icon-cnn{background: url('http://icons.iconarchive.com/icons/dakirby309/windows-8-metro/128/Web-Google-plus-Metro-icon.png');}
-.icon-fox{background: url('http://icons.iconarchive.com/icons/dakirby309/windows-8-metro/256/Web-Fox-News-Metro-icon.png');}
-.new-new{background: url('https://cdn4.iconfinder.com/data/icons/user-interface-131/32/add-512.png');}
-.icon-espn{background: url('https://www.iosicongallery.com/icons/espn-2015-03-31/512.png');}
-.icon-pga{background: url('https://lh3.googleusercontent.com/VyGWzl5rXKScX4yiiBqda6XhsGtJ9a2O8wJbY8Rz-zBVyyZiva-mxQm9chXnrIfbSWs');}
-.icon-nfl{background: url('https://cdn.iconscout.com/icon/free/png-512/nfl-2-555991.png');}
-.icon-nba{background: url('https://assets.materialup.com/uploads/347c48be-3ed3-4e80-87a0-3353405f0239/0x0ss-85.jpg');}
-.icon-tube{background: url('http://icons.iconarchive.com/icons/dakirby309/windows-8-metro/256/Web-YouTube-alt-1-Metro-icon.png');}
-.icon-test{background:
-url('test_icon.png');}
-.icon-gmail{background: url('https://upload.wikimedia.org/wikipedia/commons/4/4e/Gmail_Icon.png');}
-.icon-target{background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Target_Corporation_logo_%28vector%29.svg/1200px-Target_Corporation_logo_%28vector%29.svg.png');
-}
-::-webkit-scrollbar{
-  width: 10px;
-	height: 10px;
-	cursor: pointer;
-}
-::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px 2px rgba(0,0,0,0.3);
-    background: #007491;
-}
-::-webkit-scrollbar-thumb {
-    background: #002f3b;
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
-    cursor: pointer;
-}
-::selection{
-    background: mintcream;
-}
+        json.push({
+          "name": "Ebay",
+          "image": "https://4.bp.blogspot.com/-3UG8vPdtupY/Wv2acYZ1UEI/AAAAAAAABVE/dpTUVmNz94wOZEHWvV96gp4W3c51Cfj_ACLcBGAs/s1600/eBay%2Balt.png",
+          "color": "e5e4e5",
+          "link": "http://ebay.com"
+        });
 
-@keyframes flip{
-  0%{
-    transform: rotateX(0deg);
-  }
-  15%{
-    transform: rotateX(360deg);
-  }
-  100%{
-    transform: rotateX(360deg);
-  }
-}
+        json.push({
+          "name": "Target",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Target_Corporation_logo_%28vector%29.svg/1200px-Target_Corporation_logo_%28vector%29.svg.png",
+          "color": "fff",
+          "link": "http://target.com"
+        });
 
-.photo img{
-  top: -4px;
-  left: -4px;
-  position: absolute;
-  opacity: 0;
-  animation: fade 8s ease-in-out infinite 8s;
-  z-index: 0;
-  border: solid 2px transparent;
-  transition: all .3s ease;
-}
+        json.push({
+          "name": "Facebook",
+          "image": "http://icons.iconarchive.com/icons/danleech/simple/256/facebook-icon.png",
+          "color": "4a6ea9",
+          "link": "http://facebook.com"
+        });
 
-.photo img:hover{
-  border: solid 2px mintcream;
-}
+        json.push({
+          "name": "Instagram",
+          "image": "https://i1.wp.com/blog.fossasia.org/wp-content/uploads/2016/07/unnamed.png?fit=300%2C300&ssl=1",
+          "color": "fff",
+          "link": "http://instagram.com"
+        });
 
-@keyframes fade{
-  0%{
-    opacity: 0;
-  }
-  10%{
-    opacity: 1;
-  }
-  50%{
-    opacity: 1;
-  }
-  60%{
-    opacity: 0;
-  }
-}
-.dropbtn {
-  background-color: transparent;
-  color: #413d63;
-  border: solid 1px #fff;
-}
+        json.push({
+          "name": "Twitter",
+          "image": "https://www.charlestonacademy.co.uk/wp-content/uploads/2013/02/twitter-bird-white-on-blue-e1365769304265.png",
+          "color": "00aced",
+          "link": "http://twitter.com"
+        });
 
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
+        json.push({
+          "name": "Youtube",
+          "image": "http://icons.iconarchive.com/icons/dakirby309/windows-8-metro/256/Web-YouTube-alt-1-Metro-icon.png",
+          "color": "c8312b",
+          "link": "http://youtube.com"
+        });
 
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f1f1f1;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
+        json.push({
+          "name": "Gmail",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Gmail_Icon.png",
+          "color": "fff",
+          "link": "http://gmail.com"
+        });
 
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
+        json.push({
+          "name": "Netfix",
+          "image": "https://cdn.vox-cdn.com/thumbor/AwKSiDyDnwy_qoVdLPyoRPUPo00=/39x0:3111x2048/1400x1400/filters:focal(39x0:3111x2048):format(png)/cdn.vox-cdn.com/uploads/chorus_image/image/49901753/netflixlogo.0.0.png",
+          "color": "000",
+          "link": "http://netflix.com"
+        });
 
-.dropdown-content a:hover {background-color: #ddd;}
+        json.push({
+          "name": "Wikipedia",
+          "image": "http://icons.iconarchive.com/icons/danleech/simple/256/wikipedia-icon.png",
+          "color": "000",
+          "link": "http://wikipedia.com"
+        });
 
-.dropdown:hover .dropdown-content {display: block;}
+        json.push({
+          "name": "Fox News",
+          "image": "http://icons.iconarchive.com/icons/dakirby309/windows-8-metro/256/Web-Fox-News-Metro-icon.png",
+          "color": "cb0038",
+          "link": "http://foxnews.com"
+        });
 
-.dropdown:hover .dropbtn {background-color: transparent;}
-</style>
+        json.push({
+          "name": "ESPN",
+          "image": "https://www.iosicongallery.com/icons/espn-2015-03-31/512.png",
+          "color": "fff",
+          "link": "http://espn.com"
+        });
 
-<script>
+        localStorage.setItem("createdDefaults", "true");
+      }
 
-function Delete(button) {
-  var parent = button.parentNode;
-  var grand_father = parent.parentNode;
-  grand_father.removeChild(parent);
-}
+      links = json;
 
-</script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      let html = htmlForLinks(links);
 
-    </div>
-<div class="wrap">
+      let element = document.getElementById('tiles');
+      element.innerHTML = html;
+      saveLinks();
+    }
 
-    <div class="metro-small amazon">
-      <button type="button" style="background-color: #ccc;" onclick="Delete(this) ")>&nbsp...&nbsp</button>
-			<a href="http://amazon.com"><div class="icon-amazon"></div></a>
-			<span style="color:#000;" class="label bottom">Amazon</span>
-		</div>
+    function saveLinks() {
+      localStorage.setItem('links', JSON.stringify(links));
+    }
 
-		<div class="metro-small ebay">
-      <button type="button" style="background-color: #ccc;" onclick="Delete(this) ")>&nbsp...&nbsp</button>
-			    <a href="http://ebay.com"><div class="icon-ebay"></div></a>
-			<span style="color:#000;" class="label bottom">ebay</span>
-		</div>
+    loadLinks();
+  </script>
 
-    <div class="metro-small target">
-      <button type="button" style="background-color: #ccc;" onclick="Delete(this) ")>&nbsp...&nbsp</button>
-          <a href="http://target.com"><div class="icon-target"></div></a>
-      <span style="color:#000;" class="label bottom">Target</span>
-    </div>
-
-		<div class="metro-small fb">
-      <button type="button" style="background-color: #ccc;" onclick="Delete(this) ")>&nbsp...&nbsp</button>
-			    <a href="http://facebook.com"><div class="icon-fb"></div></a>
-			<span class="label bottom">Facebook</span>
-		</div>
-
-		<div class="metro-small insta">
-      <button type="button" style="background-color: #ccc;" onclick="Delete(this) ")>&nbsp...&nbsp</button>
-    <a href="http://instagram.com"><div class="icon-insta"></div></a>
-			<span style="color:#000;" class="label bottom">Instagram</span>
-		</div>
-
-      <div class="metro-small twitter">
-      <button type="button" style="background-color: #ccc;" onclick="Delete(this) ")>&nbsp...&nbsp</button>
-      <a href="http://twitter.com"><div class="icon-twitter"></div></a>
-  			<span class="label bottom">Twitter</span>
-		</div>
-
-    <div class="metro-small tube">
-      <button type="button" style="background-color: #ccc;" onclick="Delete(this) ")>&nbsp...&nbsp</button>
-    <a href="http://youtube.com"><div class="icon-tube"></div></a>
-			<span class="label bottom">Youtube</span>
-		</div>
-
-    <div class="metro-small gmail">
-      <button type="button" style="background-color: #ccc;" onclick="Delete(this) ")>&nbsp...&nbsp</button>
-    <a href="http://gmail.com"><div class="icon-gmail"></div></a>
-      <span style="color:#000;" class="label bottom">Gmail</span>
-    </div>
-
-    <div class="metro-small flix">
-      <button type="button" style="background-color: #ccc;" onclick="Delete(this) ")>&nbsp...&nbsp</button>
-          <a href="http://netflix.com"><div class="icon-flix"></div></a>
-      <span style="color:#fff;" class="label bottom">Netflix</span>
-    </div>
-
-		<div class="metro-small wiki">
-      <button type="button" style="background-color: #ccc;" onclick="Delete(this) ")>&nbsp...&nbsp</button>
-    <a href="http://wikipedia.com"><div class="icon-wiki"></div></a>
-			<span class="label bottom">Wikipedia</span>
-		</div>
-
-		<div class="metro-small fox">
-      <button type="button" style="background-color: #ccc;" onclick="Delete(this) ")>&nbsp...&nbsp</button>
-    <a href="http://foxnews.com"><div class="icon-fox"></div></a>
-			<span class="label bottom">Fox News</span>
-		</div>
-
-
-		<div class="metro-small espn">
-      <button type="button" style="background-color: #ccc;" onclick="Delete(this) ")>&nbsp...&nbsp</button>
-			    <a href="http://espn.com"><div class="icon-espn"></div></a>
-			<span style="color:#000;" class="label bottom">ESPN</span>
-		</div>
+  </div>
+  <div class="wrap">
+    <div id="tiles"></div>
 
     <div id="democontainer">
     </div>
     <form action="/dontcrawl/">
-    <input style="  float: left;
+      <input style="  float: left;
     	margin: 0 10px 10px 0;
     	height: 95px;
       width: 95px;
@@ -381,373 +563,457 @@ function Delete(button) {
     	cursor: pointer;
     	transition: all .4s ease;
       user-drag: element;
-      border: solid 2px transparent;"type="submit" onclick="demo_insert_div_block(); return false;" name="demo" id="demo" value="+">
+      border: solid 2px transparent;" type="submit" onclick="demo_insert_div_block(); return false;" name="demo" id="demo" value="+">
     </form>
 
-<style>
-textarea {
-  color:#000;
-  resize: none;
-  width: 80;
-  border-radius: 0px;
-  background-color:transparent;
-}
-</style>
-      <script src="https://www.googletagservices.com/activeview/js/current/osd.js?cb=%2Fr20100101"></script><script src="https://pagead2.googlesyndication.com/pagead/js/r20190925/r20190131/show_ads_impl.js" id="google_shimpl"></script><script type="text/javascript">
-function demo_insert_div_block()
-{
-	var block_to_insert ;
-	var container_block ;
-	block_to_insert = document.createElement('div');
-	block_to_insert.innerHTML = '<div class="metro-small insta"><button type="button" style="background-color: #ccc;" onclick="Delete(this) ")>&nbsp...&nbsp</button><a href=""><div class="icon-"></div></a><span class="label bottom"><textarea>Blank</textarea></span></div>';
-	container_block = document.getElementById('democontainer');
-	container_block.appendChild( block_to_insert );
-}
-</script>
-<style>
-.democontainer {
-  float: left;
-	margin: 0 10px 10px 0;
-	height: 95px;
-  width: 95px;
-	position: relative;
-	cursor: pointer;
-	transition: all .4s ease;
-  user-drag: element;
-  border: solid 2px transparent;
-}
-</style>
+    <style>
+      textarea {
+        color: #000;
+        resize: none;
+        width: 80;
+        border-radius: 0px;
+        background-color: transparent;
+      }
+    </style>
+    <script src="https://www.googletagservices.com/activeview/js/current/osd.js?cb=%2Fr20100101"></script>
+    <script src="https://pagead2.googlesyndication.com/pagead/js/r20190925/r20190131/show_ads_impl.js" id="google_shimpl"></script>
+    <script type="text/javascript">
+      function demo_insert_div_block() {
+        let name = prompt('Link Name:');
+        let link = prompt('URL:');
 
+        links.push({
+          "name": name,
+          "link": link
+        });
 
-
-
-
-
-
+        saveLinks();
+        let element = document.getElementById('tiles');
+        element.innerHTML = htmlForLinks(links);
+      }
+    </script>
+    <style>
+      .democontainer {
+        float: left;
+        margin: 0 10px 10px 0;
+        height: 95px;
+        width: 95px;
+        position: relative;
+        cursor: pointer;
+        transition: all .4s ease;
+        user-drag: element;
+        border: solid 2px transparent;
+      }
+    </style>
   </div>
-</div>
+  </div>
+  </div>
 
+  <div class="wrap2">
 
+    <div class="Weatherwindow">
+      <button type="button" style="background-color: #ccc;" onclick="Delete(this) " )>&nbsp...&nbsp</button>
+      <div style="width: 100%;"><iframe style="display: block;" src="https://cdnres.willyweather.com/widget/loadView.html?id=115404" width="100%" height="92" frameborder="0" scrolling="no"></iframe><a style="width: 20px;text-indent: -9999em;z-index: 1;margin: -92px 0 0 0;float: right;height: 92px;position: relative" href="https://www.willyweather.com/tx/harris-county/houston.html" rel="nofollow">Houston Weather</a></div>
 
+    </div>
+    <br>
+    <meta charset="UTF-8">
+    <meta charset="utf-8">
 
+    <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    <style>
+      #notepad {
+        height: 135px;
+        width: 100%;
+        font-size: 100%;
+        line-height: 125%;
+        font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+        color: #000;
+      }
+    </style>
 
-
-</div>
-
-<div class="wrap2">
-
-  <div class="Weatherwindow">
-      <button type="button" style="background-color: #ccc;" onclick="Delete(this) ")>&nbsp...&nbsp</button>
-<div style="width: 100%;"><iframe style="display: block;" src="https://cdnres.willyweather.com/widget/loadView.html?id=115404" width="100%" height="92" frameborder="0" scrolling="no"></iframe><a style="width: 20px;text-indent: -9999em;z-index: 1;margin: -92px 0 0 0;float: right;height: 92px;position: relative" href="https://www.willyweather.com/tx/harris-county/houston.html" rel="nofollow">Houston Weather</a></div>
-
-</div>
-<br>
-<meta charset="UTF-8">
-<meta charset="utf-8">
-
-<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-<style>
-#notepad{height:135px;width:100%;font-size:100%;line-height:125%;font-family:-apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;color: #000;}
-</style>
-
-</head>
-<div class="window">
-<button type="button" style="background-color: #ccc;" onclick="Delete(this) ")>&nbsp...&nbsp</button><br>
-<textarea placeholder="Type here and see it later"  id="notepad">
+    </head>
+    <div class="window">
+      <button type="button" style="background-color: #ccc;" onclick="Delete(this) " )>&nbsp...&nbsp</button><br>
+      <textarea placeholder="Type here and see it later" id="notepad">
 <!--
   you could do any element w/ contentEditable, but that doesn't fire onchange
 -->
 </textarea>
-<script>
-/* localstorage polyfill from https://gist.github.com/350433 */
-("undefined"==typeof window.localStorage||"undefined"==typeof window.sessionStorage)&&function(){function e(f){function e(a){var b;b=new Date;b.setTime(b.getTime()+31536E6);document.cookie="localStorage="+a+("; expires="+b.toGMTString())+"; path=/"}function g(a){a=JSON.stringify(a);"session"==f?window.name=a:e(a)}var d=function(){var a;if("session"==f)a=window.name;else a:{a=document.cookie.split(";");var b,c;for(b=0;b<a.length;b++){for(c=a[b];" "==c.charAt(0);)c=c.substring(1,c.length);if(0==c.indexOf("localStorage=")){a=
-c.substring(13,c.length);break a}}a=null}return a?JSON.parse(a):{}}();return{length:0,clear:function(){d={};this.length=0;"session"==f?window.name="":e("")},getItem:function(a){return void 0===d[a]?null:d[a]},key:function(a){var b=0,c;for(c in d){if(b==a)return c;b++}return null},removeItem:function(a){delete d[a];this.length--;g(d)},setItem:function(a,b){d[a]=b+"";this.length++;g(d)}}}if("undefined"==typeof window.localStorage)window.localStorage=new e("local");if("undefined"==typeof window.sessionStorage)window.sessionStorage=
-new e("session")}();
+      <script>
+        /* localstorage polyfill from https://gist.github.com/350433 */
+        ("undefined" == typeof window.localStorage || "undefined" == typeof window.sessionStorage) && function () {
+          function e(f) {
+            function e(a) {
+              var b;
+              b = new Date;
+              b.setTime(b.getTime() + 31536E6);
+              document.cookie = "localStorage=" + a + ("; expires=" + b.toGMTString()) + "; path=/"
+            }
 
-/* the code */
-	var n = document.getElementById("notepad");
-	/* save */
-	var s = function(){localStorage.setItem("notepad", n.value);}
-	/* retrieve (only on page load) */
-	if(window.localStorage){ n.value = localStorage.getItem("notepad");}
-	/* autosave onchange and every 500ms and when you close the window */
-	n.onchange = s();
-	setInterval( s, 500);
-	window.onunload = s();
-</script>
+            function g(a) {
+              a = JSON.stringify(a);
+              "session" == f ? window.name = a : e(a)
+            }
+            var d = function () {
+              var a;
+              if ("session" == f) a = window.name;
+              else a: {
+                a = document.cookie.split(";");
+                var b, c;
+                for (b = 0; b < a.length; b++) {
+                  for (c = a[b];
+                    " " == c.charAt(0);) c = c.substring(1, c.length);
+                  if (0 == c.indexOf("localStorage=")) {
+                    a =
+                      c.substring(13, c.length);
+                    break a
+                  }
+                }
+                a = null
+              }
+              return a ? JSON.parse(a) : {}
+            }();
+            return {
+              length: 0,
+              clear: function () {
+                d = {};
+                this.length = 0;
+                "session" == f ? window.name = "" : e("")
+              },
+              getItem: function (a) {
+                return void 0 === d[a] ? null : d[a]
+              },
+              key: function (a) {
+                var b = 0,
+                  c;
+                for (c in d) {
+                  if (b == a) return c;
+                  b++
+                }
+                return null
+              },
+              removeItem: function (a) {
+                delete d[a];
+                this.length--;
+                g(d)
+              },
+              setItem: function (a, b) {
+                d[a] = b + "";
+                this.length++;
+                g(d)
+              }
+            }
+          }
+          if ("undefined" == typeof window.localStorage) window.localStorage = new e("local");
+          if ("undefined" == typeof window.sessionStorage) window.sessionStorage =
+            new e("session")
+        }();
+
+        /* the code */
+        var n = document.getElementById("notepad");
+        /* save */
+        var s = function () {
+          localStorage.setItem("notepad", n.value);
+        }
+        /* retrieve (only on page load) */
+        if (window.localStorage) {
+          n.value = localStorage.getItem("notepad");
+        }
+        /* autosave onchange and every 500ms and when you close the window */
+        n.onchange = s();
+        setInterval(s, 500);
+        window.onunload = s();
+      </script>
 </body>
 </div>
 <br>
 <style>
-*{font-family:sans-serif;}
+  * {
+    font-family: sans-serif;
+  }
 
-#settings { display: block; text-align:center}
+  #settings {
+    display: block;
+    text-align: center
+  }
 
 
-#paint {background : #fff; margin-left: auto; margin-right: auto; display: block;}
-
+  #paint {
+    background: #fff;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
 </style>
 
-  <div class="window">
-      <button type="button" style="background-color: #ccc;" onclick="Delete(this) ")>&nbsp...&nbsp</button>
+<div class="window">
+  <button type="button" style="background-color: #ccc;" onclick="Delete(this) " )>&nbsp...&nbsp</button>
   <div id="sketch">
     <canvas style="width:100%;height:135px" id="paint"></canvas>
-<br>
-  <div style="background-color:#e5e4e5;width:50%;border-radius: 0px;box-shadow: 0 20px 70px rgba(0, 0, 0, 0.55);" id="settings">
-    <button style="border-radius: 0px;font-size:13px;height:23px;background-color:blue;border: 3px solid blue;" onclick="getColor('blue');">&nbsp&nbsp&nbsp&nbsp</button>
-    <button style="border-radius: 0px;font-size:13px;height:23px;background-color:red;border: 3px solid red;" onclick="getColor('red');">&nbsp&nbsp&nbsp&nbsp</button>
-    <button style="border-radius: 0px;font-size:13px;height:23px;background-color:green;border: 3px solid green;" onclick="getColor('green');">&nbsp&nbsp&nbsp&nbsp</button>
-    <button style="border-radius: 0px;font-size:13px;height:23px;background-color:white;border: 3px solid white;" onclick="getColor('white');">&nbsp&nbsp&nbsp&nbsp</button>
+    <br>
+    <div style="background-color:#e5e4e5;width:50%;border-radius: 0px;box-shadow: 0 20px 70px rgba(0, 0, 0, 0.55);" id="settings">
+      <button style="border-radius: 0px;font-size:13px;height:23px;background-color:blue;border: 3px solid blue;" onclick="getColor('blue');">&nbsp&nbsp&nbsp&nbsp</button>
+      <button style="border-radius: 0px;font-size:13px;height:23px;background-color:red;border: 3px solid red;" onclick="getColor('red');">&nbsp&nbsp&nbsp&nbsp</button>
+      <button style="border-radius: 0px;font-size:13px;height:23px;background-color:green;border: 3px solid green;" onclick="getColor('green');">&nbsp&nbsp&nbsp&nbsp</button>
+      <button style="border-radius: 0px;font-size:13px;height:23px;background-color:white;border: 3px solid white;" onclick="getColor('white');">&nbsp&nbsp&nbsp&nbsp</button>
+    </div>
+    <div style="background-color:#e5e4e5;width:50%;border-radius: 0px;box-shadow: 0 20px 70px rgba(0, 0, 0, 0.55);" id="settings">
+      <button style="border-radius: 0px;font-size:13px;height:23px;background-color:#e5e4e5;border: 3px solid #e5e4e5;" onclick="getSize('2');">Small</button>
+      <button style="border-radius: 0px;font-size:13px;height:23px;background-color:#e5e4e5;border: 3px solid #e5e4e5;" onclick="getSize('5');">Med</button>
+      <button style="border-radius: 0px;font-size:13px;height:23px;background-color:#e5e4e5;border: 3px solid #e5e4e5;" onclick="getSize('10');">Large</button>
+
+    </div>
   </div>
-  <div style="background-color:#e5e4e5;width:50%;border-radius: 0px;box-shadow: 0 20px 70px rgba(0, 0, 0, 0.55);" id="settings">
-    <button style="border-radius: 0px;font-size:13px;height:23px;background-color:#e5e4e5;border: 3px solid #e5e4e5;" onclick="getSize('2');">Small</button>
-    <button style="border-radius: 0px;font-size:13px;height:23px;background-color:#e5e4e5;border: 3px solid #e5e4e5;" onclick="getSize('5');">Med</button>
-    <button style="border-radius: 0px;font-size:13px;height:23px;background-color:#e5e4e5;border: 3px solid #e5e4e5;" onclick="getSize('10');">Large</button>
+  <script>
+    var canvas = document.getElementById('paint');
+    var ctx = canvas.getContext('2d');
 
-  </div>
-</div>
+    var sketch = document.getElementById('sketch');
+    var sketch_style = getComputedStyle(sketch);
+    canvas.width = 542;
+    canvas.height = 140;
 
+    var mouse = {
+      x: 0,
+      y: 0
+    };
 
-<!--
-<div class="metro-small ">
-  <div class="icon-"></div>
-  <span class="label bottom"></span>
-</div>
-<div class="metro-small ">
-  <div class="icon-"></div>
-  <span class="label bottom"></span>
-</div>
-<div class="metro-small ">
-  <div class="icon-"></div>
-  <span class="label bottom"></span>
-</div>
--->
-<script>
-var canvas = document.getElementById('paint');
-var ctx = canvas.getContext('2d');
+    /* Mouse Capturing Work */
+    canvas.addEventListener('mousemove', function (e) {
+      mouse.x = e.pageX - this.offsetLeft;
+      mouse.y = e.pageY - this.offsetTop;
+    }, false);
 
-var sketch = document.getElementById('sketch');
-var sketch_style = getComputedStyle(sketch);
-canvas.width = 542;
-canvas.height = 140;
+    /* Drawing on Paint App */
+    ctx.lineJoin = 'round';
+    ctx.lineCap = 'round';
 
-var mouse = {x: 0, y: 0};
+    ctx.strokeStyle = "red";
 
-/* Mouse Capturing Work */
-canvas.addEventListener('mousemove', function(e) {
-mouse.x = e.pageX - this.offsetLeft;
-mouse.y = e.pageY - this.offsetTop;
-}, false);
+    function getColor(colour) {
+      ctx.strokeStyle = colour;
+    }
 
-/* Drawing on Paint App */
-ctx.lineJoin = 'round';
-ctx.lineCap = 'round';
-
-ctx.strokeStyle = "red";
-function getColor(colour){ctx.strokeStyle = colour;}
-
-function getSize(size){ctx.lineWidth = size;}
+    function getSize(size) {
+      ctx.lineWidth = size;
+    }
 
 
-//ctx.strokeStyle =
-//ctx.strokeStyle = document.settings.colour[1].value;
+    //ctx.strokeStyle =
+    //ctx.strokeStyle = document.settings.colour[1].value;
 
-canvas.addEventListener('mousedown', function(e) {
-  ctx.beginPath();
-  ctx.moveTo(mouse.x, mouse.y);
+    canvas.addEventListener('mousedown', function (e) {
+      ctx.beginPath();
+      ctx.moveTo(mouse.x, mouse.y);
 
-  canvas.addEventListener('mousemove', onPaint, false);
-}, false);
+      canvas.addEventListener('mousemove', onPaint, false);
+    }, false);
 
-canvas.addEventListener('mouseup', function() {
-  canvas.removeEventListener('mousemove', onPaint, false);
-}, false);
+    canvas.addEventListener('mouseup', function () {
+      canvas.removeEventListener('mousemove', onPaint, false);
+    }, false);
 
-var onPaint = function() {
-  ctx.lineTo(mouse.x, mouse.y);
-  ctx.stroke();
-};
-</script>
-<br><br><br><br><br><br>
-<SCRIPT>
-<!-- Begin
-function changeBackground(hexNumber) {
-document.bgColor=hexNumber
-}
-prefix="#"
-rnum1=0
-bnum1=0
-gnum1=0
-rnum2=0
-bnum2=0
-gnum2=0
-hexNumber2="#000000";
-rcount=0;
-bcount=0;
-gcount=0;
-function num2hex(num) {
-if (num==15) return "f";
-else if (num==14) return "e";
-else if (num==13) return "d";
-else if (num==12) return "c";
-else if (num==11) return "b";
-else if (num==10) return "a";
-else if (num==9) return "9";
-else if (num==8) return "8";
-else if (num==7) return "7";
-else if (num==6) return "6";
-else if (num==5) return "5";
-else if (num==4) return "4";
-else if (num==3) return "3";
-else if (num==2) return "2";
-else if (num==1) return "1";
-else return "0";
-}
-function changeBackground2(number) {
-if(number == 1) {
-rnum1=rcount%16;
-if (rcount <15) {
-rcount=rcount+1;
-  }
-}
-if(number == 2) {
-gnum1=gcount%16;
-if (gcount <15) {
-gcount=gcount+1;
-  }
-}
-if(number == 3) {
-bnum1=bcount%16;
-if (bcount <15) {
-bcount=bcount+1;
-  }
-}
-if(number == 4) {
-rnum1=rcount%16;
-if (rcount > 0) {
-rcount=rcount-1;
-  }
-}
-if(number == 5) {
-gnum1=gcount%16;
-if (gcount > 0) {
-gcount=gcount-1;
-  }
-}
-if(number == 6) {
-bnum1=bcount%16;
-if (bcount > 0) {
-bcount=bcount-1;
-  }
- }
-hexNumber2 = prefix+num2hex(rnum1)+num2hex(rnum2)+num2hex(gnum1)+num2hex(gnum2)+num2hex(bnum1)+num2hex(bnum2);
-  document.bgColor=hexNumber2;
-}
-// End -->
-</script>
+    var onPaint = function () {
+      ctx.lineTo(mouse.x, mouse.y);
+      ctx.stroke();
+    };
+  </script>
+  <br><br><br><br><br><br>
+  <SCRIPT>
+    function changeBackground(hexNumber) {
+      document.bgColor = hexNumber
+    }
+    prefix = "#"
+    rnum1 = 0
+    bnum1 = 0
+    gnum1 = 0
+    rnum2 = 0
+    bnum2 = 0
+    gnum2 = 0
+    hexNumber2 = "#000000";
+    rcount = 0;
+    bcount = 0;
+    gcount = 0;
+
+    function num2hex(num) {
+      if (num == 15) return "f";
+      else if (num == 14) return "e";
+      else if (num == 13) return "d";
+      else if (num == 12) return "c";
+      else if (num == 11) return "b";
+      else if (num == 10) return "a";
+      else if (num == 9) return "9";
+      else if (num == 8) return "8";
+      else if (num == 7) return "7";
+      else if (num == 6) return "6";
+      else if (num == 5) return "5";
+      else if (num == 4) return "4";
+      else if (num == 3) return "3";
+      else if (num == 2) return "2";
+      else if (num == 1) return "1";
+      else return "0";
+    }
+
+    function changeBackground2(number) {
+      if (number == 1) {
+        rnum1 = rcount % 16;
+        if (rcount < 15) {
+          rcount = rcount + 1;
+        }
+      }
+      if (number == 2) {
+        gnum1 = gcount % 16;
+        if (gcount < 15) {
+          gcount = gcount + 1;
+        }
+      }
+      if (number == 3) {
+        bnum1 = bcount % 16;
+        if (bcount < 15) {
+          bcount = bcount + 1;
+        }
+      }
+      if (number == 4) {
+        rnum1 = rcount % 16;
+        if (rcount > 0) {
+          rcount = rcount - 1;
+        }
+      }
+      if (number == 5) {
+        gnum1 = gcount % 16;
+        if (gcount > 0) {
+          gcount = gcount - 1;
+        }
+      }
+      if (number == 6) {
+        bnum1 = bcount % 16;
+        if (bcount > 0) {
+          bcount = bcount - 1;
+        }
+      }
+      hexNumber2 = prefix + num2hex(rnum1) + num2hex(rnum2) + num2hex(gnum1) + num2hex(gnum2) + num2hex(bnum1) + num2hex(bnum2);
+      document.bgColor = hexNumber2;
+    }
+    // End
+  </script>
 
 </div>
 
 
 <br><br><br><br><br>
 <div style="background-color:#fff;border: 4px solid #000;" class="bg-picker">
-      <button type="button" style="background-color: #ccc;" onclick="Delete(this) ")>&nbsp...&nbsp</button>
-<SCRIPT LANGUAGE="JavaScript">
-<!-- Begin
-function changeBackground(hexNumber) {
-document.bgColor=hexNumber
-}
-prefix="#"
-rnum1=0
-bnum1=0
-gnum1=0
-rnum2=0
-bnum2=0
-gnum2=0
-hexNumber2="#000000";
-rcount=0;
-bcount=0;
-gcount=0;
-function num2hex(num) {
-if (num==15) return "f";
-else if (num==14) return "e";
-else if (num==13) return "d";
-else if (num==12) return "c";
-else if (num==11) return "b";
-else if (num==10) return "a";
-else if (num==9) return "9";
-else if (num==8) return "8";
-else if (num==7) return "7";
-else if (num==6) return "6";
-else if (num==5) return "5";
-else if (num==4) return "4";
-else if (num==3) return "3";
-else if (num==2) return "2";
-else if (num==1) return "1";
-else return "0";
-}
-function changeBackground2(number) {
-if(number == 1) {
-rnum1=rcount%16;
-if (rcount <15) {
-rcount=rcount+1;
-  }
-}
-if(number == 2) {
-gnum1=gcount%16;
-if (gcount <15) {
-gcount=gcount+1;
-  }
-}
-if(number == 3) {
-bnum1=bcount%16;
-if (bcount <15) {
-bcount=bcount+1;
-  }
-}
-if(number == 4) {
-rnum1=rcount%16;
-if (rcount > 0) {
-rcount=rcount-1;
-  }
-}
-if(number == 5) {
-gnum1=gcount%16;
-if (gcount > 0) {
-gcount=gcount-1;
-  }
-}
-if(number == 6) {
-bnum1=bcount%16;
-if (bcount > 0) {
-bcount=bcount-1;
-  }
- }
-hexNumber2 = prefix+num2hex(rnum1)+num2hex(rnum2)+num2hex(gnum1)+num2hex(gnum2)+num2hex(bnum1)+num2hex(bnum2);
-  document.bgColor=hexNumber2
-}
-// End -->
-</SCRIPT>
+  <button type="button" style="background-color: #ccc;" onclick="Delete(this) " )>&nbsp...&nbsp</button>
+  <SCRIPT LANGUAGE="JavaScript">
+    <!-- Begin
+    function changeBackground(hexNumber) {
+      document.bgColor = hexNumber
+    }
+    prefix = "#"
+    rnum1 = 0
+    bnum1 = 0
+    gnum1 = 0
+    rnum2 = 0
+    bnum2 = 0
+    gnum2 = 0
+    hexNumber2 = "#000000";
+    rcount = 0;
+    bcount = 0;
+    gcount = 0;
 
-<CENTER>
-<FORM METHOD="POST" NAME="background" style="box-shadow: 0 20px 70px rgba(0, 0, 0, 0.55);">
-<TABLE BORDER="3" CELLPADDING="3">
-</TABLE>
-<TABLE WIDTH=350 BORDER="3" CELLPADDING="3">
-<TR><TD><center>Background Color Changer</center></TD>
-</TR>
-</TABLE>
-<TABLE WIDTH=350 BORDER="3" CELLPADDING="3">
-<TR>
-<TD Align=center><INPUT TYPE="button" VALUE="+ R" ONCLICK="changeBackground2(1)"><P>
-<INPUT TYPE="button" VALUE="- R" ONCLICK="changeBackground2(4)"></TD>
-<TD Align=center><INPUT TYPE="button" VALUE ="+ G" ONCLICK="changeBackground2(2)"><P>
-<INPUT TYPE="button" VALUE="- G" ONCLICK="changeBackground2(5)"></TD>
-<TD Align=center><INPUT TYPE="button" VALUE="+ B" ONCLICK="changeBackground2(3)"><P>
-<INPUT TYPE="button" VALUE="- B" ONCLICK="changeBackground2(6)"></TD>
-</TR>
-</TABLE>
-</FORM>
-</CENTER>
+    function num2hex(num) {
+      if (num == 15) return "f";
+      else if (num == 14) return "e";
+      else if (num == 13) return "d";
+      else if (num == 12) return "c";
+      else if (num == 11) return "b";
+      else if (num == 10) return "a";
+      else if (num == 9) return "9";
+      else if (num == 8) return "8";
+      else if (num == 7) return "7";
+      else if (num == 6) return "6";
+      else if (num == 5) return "5";
+      else if (num == 4) return "4";
+      else if (num == 3) return "3";
+      else if (num == 2) return "2";
+      else if (num == 1) return "1";
+      else return "0";
+    }
+
+    function changeBackground2(number) {
+      if (number == 1) {
+        rnum1 = rcount % 16;
+        if (rcount < 15) {
+          rcount = rcount + 1;
+        }
+      }
+      if (number == 2) {
+        gnum1 = gcount % 16;
+        if (gcount < 15) {
+          gcount = gcount + 1;
+        }
+      }
+      if (number == 3) {
+        bnum1 = bcount % 16;
+        if (bcount < 15) {
+          bcount = bcount + 1;
+        }
+      }
+      if (number == 4) {
+        rnum1 = rcount % 16;
+        if (rcount > 0) {
+          rcount = rcount - 1;
+        }
+      }
+      if (number == 5) {
+        gnum1 = gcount % 16;
+        if (gcount > 0) {
+          gcount = gcount - 1;
+        }
+      }
+      if (number == 6) {
+        bnum1 = bcount % 16;
+        if (bcount > 0) {
+          bcount = bcount - 1;
+        }
+      }
+      hexNumber2 = prefix + num2hex(rnum1) + num2hex(rnum2) + num2hex(gnum1) + num2hex(gnum2) + num2hex(bnum1) + num2hex(bnum2);
+      document.bgColor = hexNumber2
+    }
+    // End 
+    -->
+  </SCRIPT>
+
+  <CENTER>
+    <FORM METHOD="POST" NAME="background" style="box-shadow: 0 20px 70px rgba(0, 0, 0, 0.55);">
+      <TABLE BORDER="3" CELLPADDING="3">
+      </TABLE>
+      <TABLE WIDTH=350 BORDER="3" CELLPADDING="3">
+        <TR>
+          <TD>
+            <center>Background Color Changer</center>
+          </TD>
+        </TR>
+      </TABLE>
+      <TABLE WIDTH=350 BORDER="3" CELLPADDING="3">
+        <TR>
+          <TD Align=center><INPUT TYPE="button" VALUE="+ R" ONCLICK="changeBackground2(1)">
+            <P>
+              <INPUT TYPE="button" VALUE="- R" ONCLICK="changeBackground2(4)">
+          </TD>
+          <TD Align=center><INPUT TYPE="button" VALUE="+ G" ONCLICK="changeBackground2(2)">
+            <P>
+              <INPUT TYPE="button" VALUE="- G" ONCLICK="changeBackground2(5)">
+          </TD>
+          <TD Align=center><INPUT TYPE="button" VALUE="+ B" ONCLICK="changeBackground2(3)">
+            <P>
+              <INPUT TYPE="button" VALUE="- B" ONCLICK="changeBackground2(6)">
+          </TD>
+        </TR>
+      </TABLE>
+    </FORM>
+  </CENTER>
 
 </div>
+
+</html>
