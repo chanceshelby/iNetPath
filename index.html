@@ -445,89 +445,6 @@
       let json = JSON.parse(tmplinks);
 
       if (localStorage.getItem('createdDefaults') !== 'true') {
-        json.push({
-          "name": "Amazon",
-          "image": "http://icons.iconarchive.com/icons/uiconstock/socialmedia/256/Amazon-icon.png",
-          "color": "ccc",
-          "link": "http://amazon.com"
-        });
-
-        json.push({
-          "name": "Ebay",
-          "image": "https://4.bp.blogspot.com/-3UG8vPdtupY/Wv2acYZ1UEI/AAAAAAAABVE/dpTUVmNz94wOZEHWvV96gp4W3c51Cfj_ACLcBGAs/s1600/eBay%2Balt.png",
-          "color": "e5e4e5",
-          "link": "http://ebay.com"
-        });
-
-        json.push({
-          "name": "Target",
-          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Target_Corporation_logo_%28vector%29.svg/1200px-Target_Corporation_logo_%28vector%29.svg.png",
-          "color": "fff",
-          "link": "http://target.com"
-        });
-
-        json.push({
-          "name": "Facebook",
-          "image": "http://icons.iconarchive.com/icons/danleech/simple/256/facebook-icon.png",
-          "color": "4a6ea9",
-          "link": "http://facebook.com"
-        });
-
-        json.push({
-          "name": "Instagram",
-          "image": "https://i1.wp.com/blog.fossasia.org/wp-content/uploads/2016/07/unnamed.png?fit=300%2C300&ssl=1",
-          "color": "fff",
-          "link": "http://instagram.com"
-        });
-
-        json.push({
-          "name": "Twitter",
-          "image": "https://www.charlestonacademy.co.uk/wp-content/uploads/2013/02/twitter-bird-white-on-blue-e1365769304265.png",
-          "color": "00aced",
-          "link": "http://twitter.com"
-        });
-
-        json.push({
-          "name": "Youtube",
-          "image": "http://icons.iconarchive.com/icons/dakirby309/windows-8-metro/256/Web-YouTube-alt-1-Metro-icon.png",
-          "color": "c8312b",
-          "link": "http://youtube.com"
-        });
-
-        json.push({
-          "name": "Gmail",
-          "image": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Gmail_Icon.png",
-          "color": "fff",
-          "link": "http://gmail.com"
-        });
-
-        json.push({
-          "name": "Netfix",
-          "image": "https://cdn.vox-cdn.com/thumbor/AwKSiDyDnwy_qoVdLPyoRPUPo00=/39x0:3111x2048/1400x1400/filters:focal(39x0:3111x2048):format(png)/cdn.vox-cdn.com/uploads/chorus_image/image/49901753/netflixlogo.0.0.png",
-          "color": "000",
-          "link": "http://netflix.com"
-        });
-
-        json.push({
-          "name": "Wikipedia",
-          "image": "http://icons.iconarchive.com/icons/danleech/simple/256/wikipedia-icon.png",
-          "color": "000",
-          "link": "http://wikipedia.com"
-        });
-
-        json.push({
-          "name": "Fox News",
-          "image": "http://icons.iconarchive.com/icons/dakirby309/windows-8-metro/256/Web-Fox-News-Metro-icon.png",
-          "color": "cb0038",
-          "link": "http://foxnews.com"
-        });
-
-        json.push({
-          "name": "ESPN",
-          "image": "https://www.iosicongallery.com/icons/espn-2015-03-31/512.png",
-          "color": "fff",
-          "link": "http://espn.com"
-        });
 
         localStorage.setItem("createdDefaults", "true");
       }
@@ -573,6 +490,7 @@
         width: 80;
         border-radius: 0px;
         background-color: transparent;
+        float:left;
       }
     </style>
     <script src="https://www.googletagservices.com/activeview/js/current/osd.js?cb=%2Fr20100101"></script>
@@ -581,11 +499,12 @@
       function demo_insert_div_block() {
         let name = prompt('Link Name:');
         let link = prompt('URL:');
+        let color = prompt('Color HEX Code: Blue-3977E5  Red-C82929 Green-3AC829');
 
         links.push({
           "name": name,
           "link": link,
-          "color": "000",
+          "color": color,
           "icon": link
         });
 
@@ -982,7 +901,7 @@
       hexNumber2 = prefix + num2hex(rnum1) + num2hex(rnum2) + num2hex(gnum1) + num2hex(gnum2) + num2hex(bnum1) + num2hex(bnum2);
       document.bgColor = hexNumber2
     }
-    // End 
+    // End
     -->
   </SCRIPT>
 
