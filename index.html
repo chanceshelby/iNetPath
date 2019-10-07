@@ -423,8 +423,8 @@
         html += `<div class="metro-small" style="background-color: #${i.color}">
           <button type="button" style="background-color: #ccc;" onclick="Delete(${index}) " )>&nbsp...&nbsp</button>
           <div onclick="window.location.href = '${i.link}'">
-            ${(i.image !==null && i.image !==undefined) ? `<img src=${i.image} style="width: 85%; height:85%;"></img>` : '<div style="width: 85%; height:85%;"></div>'}
-          <span class="label bottom">${i.name}</span>
+            ${(i.image !==null && i.image !==undefined) ? `<img src=${i.image} style="width: 50%; height:50%;  display: block;margin-left: auto;margin-right: auto;"></img>` : '<div style="width: 50%; height:50%;"></div>'}
+          <span class="label bottom"><font color="#${i.font_color}">${i.name}</span></font>
           </div>
         </div>`;
       });
@@ -497,15 +497,18 @@
     <script src="https://pagead2.googlesyndication.com/pagead/js/r20190925/r20190131/show_ads_impl.js" id="google_shimpl"></script>
     <script type="text/javascript">
       function demo_insert_div_block() {
-        let name = prompt('Link Name:');
+        let name = prompt('Name:');
         let link = prompt('URL:', "http://");
-        let color = prompt('Color: \n\nBlue-3977E5 | Red-C82929 | Green-42BA64 \n\nOrange-FF6347 | Pink-DB7093 | Black-000 | Grey-AFB0B4');
+        let color = prompt('Background Color: \n\nBlue-3977e5 | Red-c82929 | Green-42ba64 | White-fff\n\nOrange-ff6347 | Pink-db7093 | Black-000 | Grey-afb0b4');
+        let font_color = prompt('Text Color:\nWhite-fff | Black-000');
+        let img_link = prompt('Image URL:');
 
         links.push({
           "name": name,
           "link": link,
           "color": color,
-          "icon": link
+          "font_color": font_color,
+          "image": img_link
         });
 
         saveLinks();
