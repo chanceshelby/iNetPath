@@ -420,11 +420,10 @@
       console.log(items.length);
       let html = '';
       items.forEach((i, index) => {
-        html += `<div class="metro-small" style="background-color: ${i.color}">
+        html += `<div class="metro-small" style="background-color: ${i.color};">
           <button type="button" style="background-color: #ccc;" onclick="Delete(${index}) " )>&nbsp...&nbsp</button>
-          <div onclick="window.location.href = '${i.link}'">
-            ${(i.image !==null && i.image !==undefined) ? `<img src=${i.image} style="width: 50%; height:50%;  display: block;margin-left: auto;margin-right: auto;"></img>` : '<div style="width: 50%; height:50%;"></div>'}
-          <span class="label bottom"><font color="${i.font_color}">${i.name}</span></font>
+          <div onclick="window.location.href = '${i.link}'"><br>
+          <center><p style="color:${i.font_color};font-family: verdana">${i.name}</p></center>
           </div>
         </div>`;
       });
@@ -487,7 +486,7 @@
       textarea {
         color: #000;
         resize: none;
-        width: 80;
+        width: 70;
         border-radius: 0px;
         background-color: transparent;
         float:left;
@@ -501,14 +500,16 @@
         let link = prompt('URL:', "http://");
         let color = prompt('Background Color: ');
         let font_color = prompt('Text Color: ');
-        let img_link = prompt('Image/GIF URL:');
+        let border_color = prompt('Border Color: ');
+        //let img_link = prompt('Image/GIF URL:');
 
         links.push({
           "name": name,
           "link": link,
           "color": color,
           "font_color": font_color,
-          "image": img_link
+          "border_color": border_color
+          //"image": img_link
         });
 
         saveLinks();
@@ -937,4 +938,8 @@
 </div>
 
 </html>
+
+            ${(i.image !==null && i.image !==undefined) ? `<img src=${i.image} style="width: 50%; height:50%;  display: block;margin-left: auto;margin-right: auto;"></img>` : '<div style="width: 50%; height:50%;"></div>'}
+
+            border: 2px solid ${i.border_color};
 -->
