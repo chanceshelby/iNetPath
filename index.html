@@ -420,11 +420,11 @@
       console.log(items.length);
       let html = '';
       items.forEach((i, index) => {
-        html += `<div class="metro-small" style="background-color: #${i.color}">
+        html += `<div class="metro-small" style="background-color: ${i.color}">
           <button type="button" style="background-color: #ccc;" onclick="Delete(${index}) " )>&nbsp...&nbsp</button>
           <div onclick="window.location.href = '${i.link}'">
             ${(i.image !==null && i.image !==undefined) ? `<img src=${i.image} style="width: 50%; height:50%;  display: block;margin-left: auto;margin-right: auto;"></img>` : '<div style="width: 50%; height:50%;"></div>'}
-          <span class="label bottom"><font color="#${i.font_color}">${i.name}</span></font>
+          <span class="label bottom"><font color="${i.font_color}">${i.name}</span></font>
           </div>
         </div>`;
       });
@@ -499,9 +499,9 @@
       function demo_insert_div_block() {
         let name = prompt('Name:');
         let link = prompt('URL:', "http://");
-        let color = prompt('Background Color: \n\nBlue-3977e5 | Red-c82929 | Green-42ba64 | White-fff\n\nOrange-ff6347 | Pink-db7093 | Black-000 | Grey-afb0b4');
-        let font_color = prompt('Text Color:\nWhite-fff | Black-000');
-        let img_link = prompt('Image URL:');
+        let color = prompt('Background Color: ');
+        let font_color = prompt('Text Color: ');
+        let img_link = prompt('Image/GIF URL:');
 
         links.push({
           "name": name,
