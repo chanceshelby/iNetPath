@@ -14,7 +14,7 @@
 
     .window {
       font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
-      border: 1px solid #adadad;
+      border: 4px solid #fff;
       max-width: 100%;
       box-shadow: 0 20px 70px rgba(0, 0, 0, 0.55);
       margin: 0 auto;
@@ -343,7 +343,49 @@
         opacity: 0;
       }
     }
+    .dropbtnADD {
+      background-color: #fff;
+      color: #000;
+      padding: 3px;
+      font-size: 5px;
+      border: none;
+      width: 95px;
+      border-bottom-left-radius: 0px;
+      border-bottom-right-radius: 0px;
+    }
 
+    .dropdownADD {
+      position: relative;
+      display: inline-block;
+      margin-left: -105px;
+      height: 25px;
+      width: 200px;
+      border: 0;
+      -webkit-appearance: none;
+    }
+
+    .dropdown-contentADD {
+      display: none;
+      position: absolute;
+      background-color: #f1f1f1;
+      min-width: 100px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+
+    .dropdown-contentADD a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+
+    .dropdown-contentADD a:hover {background-color: #ddd;}
+
+    .dropdownADD:hover .dropdown-contentADD {display: block;}
+
+    .dropdownADD:hover .dropbtnADD {background-color: #ccc;}
+}
     .dropbtn {
       background-color: #ccc;
       color: #000;
@@ -476,6 +518,7 @@
 
     <form action="/dontcrawl/">
 
+
       <input style="
       float: left;
     	margin: 0 10px 10px 0;
@@ -485,16 +528,18 @@
     	cursor: pointer;
     	transition: all .4s ease;
       user-drag: element;
-      border: solid 2px transparent;" type="submit" onclick="demo_insert_div_block(); return false;" name="demo" id="demo" value="+">
+      border: solid 2px transparent;
+      box-shadow: 0 20px 70px rgba(0, 0, 0, 0.55)" type="submit" onclick="demo_insert_div_block(); return false;" name="demo" id="demo" value="+">
 
-      <div style="align: center" class="dropdown">
-      <button style="font-size:12px; background-color: #fff" class="dropbtn">&nbspcolors&nbsp</button>
-      <div class="dropdown-content">
+
+      <div style="align: center" class="dropdownADD">
+      <button style="font-size:12px; background-color: #fff" class="dropbtnADD">&nbspcolors&nbsp</button>
+      <div class="dropdown-contentADD">
         <script type="text/javascript">
     // Popup window code
     function newPopup(url) {
     popupWindow = window.open(
-      url,'popUpWindow','height=300,width=400,left=10,top=10,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+      url,'popUpWindow','height=1000px,width=400,left=10,top=10,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
     }
     </script>
     <p><a href="JavaScript:newPopup('colors.html');">Color Table</a></p>
@@ -700,13 +745,13 @@
   <div id="sketch">
     <canvas style="width:100%;height:135px" id="paint"></canvas>
     <br>
-    <div style="background-color:#e5e4e5;width:50%;border-radius: 0px;box-shadow: 0 20px 70px rgba(0, 0, 0, 0.55);" id="settings">
+    <div style="background-color:#e5e4e5;width:50%;border-radius: 0px;box-shadow: 0 20px 70px rgba(0, 0, 0, 0.55);border-top-left-radius: 6px;border-top-right-radius: 6px;" id="settings">
       <button style="border-radius: 0px;font-size:13px;height:23px;background-color:blue;border: 3px solid blue;" onclick="getColor('blue');">&nbsp&nbsp&nbsp&nbsp</button>
       <button style="border-radius: 0px;font-size:13px;height:23px;background-color:red;border: 3px solid red;" onclick="getColor('red');">&nbsp&nbsp&nbsp&nbsp</button>
       <button style="border-radius: 0px;font-size:13px;height:23px;background-color:green;border: 3px solid green;" onclick="getColor('green');">&nbsp&nbsp&nbsp&nbsp</button>
       <button style="border-radius: 0px;font-size:13px;height:23px;background-color:white;border: 3px solid white;" onclick="getColor('white');">&nbsp&nbsp&nbsp&nbsp</button>
     </div>
-    <div style="background-color:#e5e4e5;width:50%;border-radius: 0px;box-shadow: 0 20px 70px rgba(0, 0, 0, 0.55);" id="settings">
+    <div style="background-color:#e5e4e5;width:50%;border-radius: 0px;box-shadow: 0 20px 70px rgba(0, 0, 0, 0.55);border-bottom-left-radius: 6px;border-bottom-right-radius: 6px;" id="settings">
       <button style="border-radius: 0px;font-size:13px;height:23px;background-color:#e5e4e5;border: 3px solid #e5e4e5;" onclick="getSize('2');">Small</button>
       <button style="border-radius: 0px;font-size:13px;height:23px;background-color:#e5e4e5;border: 3px solid #e5e4e5;" onclick="getSize('5');">Med</button>
       <button style="border-radius: 0px;font-size:13px;height:23px;background-color:#e5e4e5;border: 3px solid #e5e4e5;" onclick="getSize('10');">Large</button>
