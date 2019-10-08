@@ -1,4 +1,39 @@
-<html>
+<style>
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #000;
+  border-radius: 0px;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+.topnav a:hover {
+  color: #00aced;
+}
+</style>
+</head>
+<body>
+
+<div class="topnav">
+  <a><small style="font-size:30px;margin: 70px 25px;">iNet<font color="#00aced">Path</font></small></a>
+  <a href="colors.html" style="margin: 8 0" target="blank_">Colors</a>
+  <a href="#contact" style="margin: 8 0">Contact</a>
+  <a href="#about" style="margin: 8 0">About</a>
+</div>
+
+<div style="padding-left:16px">
+</div>
 
 <head>
   <title>iNetPath | Your Path to the Internet</title>
@@ -343,49 +378,7 @@
         opacity: 0;
       }
     }
-    .dropbtnADD {
-      background-color: #fff;
-      color: #000;
-      padding: 3px;
-      font-size: 5px;
-      border: none;
-      width: 95px;
-      border-bottom-left-radius: 0px;
-      border-bottom-right-radius: 0px;
-    }
 
-    .dropdownADD {
-      position: relative;
-      display: inline-block;
-      margin-left: -105px;
-      height: 25px;
-      width: 200px;
-      border: 0;
-      -webkit-appearance: none;
-    }
-
-    .dropdown-contentADD {
-      display: none;
-      position: absolute;
-      background-color: #f1f1f1;
-      min-width: 100px;
-      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-      z-index: 1;
-    }
-
-    .dropdown-contentADD a {
-      color: black;
-      padding: 12px 16px;
-      text-decoration: none;
-      display: block;
-    }
-
-    .dropdown-contentADD a:hover {background-color: #ddd;}
-
-    .dropdownADD:hover .dropdown-contentADD {display: block;}
-
-    .dropdownADD:hover .dropbtnADD {background-color: #ccc;}
-}
     .dropbtn {
       background-color: #ccc;
       color: #000;
@@ -424,9 +417,7 @@
 </head>
 
 <body bgcolor="#413d63">
-  <br>
-  <h1 class="Start">iNet<font color="#00aced">Path</font>
-  </h1><br><small style="color:#fff;margin: 0 25;display:inline-block;">Your path to the Internet.</small>
+  <br><br>
   <center>
     <form action="https://www.google.com/search" class="searchform" method="get" name="searchform" target="_blank">
       <input name="sitesearch" type="hidden" value="">
@@ -532,20 +523,6 @@
       box-shadow: 0 20px 70px rgba(0, 0, 0, 0.55);
       background-color:#ccc;" type="submit" onclick="demo_insert_div_block(); return false;" name="demo" id="demo" value="+">
 
-
-      <div style="align: center" class="dropdownADD">
-      <button style="font-size:12px; background-color: #fff" class="dropbtnADD">&nbspcolors&nbsp</button>
-      <div class="dropdown-contentADD">
-        <script type="text/javascript">
-    // Popup window code
-    function newPopup(url) {
-    popupWindow = window.open(
-      url,'popUpWindow','height=1000px,width=400,left=10,top=10,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
-    }
-    </script>
-    <p><a href="JavaScript:newPopup('colors.html');">Color Table</a></p>
-      </div>
-      </div>
 
     </input>
 
