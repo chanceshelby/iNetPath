@@ -4,7 +4,7 @@
   <title>iNetPath | Your Path to the Internet</title>
   <style>
     input {
-      margin: 0px25px;
+      margin: 0px 25px;
       color: #808080;
       height: 30px;
       font-size: 20px;
@@ -39,8 +39,6 @@
       height: 106px;
       max-height: 106px;
     }
-  </style>
-  <style>
     @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,200);
 
     * {
@@ -347,9 +345,11 @@
     }
 
     .dropbtn {
-      background-color: transparent;
-      color: #413d63;
-      border: solid 1px #fff;
+      background-color: #ccc;
+      color: #000;
+      padding: 3px;
+      font-size: 7px;
+      border: none;
     }
 
     .dropdown {
@@ -361,8 +361,8 @@
       display: none;
       position: absolute;
       background-color: #f1f1f1;
-      min-width: 160px;
-      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      min-width: 100px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
       z-index: 1;
     }
 
@@ -373,17 +373,11 @@
       display: block;
     }
 
-    .dropdown-content a:hover {
-      background-color: #ddd;
-    }
+    .dropdown-content a:hover {background-color: #ddd;}
 
-    .dropdown:hover .dropdown-content {
-      display: block;
-    }
+    .dropdown:hover .dropdown-content {display: block;}
 
-    .dropdown:hover .dropbtn {
-      background-color: transparent;
-    }
+    .dropdown:hover .dropbtn {background-color: #ccc;}
   </style>
 </head>
 
@@ -422,9 +416,14 @@
       let html = '';
       items.forEach((i, index) => {
         html += `<div class="metro-small" style="background-color: ${i.color};">
-          <button type="button" style="background-color: #ccc;" onclick="Delete(${index}) " )>&nbsp...&nbsp</button>
+        <div class="dropdown">
+<button class="dropbtn">&nbsp...&nbsp</button>
+<div class="dropdown-content">
+<button type="button" style="background-color: #ccc;width:100%;height:25px;border:2px solid #fff" onclick="Delete(${index}) " )>Remove</button>
+</div>
+</div>
           <div onclick="window.location.href = '${i.link}'"><br>
-          <center><p style="color:${i.font_color};font-family: verdana">${i.name}</p></center>
+          <center><p style="color:${i.font_color};font-size:16px;">${i.name}</p></center>
           </div>
         </div>`;
       });
@@ -470,9 +469,13 @@
     <div id="tiles"></div>
 
     <div id="democontainer">
+
     </div>
+
     <form action="/dontcrawl/">
-      <input style="  float: left;
+
+      <input style="
+      float: left;
     	margin: 0 10px 10px 0;
     	height: 95px;
       width: 95px;
@@ -481,13 +484,25 @@
     	transition: all .4s ease;
       user-drag: element;
       border: solid 2px transparent;" type="submit" onclick="demo_insert_div_block(); return false;" name="demo" id="demo" value="+">
+
+      <div class="dropdown">
+      <button style="font-size:12px; background-color: #fff" class="dropbtn">&nbspcolors&nbsp</button>
+      <div class="dropdown-content">
+      <a style="width:115px" href="colors.html" target="_blank">Color Table</a>
+      </div>
+      </div>
+
+    </input>
+
     </form>
+  </div>
+
 
     <style>
       textarea {
         color: #000;
         resize: none;
-        width: 70;
+        width: 50;
         border-radius: 0px;
         background-color: transparent;
         float:left;
@@ -531,6 +546,7 @@
         border: solid 2px transparent;
       }
     </style>
+
   </div>
   </div>
   </div>
