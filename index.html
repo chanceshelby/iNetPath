@@ -465,7 +465,9 @@
   </script>
 
   </div>
+
   <div class="wrap">
+
     <div id="tiles"></div>
 
     <div id="democontainer">
@@ -485,10 +487,17 @@
       user-drag: element;
       border: solid 2px transparent;" type="submit" onclick="demo_insert_div_block(); return false;" name="demo" id="demo" value="+">
 
-      <div class="dropdown">
+      <div style="align: center" class="dropdown">
       <button style="font-size:12px; background-color: #fff" class="dropbtn">&nbspcolors&nbsp</button>
       <div class="dropdown-content">
-      <a style="width:115px" href="colors.html" target="_blank">Color Table</a>
+        <script type="text/javascript">
+    // Popup window code
+    function newPopup(url) {
+    popupWindow = window.open(
+      url,'popUpWindow','height=300,width=400,left=10,top=10,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+    }
+    </script>
+    <p><a href="JavaScript:newPopup('colors.html');">Color Table</a></p>
       </div>
       </div>
 
