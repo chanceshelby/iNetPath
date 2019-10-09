@@ -28,8 +28,8 @@ body {
 <div class="topnav">
   <a href="http://inetpath.com"><small style="font-size:30px;margin: 70px 25px;">iNet<font color="#00aced">Path</font></small></a>
   <a href="colors.html" style="margin: 8 0" target="blank_">Colors</a>
-  <a href="#contact" style="margin: 8 0">Contact</a>
-  <a href="#about" style="margin: 8 0">About</a>
+  <a href="https://chrome.google.com/webstore/detail/inetpath/cjmlepalbcpolnnofbiodpbecnfceifb" style="margin: 8 0">Chrome</a>
+  <!--<a href="#about" style="margin: 8 0">About</a>-->
 </div>
 
 <div style="padding-left:16px">
@@ -447,7 +447,7 @@ body {
       console.log(items.length);
       let html = '';
       items.forEach((i, index) => {
-        html += `<div class="metro-small" style="background-color: ${i.color};">
+        html += `<div onclick="window.location.href = '${i.link}'" class="metro-small" style="background-color: ${i.color};">
         <div class="dropdown">
 <button class="dropbtn">&nbsp...&nbsp</button>
 <div class="dropdown-content">
