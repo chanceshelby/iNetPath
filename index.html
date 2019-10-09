@@ -28,7 +28,7 @@ body {
 <div class="topnav">
   <a href="http://inetpath.com"><small style="font-size:30px;margin: 70px 25px;">iNet<font color="#00aced">Path</font></small></a>
   <a href="colors.html" style="margin: 8 0" target="blank_">Colors</a>
-  <a href="https://chrome.google.com/webstore/detail/inetpath/cjmlepalbcpolnnofbiodpbecnfceifb" style="margin: 8 0">Chrome</a>
+  <a href="https://chrome.google.com/webstore/detail/inetpath/cjmlepalbcpolnnofbiodpbecnfceifb" target="blank_" style="margin: 8 0">Chrome</a>
   <!--<a href="#about" style="margin: 8 0">About</a>-->
 </div>
 
@@ -447,14 +447,14 @@ body {
       console.log(items.length);
       let html = '';
       items.forEach((i, index) => {
-        html += `<div onclick="window.location.href = '${i.link}'" class="metro-small" style="background-color: ${i.color};">
+        html += `<div class="metro-small" style="background-color: ${i.color};">
         <div class="dropdown">
 <button class="dropbtn">&nbsp...&nbsp</button>
 <div class="dropdown-content">
 <button type="button" style="background-color: #ccc;width:100%;height:25px;border:2px solid #fff" onclick="Delete(${index}) " )>Remove</button>
 </div>
 </div>
-          <div onclick="window.location.href = '${i.link}'"><br>
+          <div onclick="window.open('${i.link}', '_blank');"><br>
           <center><p style="color:${i.font_color};font-size:16px;">${i.name}</p></center>
           </div>
         </div>`;
