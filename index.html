@@ -25,7 +25,6 @@ body {
 
 <div class="topnav">
   <a href="http://inetpath.com"><small style="font-size:30px;margin: 70px 25px;">iNet<font color="#00aced">Path</font></small></a>
-  <a href="colors.html" style="margin: 8 0" target="blank_">Colors</a>
   <a href="https://chrome.google.com/webstore/detail/inetpath/cjmlepalbcpolnnofbiodpbecnfceifb" target="blank_" style="margin: 8 0">Chrome</a>
   <!--<a href="#about" style="margin: 8 0">About</a>-->
 </div>
@@ -141,6 +140,8 @@ body {
 
     .metro-small {
       width: 95px;
+      height: 95px;
+      border-radius: 10px;
     }
 
     .last {
@@ -270,7 +271,7 @@ body {
     div[class^="icon"] {
       width: 45px;
       height: 45px;
-      margin: 6px auto;
+      margin: -4px auto;
       background-size: 45px 45px;
     }
 
@@ -444,57 +445,58 @@ body {
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
   <script>
-    function htmlForLinks(items) {
-      console.log(items.length);
-      let html = '';
-      items.forEach((i, index) => {
-        html += `<div class="metro-small" style="background-color: ${i.color};">
-        <div class="dropdown">
+  function htmlForLinks(items) {
+    console.log(items.length);
+    let html = '';
+    items.forEach((i, index) => {
+      html += `<div class="metro-small" style="background-color: #efefef">
+      <div class="dropdown">
 <button class="dropbtn">&nbsp...&nbsp</button>
 <div class="dropdown-content">
 <button type="button" style="background-color: #ccc;width:100%;height:25px;border:2px solid #fff" onclick="Delete(${index}) " )>Remove</button>
 </div>
 </div>
-          <div onclick="window.open('${i.link}', '_blank');"><br>
-          <center><p style="color:${i.font_color};font-size:16px;">${i.name}</p></center>
-          </div>
-        </div>`;
-      });
-      return html;
+        <div onclick="window.location.href = '${i.link}'">
+          ${(i.image !==null && i.image !==undefined) ? `<img src=${i.image} style="margin:5;width: 45px; height:45px;  display: block;margin-left: auto;margin-right: auto;"></img>` : '<div style="width: 50%; height:50%;"></div>'}
+        <span class="label bottom"><font color="#000">${i.name}</span></font>
+        </div>
+      </div>`;
+    });
+    return html;
+  }
+  links = [];
+
+  function loadLinks() {
+    if (document.getElementById('tiles') === null) {
+      setTimeout(() => loadLinks(), 1000);
+      return;
     }
-    links = [];
+    let tmplinks = localStorage.getItem('links');
 
-    function loadLinks() {
-      if (document.getElementById('tiles') === null) {
-        setTimeout(() => loadLinks(), 1000);
-        return;
-      }
-      let tmplinks = localStorage.getItem('links');
+    if (tmplinks === undefined || tmplinks === null || tmplinks === '') {
+      tmplinks = '[]';
+    }
+    let json = JSON.parse(tmplinks);
 
-      if (tmplinks === undefined || tmplinks === null || tmplinks === '') {
-        tmplinks = '[]';
-      }
-      let json = JSON.parse(tmplinks);
+    if (localStorage.getItem('createdDefaults') !== 'true') {
 
-      if (localStorage.getItem('createdDefaults') !== 'true') {
-
-        localStorage.setItem("createdDefaults", "true");
-      }
-
-      links = json;
-
-      let html = htmlForLinks(links);
-
-      let element = document.getElementById('tiles');
-      element.innerHTML = html;
-      saveLinks();
+      localStorage.setItem("createdDefaults", "true");
     }
 
-    function saveLinks() {
-      localStorage.setItem('links', JSON.stringify(links));
-    }
+    links = json;
 
-    loadLinks();
+    let html = htmlForLinks(links);
+
+    let element = document.getElementById('tiles');
+    element.innerHTML = html;
+    saveLinks();
+  }
+
+  function saveLinks() {
+    localStorage.setItem('links', JSON.stringify(links));
+  }
+
+  loadLinks();
   </script>
 
   </div>
@@ -543,27 +545,25 @@ body {
     <script src="https://www.googletagservices.com/activeview/js/current/osd.js?cb=%2Fr20100101"></script>
     <script src="https://pagead2.googlesyndication.com/pagead/js/r20190925/r20190131/show_ads_impl.js" id="google_shimpl"></script>
     <script type="text/javascript">
-      function demo_insert_div_block() {
-        let name = prompt('Name:');
-        let link = prompt('URL:', "http://");
-        let color = prompt('Background Color: ');
-        let font_color = prompt('Text Color: ');
-        //let border_color = prompt('Border Color: ');
-        //let img_link = prompt('Image/GIF URL:');
+    function demo_insert_div_block() {
+      let name = prompt('Name:');
+      let link = prompt('URL:');
+      //let color = prompt('Background Color: ');
+      //let font_color = prompt('Text Color: ');
+      //let img_link = prompt('Image/GIF URL:');
 
-        links.push({
-          "name": name,
-          "link": link,
-          "color": color,
-          "font_color": font_color,
-          //"border_color": border_color
-          //"image": img_link
-        });
+      links.push({
+        "name": name,
+        "link": "http://" + link,
+        //"color": color,
+        //"font_color": font_color,
+        "image":  "https://besticon-demo.herokuapp.com/icon?url=" + link + "&size=80..120..200"
+      });
 
-        saveLinks();
-        let element = document.getElementById('tiles');
-        element.innerHTML = htmlForLinks(links);
-      }
+      saveLinks();
+      let element = document.getElementById('tiles');
+      element.innerHTML = htmlForLinks(links);
+    }
     </script>
     <style>
       .democontainer {
