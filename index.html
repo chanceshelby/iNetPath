@@ -121,8 +121,13 @@ body {
       box-shadow: 0 20px 70px rgba(0, 0, 0, 0.55);
     }
 
-    div[class^="metro"]:hover {
+    div[class^="metro"]:hover .dropbtn {
       border: solid 2px mintcream;
+      background-color: #ccc;
+      color: #000;
+      padding: 3px;
+      font-size: 7px;
+      border: none;}
 
     }
 
@@ -378,11 +383,8 @@ body {
     }
 
     .dropbtn {
-      background-color: #ccc;
-      color: #000;
-      padding: 3px;
-      font-size: 7px;
-      border: none;
+      color: transparent;
+      background-color: transparent;
     }
 
     .dropdown {
