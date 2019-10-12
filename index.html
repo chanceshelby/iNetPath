@@ -451,7 +451,7 @@ body {
 <button type="button" style="background-color: #ccc;width:100%;height:25px;border:2px solid #fff" onclick="Delete(${index}) " )>Remove</button>
 </div>
 </div>
-        <div onclick="window.location.href = '${i.link}'">
+        <div onclick="window.open( '${i.link}' , '_blank')">
           ${(i.image !==null && i.image !==undefined) ? `<img src=${i.image} style="padding:4px;margin:0;width: 82px; height:82px; display: block;margin-left: auto;margin-right: auto;"></img>` : '<div style="width: 50%; height:50%;"></div>'}
           <center><span style="float:bottom;font-size:13px;"><font color="#000">${i.name}</span></font></center>
         </div>
