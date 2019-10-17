@@ -299,14 +299,14 @@ small#inet:hover {
     <script type="text/javascript">
     function demo_insert_div_block() {
       let name = prompt('Name:');
-      let link = prompt('URL:');
+      let link = prompt('URL:', 'http://');
       //let color = prompt('Background Color: ');
       //let font_color = prompt('Text Color: ');
       //let img_link = prompt('Image/GIF URL:');
 
       links.push({
         "name": name,
-        "link": link, "http://",
+        "link": link,
         //"color": color,
         //"font_color": font_color,
         "image":  "https://besticon.herokuapp.com/icon?size=80..120..200&url=" + link
