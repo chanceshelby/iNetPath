@@ -1,1 +1,858 @@
-<iframe src="https://www.meteoblue.com/en/weather/widget/three?geoloc=detect&nocurrent=0&noforecast=0&noforecast=1&days=7&tempunit=FAHRENHEIT&windunit=MILE_PER_HOUR&layout=monochrome&location_url=https%3A%2F%2Fwww.meteoblue.com%2Fen%2Fweather%2Fwidget%2Fthree%2Fbells-corners_canada_5898070&location_mainUrl=https%3A%2F%2Fwww.meteoblue.com%2Fen%2Fweather%2Fweek%2Fbells-corners_canada_5898070&nolocation_url=https%3A%2F%2Fwww.meteoblue.com%2Fen%2Fweather%2Fwidget%2Fthree&nolocation_mainUrl=https%3A%2F%2Fwww.meteoblue.com%2Fen%2Fweather%2Fweek%2Findex&dailywidth=115&tracking=%3Futm_source%3Dweather_widget%26utm_medium%3Dlinkus%26utm_content%3Dthree%26utm_campaign%3DWeather%252BWidget"  frameborder="0" scrolling="NO" allowtransparency="true" sandbox="allow-same-origin allow-scripts allow-popups allow-popups-to-escape-sandbox" style="width: 805px;height: 235px"></iframe><div><!-- DO NOT REMOVE THIS LINK --><a href="https://www.meteoblue.com/en/weather/week/index?utm_source=weather_widget&utm_medium=linkus&utm_content=three&utm_campaign=Weather%2BWidget" target="_blank">meteoblue</a></div>
+<style>
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #2a2b2c;
+  border-radius: 0px;
+  height:50px;
+  padding: 8px 16px;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  text-decoration: none;
+  font-size: 17px;
+}
+.topnav a:hover {
+  color: #a2cff6;
+}
+small#inet:hover {
+  color:#c7ffc8;
+}
+</style>
+
+<div class="topnav">
+  <a href="http://ihometab.com"><small id="inet" style="font-size:30px;margin: 70px 25px;cursor:default;">iHome<font color="#a2cff6">Tab</font></small></a>
+  <a onclick="demo_insert_div_block();" style="margin: 8 20;cursor:pointer;">Add Tile</a>
+  <a style="color:#fff;margin: 8 20;cursor:default">|</a>
+  <a href="https://chrome.google.com/webstore/detail/inetpath/cjmlepalbcpolnnofbiodpbecnfceifb" target="blank_" style="margin: 8 20">Add To Chrome</a>
+  <!--<a href="#about" style="margin: 8 0">About</a>-->
+  <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script language="JavaScript">
+<!--
+
+var backColor = new Array();
+
+backColor[0] = '#323334';
+backColor[1] = '#c1c8d3';
+
+
+function changeBG(whichColor){
+document.bgColor = backColor[whichColor];
+}
+
+-->
+</script>
+<link href="amandastyle.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <div id="text">
+  <p align="center"><a href="javascript:changeBG(0)" style="color:#fff;margin: 8 20;cursor:default">Dark Mode</a></p>
+  <p align="center"><a href="javascript:changeBG(1)" style="color:#fff;margin: 8 20;cursor:default">Light Mode</a></p>
+</div> </div>
+</div>
+</body>
+</html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="amandastyle.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript">
+<!--
+
+function createCookie(name,value,days) {
+	if (days) {
+		var date = new Date();
+		date.setTime(date.getTime()+(days*24*60*60*1000));
+		var expires = "; expires="+date.toGMTString();
+	}
+	else var expires = "";
+	document.cookie = name+"="+value+expires+"; path=/";
+}
+
+function readCookie(name) {
+	var nameEQ = name + "=";
+	var ca = document.cookie.split(';');
+	for(var i=0;i < ca.length;i++) {
+		var c = ca[i];
+		while (c.charAt(0)==' ') c = c.substring(1,c.length);
+		if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+	}
+	return null;
+}
+
+function eraseCookie(name) {
+	createCookie(name,"",-1);
+}
+
+var backColor = new Array();
+
+backColor[0] = '#323334';
+backColor[1] = '#c1c8d3';
+
+function changeBG(whichColor){
+ document.body.style.backgroundColor = backColor[whichColor];
+ createCookie('backColor', whichColor);
+}
+
+if(readCookie('backColor'))
+ document.write('<style type="text/css">body {background-color: ' + backColor[readCookie("backColor")] + ';}<\/style>');
+
+-->
+</script>
+</div>
+
+<div style="padding-left:16px">
+</div>
+
+<head>
+  <script data-ad-client="ca-pub-8622623811810201" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <title>iHomeTab - New Tab</title>
+  <style>
+    input {
+      margin: 0px 25px;
+      color: #808080;
+      height: 30px;
+      font-size: 20px;
+      border: 3px solid #fff;
+      width: 40%;
+    }
+
+    .window {
+      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+      border: 8px solid #fff;
+      max-width: 100%;
+      margin: 0 auto;
+      background: #fff;
+      width: 100%;
+      height: 185px;
+      max-height: 185px;
+    }
+
+    .window:before {
+      border: 3px solid #ccc;
+    }
+    @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,200);
+
+    * {
+      margin: 0;
+      padding: 0;
+      outline: none;
+      border: none;
+      box-sizing: border-box;
+      border-radius: 20px;
+    }
+
+    *:before,
+    *:after {
+      box-sizing: border-box;
+    }
+
+    html {
+      width: 100%;
+    }
+    body {
+      background-color: #c1c8d3;
+    }
+    .wrap,
+    .wrap2 {
+      width: 40%;
+      height: auto;
+      margin: 60px 25px;
+      float: left;
+
+      /*border: 3px solid black; */
+    }
+
+    .wrap2 {
+      width: 40% !important;
+      float: right;
+      display: inline-block;
+    }
+
+    div[class^="metro"] {
+      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+      float: left;
+      margin: 0 10px 10px 0;
+      height: 95px;
+      position: relative;
+      cursor: pointer;
+    }
+
+    div[class^="metro"]:hover .dropbtn {
+      background-color: #fff;
+      margin-bottom:-11px;
+      color: #000;
+      padding: 3px;
+      font-size: 7px;
+      border: none;}
+    }
+
+    div[class^="metro"]:active {
+    }
+
+    .metro-big {
+      width: 200px;
+    }
+
+    .metro-small {
+      width: 95px;
+      height: 95px;
+
+    }
+
+    .dropbtn {
+      color: transparent;
+      background-color: transparent;
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f1f1f1;
+      min-width: 100px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+
+    .dropdown-content a:hover {background-color: #ddd;}
+
+    .dropdown:hover .dropdown-content {display: block;}
+
+    .dropdown:hover .dropbtn {background-color: #ccc;}
+
+    br.tile {
+   line-height: 5px;
+    }
+  </style>
+</head>
+
+  <br><br>
+  <center>
+    <form action="https://www.google.com/search" class="searchform" method="get" name="searchform" target="_blank">
+      <input name="sitesearch" type="hidden" style="height:100%" value="">
+      <input autocomplete="on" class="form-control search" name="q" placeholder="Google Search" required="required" type="text" style="border-radius:5px;height:33px">
+      <button style="border-radius:5px;font-size:18px;height:30px;background-color:#fff;border:5px solid #fff;" class="button" type="submit">Search</button>
+    </form>
+  </center>
+
+  <script>
+    function Delete(button) {
+      if (typeof button === 'number') {
+        links.splice(button, 1);
+        saveLinks();
+        let element = document.getElementById('tiles');
+        element.innerHTML = htmlForLinks(links);
+      } else {
+        var parent = button.parentNode;
+        var grand_father = parent.parentNode;
+        grand_father.removeChild(parent);
+      }
+    }
+  </script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  <script>
+  function htmlForLinks(items) {
+    console.log(items.length);
+    let html = '';
+    items.forEach((i, index) => {
+      html += `<div class="metro-small" style="margin-top:20px;">
+      <div class="dropdown">
+<button class="dropbtn">&nbsp...&nbsp</button>
+<div class="dropdown-content">
+<button type="button" style="background-color: #ccc;width:100%;height:25px;border:2px solid #fff" onclick="Delete(${index}) " )>Remove</button>
+<button type="button" onclick="favorite"(${index})">Favorite</button>
+</div>
+</div>
+        <div onclick="window.open( '${i.link}' , '_blank')">
+          ${(i.image !==null && i.image !==undefined) ? `<img src=${i.image} style=";width: 85px; height:85px; display: block;margin-left: auto;margin-right: auto;"></img>` : '<div style="width: 50%; height:50%;"></div>'}
+          <center><span style="float:bottom;font-size:13px;"><font color="#000"><br class="tile">${i.name}</span></font></center>
+        </div>
+      </div>`;
+    });
+    return html;
+  }
+  links = [];
+
+  function loadLinks() {
+    if (document.getElementById('tiles') === null) {
+      setTimeout(() => loadLinks(), 1000);
+      return;
+    }
+    let tmplinks = localStorage.getItem('links');
+
+    if (tmplinks === undefined || tmplinks === null || tmplinks === '') {
+      tmplinks = '[]';
+    }
+    let json = JSON.parse(tmplinks);
+
+    if (localStorage.getItem('createdDefaults') !== 'true') {
+
+      localStorage.setItem("createdDefaults", "true");
+    }
+
+    links = json;
+
+    let html = htmlForLinks(links);
+
+    let element = document.getElementById('tiles');
+    element.innerHTML = html;
+    saveLinks();
+  }
+
+  function saveLinks() {
+    localStorage.setItem('links', JSON.stringify(links));
+  }
+
+  loadLinks();
+  </script>
+
+  </div>
+
+  <div class="wrap">
+
+    <div id="favorites" style="margin: -33px 0px;"></div>
+
+    <div id="tiles" style="margin: -33px 0px;"></div>
+
+<!--
+<div class="metro-small" style="background-color: transparent;padding:2px">
+    <form action="/dontcrawl/">
+      <input style="
+        margin:15;
+        width: 78px;
+        height:78px;
+        display: block;
+        margin-left: auto;
+        padding:4px;
+        cursor: pointer;
+        color:#2a2b2c;
+        border-radius: 16px;
+        margin-right: auto;" type="submit" onclick="demo_insert_div_block(); return false;" name="demo" id="demo" value="+">
+
+    </input>
+
+    </form>
+  </div>
+-->
+</div>
+
+
+    <style>
+      textarea {
+        color: #000;
+        resize: none;
+        width: 50;
+        border-radius: 0px;
+        background-color: transparent;
+        float:left;
+      }
+    </style>
+    <script src="https://www.googletagservices.com/activeview/js/current/osd.js?cb=%2Fr20100101"></script>
+    <script src="https://pagead2.googlesyndication.com/pagead/js/r20190925/r20190131/show_ads_impl.js" id="google_shimpl"></script>
+    <script type="text/javascript">
+    function demo_insert_div_block() {
+      let name = prompt('Name:');
+      let link = prompt('URL:', 'http://');
+      //let color = prompt('Background Color: ');
+      //let font_color = prompt('Text Color: ');
+      //let img_link = prompt('Image/GIF URL:');
+
+      links.push({
+        "name": name,
+        "link": link,
+        //"color": color,
+        //"font_color": font_color,
+        "image":  "https://besticon.herokuapp.com/icon?size=80..120..200&url=" + link
+      });
+
+      saveLinks();
+      let element = document.getElementById('tiles');
+      element.innerHTML = htmlForLinks(links);
+    }
+    </script>
+    <style>
+      .democontainer {
+        float: left;
+        margin: 0 10px 10px 0;
+        margin-bottom:-15px
+        height: 95px;
+        width: 95px;
+        position: relative;
+        cursor: pointer;
+        transition: all .4s ease;
+        user-drag: element;
+        border: solid 2px transparent;
+      }
+    </style>
+
+  </div>
+  </div>
+  </div>
+
+  <div class="wrap2">
+<!--
+    <div class="Weatherwindow">
+      <div style="width: 100%;"><iframe style="display: block;" src="https://cdnres.willyweather.com/widget/loadView.html?id=115404" width="100%" height="92" frameborder="0" scrolling="no"></iframe><a style="width: 20px;text-indent: -9999em;z-index: 1;margin: -92px 0 0 0;float: right;height: 92px;position: relative" href="https://www.willyweather.com/tx/harris-county/houston.html" rel="nofollow">Houston Weather</a></div>
+
+    </div>
+    <br>
+    <meta charset="UTF-8">
+    <meta charset="utf-8">
+
+    [if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    <style>
+      #notepad {
+        height: 175px;
+        width: 100%;
+        font-size: 100%;
+        line-height: 125%;
+        font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+        color: #000;
+      }
+    </style>
+
+    </head>
+    <div class="window" style="border-radius:14px">
+      <textarea placeholder="Type here and see it later" id="notepad">
+<!--
+  you could do any element w/ contentEditable, but that doesn't fire onchange
+-->
+</textarea>
+      <script>
+        /* localstorage polyfill from https://gist.github.com/350433 */
+        ("undefined" == typeof window.localStorage || "undefined" == typeof window.sessionStorage) && function () {
+          function e(f) {
+            function e(a) {
+              var b;
+              b = new Date;
+              b.setTime(b.getTime() + 31536E6);
+              document.cookie = "localStorage=" + a + ("; expires=" + b.toGMTString()) + "; path=/"
+            }
+
+            function g(a) {
+              a = JSON.stringify(a);
+              "session" == f ? window.name = a : e(a)
+            }
+            var d = function () {
+              var a;
+              if ("session" == f) a = window.name;
+              else a: {
+                a = document.cookie.split(";");
+                var b, c;
+                for (b = 0; b < a.length; b++) {
+                  for (c = a[b];
+                    " " == c.charAt(0);) c = c.substring(1, c.length);
+                  if (0 == c.indexOf("localStorage=")) {
+                    a =
+                      c.substring(13, c.length);
+                    break a
+                  }
+                }
+                a = null
+              }
+              return a ? JSON.parse(a) : {}
+            }();
+            return {
+              length: 0,
+              clear: function () {
+                d = {};
+                this.length = 0;
+                "session" == f ? window.name = "" : e("")
+              },
+              getItem: function (a) {
+                return void 0 === d[a] ? null : d[a]
+              },
+              key: function (a) {
+                var b = 0,
+                  c;
+                for (c in d) {
+                  if (b == a) return c;
+                  b++
+                }
+                return null
+              },
+              removeItem: function (a) {
+                delete d[a];
+                this.length--;
+                g(d)
+              },
+              setItem: function (a, b) {
+                d[a] = b + "";
+                this.length++;
+                g(d)
+              }
+            }
+          }
+          if ("undefined" == typeof window.localStorage) window.localStorage = new e("local");
+          if ("undefined" == typeof window.sessionStorage) window.sessionStorage =
+            new e("session")
+        }();
+
+        /* the code */
+        var n = document.getElementById("notepad");
+        /* save */
+        var s = function () {
+          localStorage.setItem("notepad", n.value);
+        }
+        /* retrieve (only on page load) */
+        if (window.localStorage) {
+          n.value = localStorage.getItem("notepad");
+        }
+        /* autosave onchange and every 500ms and when you close the window */
+        n.onchange = s();
+        setInterval(s, 500);
+        window.onunload = s();
+      </script>
+</body>
+</div>
+<br>
+<style>
+  * {
+    font-family: sans-serif;
+  }
+
+  #settings {
+    display: block;
+    text-align: center
+  }
+
+
+  #paint {
+    background: #fff;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+</style>
+
+<div class="window" style="border-radius:14px">
+  <div id="sketch">
+    <canvas style="width:100%;height:175px" id="paint"></canvas>
+    <br>
+    <div style="background-color:#e5e4e5;width:50%;border-radius: 0px;border-top-left-radius: 6px;border-top-right-radius: 6px;" id="settings">
+      <button style="border-radius: 0px;font-size:13px;height:23px;background-color:blue;border: 3px solid blue;" onclick="getColor('blue');">&nbsp&nbsp&nbsp&nbsp</button>
+      <button style="border-radius: 0px;font-size:13px;height:23px;background-color:red;border: 3px solid red;" onclick="getColor('red');">&nbsp&nbsp&nbsp&nbsp</button>
+      <button style="border-radius: 0px;font-size:13px;height:23px;background-color:green;border: 3px solid green;" onclick="getColor('green');">&nbsp&nbsp&nbsp&nbsp</button>
+      <button style="border-radius: 0px;font-size:13px;height:23px;background-color:white;border: 3px solid white;" onclick="getColor('white');">&nbsp&nbsp&nbsp&nbsp</button>
+    </div>
+    <div style="background-color:#e5e4e5;width:50%;border-radius: 0px;border-bottom-left-radius: 6px;border-bottom-right-radius: 6px;" id="settings">
+      <button style="border-radius: 0px;font-size:13px;height:23px;background-color:#e5e4e5;border: 3px solid #e5e4e5;" onclick="getSize('2');">Small</button>
+      <button style="border-radius: 0px;font-size:13px;height:23px;background-color:#e5e4e5;border: 3px solid #e5e4e5;" onclick="getSize('5');">Med</button>
+      <button style="border-radius: 0px;font-size:13px;height:23px;background-color:#e5e4e5;border: 3px solid #e5e4e5;" onclick="getSize('10');">Large</button>
+
+    </div>
+  </div>
+  <script>
+    var canvas = document.getElementById('paint');
+    var ctx = canvas.getContext('2d');
+
+    var sketch = document.getElementById('sketch');
+    var sketch_style = getComputedStyle(sketch);
+    canvas.width = 534;
+    canvas.height = 175;
+
+    var mouse = {
+      x: 0,
+      y: 0
+    };
+
+    /* Mouse Capturing Work */
+    canvas.addEventListener('mousemove', function (e) {
+      mouse.x = e.pageX - this.offsetLeft;
+      mouse.y = e.pageY - this.offsetTop;
+    }, false);
+
+    /* Drawing on Paint App */
+    ctx.lineJoin = 'round';
+    ctx.lineCap = 'round';
+
+    ctx.strokeStyle = "red";
+
+    function getColor(colour) {
+      ctx.strokeStyle = colour;
+    }
+
+    function getSize(size) {
+      ctx.lineWidth = size;
+    }
+
+
+    //ctx.strokeStyle =
+    //ctx.strokeStyle = document.settings.colour[1].value;
+
+    canvas.addEventListener('mousedown', function (e) {
+      ctx.beginPath();
+      ctx.moveTo(mouse.x, mouse.y);
+
+      canvas.addEventListener('mousemove', onPaint, false);
+    }, false);
+
+    canvas.addEventListener('mouseup', function () {
+      canvas.removeEventListener('mousemove', onPaint, false);
+    }, false);
+
+    var onPaint = function () {
+      ctx.lineTo(mouse.x, mouse.y);
+      ctx.stroke();
+    };
+  </script>
+  <br><br><br><br><br><br>
+  <SCRIPT>
+    function changeBackground(hexNumber) {
+      document.bgColor = hexNumber
+    }
+    prefix = "#"
+    rnum1 = 0
+    bnum1 = 0
+    gnum1 = 0
+    rnum2 = 0
+    bnum2 = 0
+    gnum2 = 0
+    hexNumber2 = "#000000";
+    rcount = 0;
+    bcount = 0;
+    gcount = 0;
+
+    function num2hex(num) {
+      if (num == 15) return "f";
+      else if (num == 14) return "e";
+      else if (num == 13) return "d";
+      else if (num == 12) return "c";
+      else if (num == 11) return "b";
+      else if (num == 10) return "a";
+      else if (num == 9) return "9";
+      else if (num == 8) return "8";
+      else if (num == 7) return "7";
+      else if (num == 6) return "6";
+      else if (num == 5) return "5";
+      else if (num == 4) return "4";
+      else if (num == 3) return "3";
+      else if (num == 2) return "2";
+      else if (num == 1) return "1";
+      else return "0";
+    }
+
+    function changeBackground2(number) {
+      if (number == 1) {
+        rnum1 = rcount % 16;
+        if (rcount < 15) {
+          rcount = rcount + 1;
+        }
+      }
+      if (number == 2) {
+        gnum1 = gcount % 16;
+        if (gcount < 15) {
+          gcount = gcount + 1;
+        }
+      }
+      if (number == 3) {
+        bnum1 = bcount % 16;
+        if (bcount < 15) {
+          bcount = bcount + 1;
+        }
+      }
+      if (number == 4) {
+        rnum1 = rcount % 16;
+        if (rcount > 0) {
+          rcount = rcount - 1;
+        }
+      }
+      if (number == 5) {
+        gnum1 = gcount % 16;
+        if (gcount > 0) {
+          gcount = gcount - 1;
+        }
+      }
+      if (number == 6) {
+        bnum1 = bcount % 16;
+        if (bcount > 0) {
+          bcount = bcount - 1;
+        }
+      }
+      hexNumber2 = prefix + num2hex(rnum1) + num2hex(rnum2) + num2hex(gnum1) + num2hex(gnum2) + num2hex(bnum1) + num2hex(bnum2);
+      document.bgColor = hexNumber2;
+    }
+    // End
+  </script>
+
+<script>
+            var el_up = document.getElementById("GFG_UP");
+            var el_down = document.getElementById("GFG_DOWN");
+            var str = "Click on button to change the background color";
+
+            el_up.innerHTML = str;
+
+            function changeColor(color) {
+                document.body.style.background = color;
+            }
+
+            function gfg_Run() {
+                changeColor('yellow');
+                el_down.innerHTML = "Background Color changed";
+            }
+</script>
+
+  <button onclick = "gfg_Run()">
+             Click here
+         </button>
+
+</div>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-149751742-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-149751742-1');
+</script>
+
+
+
+<!--
+<br><br><br><br><br>
+<div style="background-color:#fff;border: 4px solid #000;" class="bg-picker">
+  <button type="button" style="background-color: #ccc;" onclick="Delete(this) " )>&nbsp...&nbsp</button>
+  <SCRIPT LANGUAGE="JavaScript">
+    <!-- Begin
+    function changeBackground(hexNumber) {
+      document.bgColor = hexNumber
+    }
+    prefix = "#"
+    rnum1 = 0
+    bnum1 = 0
+    gnum1 = 0
+    rnum2 = 0
+    bnum2 = 0
+    gnum2 = 0
+    hexNumber2 = "#000000";
+    rcount = 0;
+    bcount = 0;
+    gcount = 0;
+
+    function num2hex(num) {
+      if (num == 15) return "f";
+      else if (num == 14) return "e";
+      else if (num == 13) return "d";
+      else if (num == 12) return "c";
+      else if (num == 11) return "b";
+      else if (num == 10) return "a";
+      else if (num == 9) return "9";
+      else if (num == 8) return "8";
+      else if (num == 7) return "7";
+      else if (num == 6) return "6";
+      else if (num == 5) return "5";
+      else if (num == 4) return "4";
+      else if (num == 3) return "3";
+      else if (num == 2) return "2";
+      else if (num == 1) return "1";
+      else return "0";
+    }
+
+    function changeBackground2(number) {
+      if (number == 1) {
+        rnum1 = rcount % 16;
+        if (rcount < 15) {
+          rcount = rcount + 1;
+        }
+      }
+      if (number == 2) {
+        gnum1 = gcount % 16;
+        if (gcount < 15) {
+          gcount = gcount + 1;
+        }
+      }
+      if (number == 3) {
+        bnum1 = bcount % 16;
+        if (bcount < 15) {
+          bcount = bcount + 1;
+        }
+      }
+      if (number == 4) {
+        rnum1 = rcount % 16;
+        if (rcount > 0) {
+          rcount = rcount - 1;
+        }
+      }
+      if (number == 5) {
+        gnum1 = gcount % 16;
+        if (gcount > 0) {
+          gcount = gcount - 1;
+        }
+      }
+      if (number == 6) {
+        bnum1 = bcount % 16;
+        if (bcount > 0) {
+          bcount = bcount - 1;
+        }
+      }
+      hexNumber2 = prefix + num2hex(rnum1) + num2hex(rnum2) + num2hex(gnum1) + num2hex(gnum2) + num2hex(bnum1) + num2hex(bnum2);
+      document.bgColor = hexNumber2
+    }
+    // End
+  </SCRIPT>
+
+  <CENTER>
+    <FORM METHOD="POST" NAME="background" style="box-shadow: 0 20px 70px rgba(0, 0, 0, 0.55);">
+      <TABLE BORDER="3" CELLPADDING="3">
+      </TABLE>
+      <TABLE WIDTH=350 BORDER="3" CELLPADDING="3">
+        <TR>
+          <TD>
+            <center>Background Color Changer</center>
+          </TD>
+        </TR>
+      </TABLE>
+      <TABLE WIDTH=350 BORDER="3" CELLPADDING="3">
+        <TR>
+          <TD Align=center><INPUT TYPE="button" VALUE="+ R" ONCLICK="changeBackground2(1)">
+            <P>
+              <INPUT TYPE="button" VALUE="- R" ONCLICK="changeBackground2(4)">
+          </TD>
+          <TD Align=center><INPUT TYPE="button" VALUE="+ G" ONCLICK="changeBackground2(2)">
+            <P>
+              <INPUT TYPE="button" VALUE="- G" ONCLICK="changeBackground2(5)">
+          </TD>
+          <TD Align=center><INPUT TYPE="button" VALUE="+ B" ONCLICK="changeBackground2(3)">
+            <P>
+              <INPUT TYPE="button" VALUE="- B" ONCLICK="changeBackground2(6)">
+          </TD>
+        </TR>
+      </TABLE>
+    </FORM>
+  </CENTER>
+
+</div>
+
+</html>
+
+            ${(i.image !==null && i.image !==undefined) ? `<img src=${i.image} style="width: 50%; height:50%;  display: block;margin-left: auto;margin-right: auto;"></img>` : '<div style="width: 50%; height:50%;"></div>'}
+
+            border: 2px solid ${i.border_color};
+-->
