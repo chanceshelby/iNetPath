@@ -8,15 +8,15 @@
 
 	html,
 	html.light {
-	  --background-color: #eeeeee;
+	  --background-color: #c1c8d3;
 	  --background-card-color: #ffffff;
 	  --background-success-color: #85da85;
 	  --background-toggle-inactive-color: rgba(0, 0, 0, 0);
-	  --background-toggle-active-color: rgba(0, 0, 0, 0.08);
+	  --background-toggle-active-color: rgba(0, 0, 0, 0);
 	  --foreground-color: rgba(0, 0, 0, 0.87);
 	  --foreground-success-color: #000000;
-	  --foreground-secondary-color: rgba(0, 0, 0, 0.56);
-	  --focus-color: rgba(0, 0, 0, 0.5);
+	  --foreground-secondary-color: #090909;
+	  --focus-color: rgba(0, 0, 0, 0);
 	}
 
 	html.dark {
@@ -339,7 +339,7 @@ small#inet:hover {
 <div class="topnav">
   <a href="http://ihometab.com"><small id="inet" style="font-size:30px;margin: 70px 25px;cursor:default;">iHome<font color="#a2cff6">Tab</font></small></a>
   <a onclick="demo_insert_div_block();" style="margin: 8 20;cursor:pointer;">Add Tile</a>
-    <a href="https://chrome.google.com/webstore/detail/inetpath/cjmlepalbcpolnnofbiodpbecnfceifb" target="blank_" style="margin: 8 10">Add To Chrome</a>
+      <a href="https://chrome.google.com/webstore/detail/inetpath/cjmlepalbcpolnnofbiodpbecnfceifb" target="blank_" style="margin: 8 15">Add To Chrome</a>
   <main class="card" style="background-color:transparent;">
       <label class="header__selection toggle">
         <input js-toggle class="toggle__input" aria-label="toggle dark mode" type="checkbox">
@@ -529,7 +529,7 @@ small#inet:hover {
 </div>
         <div onclick="window.open( '${i.link}' , '_blank')">
           ${(i.image !==null && i.image !==undefined) ? `<img src=${i.image} style=";width: 85px; height:85px; display: block;margin-left: auto;margin-right: auto;"></img>` : '<div style="width: 50%; height:50%;"></div>'}
-          <center><p class="body__text">${i.name}</p></center>
+          <center><p class="body__text" style="line-height:25px">${i.name}</p></center>
         </div>
       </div>`;
     });
