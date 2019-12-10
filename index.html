@@ -418,7 +418,7 @@ body {
     div[class^="metro"] {
       font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
       float: left;
-      margin: 0 10px 10px 0;
+      margin: 0 21px 21px 0;
       height: 95px;
       position: relative;
       cursor: pointer;
@@ -443,6 +443,7 @@ body {
     .metro-small {
       width: 95px;
       height: 95px;
+	  
 
     }
 
@@ -524,8 +525,8 @@ body {
 </div>
 </div>
         <div onclick="window.open( '${i.link}' , '_blank')">
-          ${(i.image !==null && i.image !==undefined) ? `<img src=${i.image} style=";width: 85px; height:85px; display: block;margin-left: auto;margin-right: auto;border-radius: 21px;background-color: #fff;border: 1px solid silver"></img>` : '<div style="width: 50%; height:50%;"></div>'}
-          <center><p class="body__text" style="line-height:25px;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">${i.name}</p></center>
+          ${(i.image !==null && i.image !==undefined) ? `<img src=${i.image} style=";width: 85px; height:85px; display: block;margin-left: auto;margin-right: auto;border-radius: 21px;border: 0px solid silver"></img>` : '<div style="width: 50%; height:50%;"></div>'}
+          <center><p class="body__text" style="line-height:33px;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">${i.name}</p></center>
         </div>
       </div>`;
     });
