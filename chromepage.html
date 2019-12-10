@@ -332,13 +332,10 @@ body {
 .topnav a:hover {
   color: #a2cff6;
 }
-small#inet:hover {
-  color:#c7ffc8;
-}
 </style>
 
 <div class="topnav">
-  <a href="http://ihometab.com"><small id="inet" style="font-size:30px;margin: 70px 25px;cursor:default;">iHome<font color="#a2cff6">Tab</font></small></a>
+  <a href="http://ihometab.com/chromepage"><small id="inet" style="font-size:30px;margin: 70px 25px;cursor:default;">iHome<font color="#a2cff6">Tab</font></small></a>
   <a onclick="demo_insert_div_block();" style="margin: 8 20;cursor:pointer;">Add Tile</a>
   <main class="card" style="background-color:transparent;">
       <label class="header__selection toggle">
@@ -390,7 +387,6 @@ small#inet:hover {
       outline: none;
       border: none;
       box-sizing: border-box;
-      border-radius: 20px;
     }
 
     *:before,
@@ -527,8 +523,8 @@ small#inet:hover {
 </div>
 </div>
         <div onclick="window.open( '${i.link}' , '_blank')">
-          ${(i.image !==null && i.image !==undefined) ? `<img src=${i.image} style=";width: 85px; height:85px; display: block;margin-left: auto;margin-right: auto;"></img>` : '<div style="width: 50%; height:50%;"></div>'}
-          <center><p class="body__text" style="line-height:25px">${i.name}</p></center>
+          ${(i.image !==null && i.image !==undefined) ? `<img src=${i.image} style=";width: 85px; height:85px; display: block;margin-left: auto;margin-right: auto;border-radius: 21px;background-color: #fff;border: 1px solid silver"></img>` : '<div style="width: 50%; height:50%;"></div>'}
+          <center><p class="body__text" style="line-height:25px;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">${i.name}</p></center>
         </div>
       </div>`;
     });
