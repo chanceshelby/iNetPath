@@ -110,7 +110,6 @@
 	  cursor: inherit;
 	}
 	.card {
-	  width: 100%;
 	  margin: 8px 16px;
 	  background-color: var(--background-card-color);
 	  border-radius: 8px;
@@ -165,8 +164,8 @@
 	  border: 1px solid var(--foreground-color);
 	  border-radius: 12px;
 	  transition: background-color 100ms cubic-bezier(0.4, 0, 0.2, 1);
-	  margin-top: -2px;
-	  margin-left: 20px;
+	  margin-left:0px;
+	  margin-top:-14px;
 	}
 	.toggle__fake::after {
 	  will-change: left;
@@ -307,23 +306,57 @@ body {
   text-decoration: none;
   font-size: 17px;
 }
-.topnav a:hover {
-  color: #a2cff6;
-}
 </style>
 
 <div class="topnav">
-  <a href="http://ihometab.com/chromepage"><small id="inet" style="font-size:30px;margin: 70px 25px;cursor:default;">iHome<font color="#a2cff6">Tab</font></small></a>
-  <a onclick="demo_insert_div_block();" style="margin: 8 20;cursor:pointer;">Add Tile</a>
-  <main class="card" style="background-color:transparent;">
-      <label class="header__selection toggle">
+  <a><small id="inet" style="font-size:30px;margin: 70px 25px;cursor:pointer;">iHomeTab</small></a>
+      <a>
+		  <style>
+		  .dropbtn2 {
+		    background-color: #98b9ec;
+		    color: white;
+		    padding: 16px;
+		    font-size: 20px;
+		    border: none;
+			margin-top: -8px;
+		  }
+
+		  .dropdown2 {
+		  }
+
+		  .dropdown-content2 {
+		    display: none;
+		    background-color: #f1f1f1;
+		    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+		  }
+
+		  .dropdown-content2 a {
+		    color: black;
+		    padding: 12px 16px;
+		    text-decoration: none;
+		  }
+		  .dropdown2:hover .dropdown-content2 {display: block;}
+		  .dropdown2:hover .dropbtn2 {background-color: #7d98c2;}
+		  </style>
+
+		  <div class="dropdown2">
+		    <button class="dropbtn2">?</button>
+		    <div class="dropdown-content2">
+			    <a onclick="demo_insert_div_block();" style="cursor:pointer;font-size:18px;color:#fff;margin-left:-30px;margin-top:-13px;">Add Tile</a>
+			    <main class="card" style="background-color:transparent;">
+					<a href="https://chrome.google.com/webstore/detail/ihometab-new-tab-page/cjmlepalbcpolnnofbiodpbecnfceifb" target="blank_" style="cursor:pointer;font-size:18px;color:#fff;margin-left:0px;margin-top:-13px;">Add To Chrome</a>
+	  <a><label class="header__selection toggle">
         <input js-toggle class="toggle__input" aria-label="toggle dark mode" type="checkbox">
         <span class="toggle__fake"></span>
       </label>
-    </header>
       <button type="switch" js-clearStorage></button>
     </section>
   </main>
+</a>
+
+		    </div>
+		  </div>
+
   <!--<a href="#about" style="margin: 8 0">About</a>-->
 </div>
 
