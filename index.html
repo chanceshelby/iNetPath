@@ -517,7 +517,7 @@ body {
 </div>
 </div>
         <div onclick="window.open( '${i.link}' , '_blank')">
-          ${(i.image !==null && i.image !==undefined) ? `<img src=${i.image} style=";width: 85px; height:85px; display: block;margin-left: auto;margin-right: auto;border-radius: 21px;border: 0px solid silver"></img>` : '<div style="width: 50%; height:50%;"></div>'}
+          ${(i.image !==null && i.image !==undefined) ? `<img src=${i.image} draggable="false" style=";width: 85px; height:85px; display: block;margin-left: auto;margin-right: auto;border-radius: 21px;border: 0px solid silver"></img>` : '<div style="width: 50%; height:50%;"></div>'}
           <center><p class="body__text" style="line-height:33px;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">${i.name}</p></center>
         </div>
       </div>`;
