@@ -309,7 +309,7 @@ body {
 </style>
 
 <div class="topnav">
-  <a><small id="inet" style="font-size:30px;margin: 70px 25px;cursor:pointer;">iglooed</small></a>
+  <a><img style="margin-top:-3" src="iglooed_final_logo.png" draggable="false" width="70px" height="40px"></a><a style="margin-top:5"><small style="font-size:30px;margin-left:5;margin-right:20;cursor:pointer;" id="inet">iglooed</small></a>
       <a>
 		  <style>
 		  .dropbtn2 {
@@ -500,6 +500,15 @@ body {
         grand_father.removeChild(parent);
       }
     }
+    function Rename() {
+      let Newname = prompt('Name:');
+      links.push({
+        "name": Newname.replace(/(name=).*?(&)/,'$1' + link + '$2');,
+      });
+      saveLinks();
+      let element = document.getElementById('tiles');
+      element.innerHTML = htmlForLinks(links);
+    }
   </script>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -514,6 +523,7 @@ body {
 <button class="dropbtn">&nbsp...&nbsp</button>
 <div class="dropdown-content">
 <button type="button" style="background-color: #ccc;width:100%;height:25px;border:2px solid #fff;border-radius: 5px;" onclick="Delete(${index}) " )>Remove</button>
+		<button type="button" style="background-color: #ccc;width:100%;height:25px;border:2px solid #fff;border-radius: 5px;" onclick="Rename(${index}) " )>Rename</button>
 </div>
 </div>
         <div onclick="window.open( '${i.link}' , '_blank')">
