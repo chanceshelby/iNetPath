@@ -531,29 +531,72 @@ body {
       return;
     }
     let tmplinks = localStorage.getItem('links');
+
     if (tmplinks === undefined || tmplinks === null || tmplinks === '') {
       tmplinks = '[]';
     }
     let json = JSON.parse(tmplinks);
+
     if (localStorage.getItem('createdDefaults') !== 'true') {
+      json.push({
+        "name": "Facebook",
+        "image": "https://besticon.herokuapp.com/icon?size=80..120..200&url=facebook.com",
+        "link": "http://www.facebook.com"
+      });
+
+      json.push({
+        "name": "Instagram",
+        "image": "https://besticon.herokuapp.com/icon?size=80..120..200&url=instagram.com",
+        "link": "http://www.instagram.com"
+      });
+
+      json.push({
+        "name": "Apple",
+        "image": "https://besticon.herokuapp.com/icon?size=80..120..200&url=apple.com",
+        "link": "http://www.apple.com"
+      });
+
+      json.push({
+        "name": "ESPN",
+        "image": "https://besticon.herokuapp.com/icon?size=80..120..200&url=espn.com",
+        "link": "http://www.espn.com"
+      });
+
+      json.push({
+        "name": "Wikipedia",
+        "image": "https://besticon.herokuapp.com/icon?size=80..120..200&url=wikipedia.com",
+        "link": "http://www.wikipedia.com"
+      });
+
+      json.push({
+        "name": "YouTube",
+        "image": "https://besticon.herokuapp.com/icon?size=80..120..200&url=youtube.com",
+        "link": "http://www.youtube.com"
+      });
+
       localStorage.setItem("createdDefaults", "true");
     }
+
     links = json;
+
     let html = htmlForLinks(links);
+
     let element = document.getElementById('tiles');
     element.innerHTML = html;
     saveLinks();
   }
+
   function saveLinks() {
     localStorage.setItem('links', JSON.stringify(links));
   }
+
   loadLinks();
   </script>
 
   </div>
 
   <div class="wrap">
-
+	 
     <div id="tiles" style="margin: -33px 0px;"></div>
 
     <div id="democontainer">
