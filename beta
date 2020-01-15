@@ -1,0 +1,817 @@
+<style>
+	@media screen and (max-width: 1280px) and (max-height: 720px) {
+	   html {
+	      transform: scale(.5);   
+	      // or simply zoom: 50%
+	   }
+	}
+	:focus, .toggle__input:focus-visible ~ .toggle__fake {
+	  outline-color: var(--focus-color);
+	  outline-style: solid;
+	  outline-width: 2px;
+	  outline-offset: 2px;
+	}
+	html,
+	html.light {
+	  --background-color: #c1c8d3;
+	  --background-card-color: #ffffff;
+	  --background-success-color: #24a5e7;
+	  --background-toggle-inactive-color: #24a5e7;
+	  --background-toggle-active-color: #24a5e7;
+	  --foreground-color: #fff;
+	  --foreground-success-color: #fff;
+	  --foreground-secondary-color: #090909;
+	  --focus-color: rgba(0, 0, 0, 0);
+	}
+	html.dark {
+  	    --background-color: #212121;
+  	    --background-card-color: #362bc4;
+  	    --background-success-color: #362bc4;
+  	    --background-toggle-inactive-color: #362bc4;
+  	    --background-toggle-active-color: #362bc4;
+  	    --foreground-color: rgba(255, 255, 255, 0.87);
+  	    --foreground-success-color: #ffffff;
+  	    --foreground-secondary-color: rgba(255, 255, 255, 0.56);
+  	    --focus-color: rgba(255, 255, 255, 0.5);
+	}
+	@media (prefers-color-scheme: light), (prefers-color-scheme: no-preference) {
+	  html {
+		  --background-color: #c1c8d3;
+		  --background-card-color: #ffffff;
+		  --background-success-color: #24a5e7;
+		  --background-toggle-inactive-color: #24a5e7;
+		  --background-toggle-active-color: #24a5e7;
+		  --foreground-color: #fff;
+		  --foreground-success-color: #fff;
+		  --foreground-secondary-color: #090909;
+		  --focus-color: rgba(0, 0, 0, 0);
+	  }
+	  html.dark {
+  	    --background-color: #212121;
+  	    --background-card-color: #362bc4;
+  	    --background-success-color: #362bc4;
+  	    --background-toggle-inactive-color: #362bc4;
+  	    --background-toggle-active-color: #362bc4;
+  	    --foreground-color: rgba(255, 255, 255, 0.87);
+  	    --foreground-success-color: #ffffff;
+  	    --foreground-secondary-color: rgba(255, 255, 255, 0.56);
+  	    --focus-color: rgba(255, 255, 255, 0.5);
+	  }
+	}
+	@media (prefers-color-scheme: dark) {
+	  html {
+    	    --background-color: #212121;
+    	    --background-card-color: #362bc4;
+    	    --background-success-color: #362bc4;
+    	    --background-toggle-inactive-color: #362bc4;
+    	    --background-toggle-active-color: #362bc4;
+    	    --foreground-color: rgba(255, 255, 255, 0.87);
+    	    --foreground-success-color: #ffffff;
+    	    --foreground-secondary-color: rgba(255, 255, 255, 0.56);
+    	    --focus-color: rgba(255, 255, 255, 0.5);
+	  }
+	  html.light {
+		  --background-color: #c1c8d3;
+		  --background-card-color: #ffffff;
+		  --background-success-color: #24a5e7;
+		  --background-toggle-inactive-color: #24a5e7;
+		  --background-toggle-active-color: #24a5e7;
+		  --foreground-color: #fff;
+		  --foreground-success-color: #fff;
+		  --foreground-secondary-color: #090909;
+		  --focus-color: rgba(0, 0, 0, 0);
+	  }
+	}
+	* {
+	  box-sizing: border-box;
+	}
+	html,
+	body {
+	}
+	body {
+	  justify-content: center;
+	  font-family: "Roboto", sans-serif;
+	  background-color: var(--background-color);
+  }
+	p {
+	  color: var(--foreground-secondary-color);
+	  line-height: 1.5;
+	  margin-bottom: 16px;
+	}
+	code {
+	  display: inline-block;
+	  padding: 2px 6px;
+	  background-color: var(--background-toggle-active-color);
+	  border-radius: 2px;
+	}
+	input[type="checkbox"] {
+	  position: absolute;
+	  top: 0;
+	  left: 0;
+	  width: 100%;
+	  height: 100%;
+	  margin: 0;
+	  padding: 0;
+	  opacity: 0;
+	  cursor: inherit;
+	}
+	.card {
+	  margin: 8px 16px;
+	  background-color: var(--background-card-color);
+	  border-radius: 8px;
+	}
+	.card__header {
+	  display: flex;
+	  flex-wrap: wrap;
+	  align-items: center;
+	  justify-content: space-between;
+	}
+	.card__body {
+	  padding-top: 16px;
+	}
+	.card__body--right {
+	  display: flex;
+	  justify-content: flex-end;
+	  padding-top: 0;
+	}
+	.header__text {
+	  padding: 8px 0;
+	  margin-right: 16px;
+	}
+	.footer__p {
+	  padding: 8px 24px;
+	  margin: 0 0 16px -24px;
+	  border-radius: 0 22px 22px 0;
+	  background-color: var(--background-success-color);
+	  color: var(--foreground-success-color);
+	}
+	.toggle {
+	  flex: 1;
+	  position: relative;
+	  display: flex;
+	  flex-wrap: wrap;
+	  align-items: center;
+	  cursor: pointer;
+	}
+	.toggle__input:checked ~ .toggle__fake::after {
+	  left: 30px;
+	  background-color: var(--foreground-color);
+	}
+	.toggle__input:focus ~ .toggle__fake, .toggle__input:not([disabled]):hover ~ .toggle__fake {
+	  background-color: var(--background-toggle-active-color);
+	}
+	.toggle__fake {
+	  will-change: background-color;
+	  position: relative;
+	  display: inline-block;
+	  width: 52px;
+	  height: 24px;
+	  background-color: var(--background-toggle-inactive-color);
+	  border: 1px solid var(--foreground-color);
+	  border-radius: 12px;
+	  transition: background-color 100ms cubic-bezier(0.4, 0, 0.2, 1);
+	  margin-left:0px;
+	  margin-top:-14px;
+	}
+	.toggle__fake::after {
+	  will-change: left;
+	  content: "";
+	  position: absolute;
+	  top: 50%;
+	  left: 4px;
+	  display: block;
+	  width: 15px;
+	  height: 15px;
+	  background-color: var(--background-card-color);
+	  border: 1px solid var(--foreground-color);
+	  border-radius: 8px;
+	  -webkit-transform: translateY(-50%);
+	          transform: translateY(-50%);
+	  transition: left 100ms cubic-bezier(0.4, 0, 0.2, 1);
+	}
+	.toggle__text {
+	  margin-right: 100%;
+	  margin-top: -1.5px;
+	}
+	.switch {
+	  -webkit-appearance: none;
+	     -moz-appearance: none;
+	          appearance: none;
+	  display: inline-flex;
+	  align-items: center;
+	  color: var(--foreground-color);
+	  text-transform: uppercase;
+	  letter-spacing: 0.1em;
+	  background-color: var(--background-color);
+	  border-radius: 4px;
+	  cursor: pointer;
+	}
+</style>
+
+<script>
+	const themePreference = () => {
+	  const hasLocalStorage = localStorage.getItem('theme');
+  
+	  let supports = false;
+	  let theme = undefined;
+  
+	  if (hasLocalStorage === 'light') { theme = 'light'; }
+	  if (hasLocalStorage === 'dark') { theme = 'dark'; }
+	  if (window.matchMedia(`(prefers-color-scheme: dark)`).matches) {
+	    theme = hasLocalStorage ? hasLocalStorage : 'dark';
+	    supports = true;
+	  };
+	  if (window.matchMedia(`(prefers-color-scheme: light)`).matches) {
+	    theme = hasLocalStorage ? hasLocalStorage : 'light';
+	    supports = true;
+	  };
+	  if (window.matchMedia(`(prefers-color-scheme: no-preference)`).matches) {
+	    theme = hasLocalStorage ? hasLocalStorage : 'none';
+	    supports = true;
+	  };
+  
+	  return {supports, theme};
+	}
+	addFooter = () => {
+	  const parent = document.querySelector('.card');
+	  const footer = document.createElement('footer');
+	  const html = `
+	  `;
+  
+	  footer.classList.add('card__footer', 'footer');
+	  footer.innerHTML = html;
+  
+	  parent.appendChild(footer);
+	}
+	document.addEventListener('DOMContentLoaded', e => {
+	  console.clear();
+  
+	  const userThemePreference = themePreference();
+	  const toggle = document.querySelector('[js-toggle]');
+	  const clearStorage = document.querySelector('[js-clearStorage]');
+	  const html = document.documentElement;
+    
+	  const setTheme = () => {
+	    switch(userThemePreference.theme) {
+	      case 'dark':
+	        toggle.checked = true;
+	        html.classList.add('dark');
+	        html.classList.remove('light');
+	        break;
+	      case 'light':
+	        toggle.checked = false;
+	        html.classList.remove('dark');
+	        html.classList.add('light');
+	        break;
+	    }
+	  }
+  
+    
+	  setTheme();
+  
+	  if (userThemePreference.supports) {
+	    addFooter();
+	  }
+    
+	  clearStorage.addEventListener('click', e => {
+	    localStorage.removeItem('theme');
+	    console.info('local storage cleared');
+	  }, false);
+  
+	  toggle.addEventListener('click', e => {
+	    if (toggle.checked) {
+	      html.classList.add('dark');
+	      html.classList.remove('light');
+	      localStorage.setItem('theme', 'dark');
+	    } else {
+	      html.classList.remove('dark');
+	      html.classList.add('light');
+	      localStorage.setItem('theme', 'light');
+	    }
+	  }, false);
+	}, false);
+</script>
+
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.topnav {
+  overflow: hidden;
+  background-color: #303030;
+  border-radius: 0px;
+  height:50px;
+  padding: 8px 16px;
+}
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  text-decoration: none;
+  font-size: 17px;
+}
+</style>
+
+<div class="topnav">
+  <a><img style="margin-top:-3" src="iglooed_final_logo.png" draggable="false" width="70px" height="40px"></a><a style="margin-top:5"><small style="font-size:30px;margin-left:5;margin-right:20;cursor:pointer;" id="inet">iglooed</small></a>
+      <a>
+		  <style>
+		  .dropbtn2 {
+		    background-color: #98b9ec;
+		    color: white;
+		    padding: 16px;
+		    font-size: 20px;
+		    border: none;
+			margin-top: -8px;
+		  }
+
+		  .dropdown2 {
+		  }
+
+		  .dropdown-content2 {
+		    display: none;
+		    background-color: #f1f1f1;
+		    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+		  }
+
+		  .dropdown-content2 a {
+		    color: black;
+		    padding: 12px 16px;
+		    text-decoration: none;
+		  }
+		  .dropdown2:hover .dropdown-content2 {display: block;}
+		  .dropdown2:hover .dropbtn2 {background-color: #7d98c2;}
+		  </style>
+
+		  <div class="dropdown2">
+		    <button class="dropbtn2" style="margin-top:-12px;margin-left:-5px">☰</button>
+		    <div class="dropdown-content2">
+			    <a onclick="demo_insert_div_block();" style="cursor:pointer;font-size:18px;color:#fff;margin-left:-30px;margin-top:-13px;">Add Tile</a>
+			    <main class="card" style="background-color:transparent;">
+					<a href="https://chrome.google.com/webstore/detail/ihometab-new-tab-page/cjmlepalbcpolnnofbiodpbecnfceifb" target="blank_" style="cursor:pointer;font-size:18px;color:#fff;margin-left:0px;margin-top:-13px;">Add To Chrome</a>
+	  <a><label class="header__selection toggle">
+        <input js-toggle class="toggle__input" aria-label="toggle dark mode" type="checkbox">
+        <span class="toggle__fake"></span>
+      </label>
+      <button type="switch" js-clearStorage></button>
+    </section>
+  </main>
+</a>
+
+		    </div>
+		  </div>
+
+  <!--<a href="#about" style="margin: 8 0">About</a>-->
+</div>
+
+<div style="padding-left:16px">
+</div>
+
+<head>
+  <script data-ad-client="ca-pub-8622623811810201" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <title>iglooed - New Tab</title>
+  <style>
+    input {
+      margin: 0px 25px;
+      color: #808080;
+      height: 30px;
+      font-size: 20px;
+      border: 3px solid #fff;
+      width: 40%;
+    }
+    .window {
+      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+      border: 8px solid #fff;
+      max-width: 100%;
+      margin: 0 auto;
+      background: #fff;
+      width: 100%;
+      height: 235px;
+      max-height: 235px;
+    }
+    .window:before {
+      border: 3px solid #ccc;
+    }
+    @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,200);
+    * {
+      margin: 0;
+      padding: 0;
+      outline: none;
+      border: none;
+      box-sizing: border-box;
+    }
+    *:before,
+    *:after {
+      box-sizing: border-box;
+    }
+    html {
+      width: 100%;
+    }
+    .wrap,
+    .wrap2 {
+      width: 40%;
+      height: auto;
+      margin: 60px 25px;
+      float: left;
+      /*border: 3px solid black; */
+    }
+    .wrap2 {
+      width: 40% !important;
+      float: right;
+      display: inline-block;
+    }
+    div[class^="metro"] {
+      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+      float: left;
+      margin: 0 21px 21px 0;
+      height: 95px;
+      position: relative;
+      cursor: pointer;
+    }
+    div[class^="metro"]:hover .dropbtn {
+      background-color: #fff;
+      margin-bottom:-11px;
+      color: #000;
+      padding: 3px;
+      font-size: 7px;
+      border: none;}
+    }
+    div[class^="metro"]:active {
+    }
+    .metro-big {
+      width: 200px;
+    }
+    .metro-small {
+      width: 95px;
+      height: 95px;
+	  
+    }
+    .dropbtn {
+      color: transparent;
+      background-color: transparent;
+	  border-radius: 5px;
+    }
+    .dropdown {
+      position: relative;
+      display: inline-block;
+	  border-radius: 5px;
+    }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f1f1f1;
+      min-width: 100px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+	  border-radius: 5px;
+    }
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+	  border-radius: 5px;
+    }
+    .dropdown-content a:hover {background-color: #ddd;}
+    .dropdown:hover .dropdown-content {display: block;}
+    .dropdown:hover .dropbtn {background-color: #ccc;}
+    br.tile {
+   line-height: 5px;
+    }
+  </style>
+</head>
+
+<body bgcolor="#c1c8d3">
+  <br><br>
+  <center>
+    <form action="https://www.google.com/search" class="searchform" method="get" name="searchform" target="_blank">
+      <input name="sitesearch" type="hidden" style="height:100%" value="">
+      <input autocomplete="on" class="form-control search" name="q" placeholder="Google Search" required="required" type="text" style="border-radius:5px;height:33px">
+      <button style="border-radius:5px;font-size:18px;height:30px;background-color:#fff;border:5px solid #fff;" class="button" type="submit">Search</button>
+    </form>
+  </center>
+
+  <script>
+    function Delete(button) {
+      if (typeof button === 'number') {
+        links.splice(button, 1);
+        saveLinks();
+        let element = document.getElementById('tiles');
+        element.innerHTML = htmlForLinks(links);
+      } else {
+        var parent = button.parentNode;
+        var grand_father = parent.parentNode;
+        grand_father.removeChild(parent);
+      }
+    }
+    function Rename() {
+      let links[${index}].name = prompt('Name:');
+      saveLinks();
+      let element = document.getElementById('tiles');
+      element.innerHTML = htmlForLinks(links);
+    }
+    function Rename1(button) {
+      if (typeof button === 'name') {
+        links.splice(button, 1);
+        let links[${index}].name = prompt('Name:');
+        saveLinks();
+        let element = document.getElementById('tiles');
+        element.innerHTML = htmlForLinks(links);
+      } else {
+          let links[${index}].name = prompt('Name:');
+          saveLinks();
+      }
+    }
+  </script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  <script>
+  function htmlForLinks(items) {
+    console.log(items.length);
+    let html = '';
+    items.forEach((i, index) => {
+      html += `<div class="metro-small" style="margin-top:20px;">
+      <div class="dropdown">
+<button class="dropbtn">&nbsp...&nbsp</button>
+<div class="dropdown-content">
+<button type="button" style="background-color: #ccc;width:100%;height:25px;border:2px solid #fff;border-radius: 5px;" onclick="Delete(${index}) " )>Remove</button>
+<button type="button" style="background-color: #ccc;width:100%;height:25px;border:2px solid #fff;border-radius: 5px;" onclick="Rename1(${index}) " )>Rename</button>
+</div>
+</div>
+        <div onclick="window.open( '${i.link}' , '_blank')">
+          ${(i.image !==null && i.image !==undefined) ? `<img src=${i.image} draggable="false" style=";width: 85px; height:85px; display: block;margin-left: auto;margin-right: auto;border-radius: 21px;border: 0px solid silver"></img>` : '<div style="width: 50%; height:50%;"></div>'}
+          <center><p class="body__text" style="line-height:33px;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">${i.name}</p></center>
+        </div>
+      </div>`;
+    });
+    return html;
+  }
+  links = [];
+  function loadLinks() {
+    if (document.getElementById('tiles') === null) {
+      setTimeout(() => loadLinks(), 1000);
+      return;
+    }
+    let tmplinks = localStorage.getItem('links');
+
+    if (tmplinks === undefined || tmplinks === null || tmplinks === '') {
+      tmplinks = '[]';
+    }
+    let json = JSON.parse(tmplinks);
+
+    if (localStorage.getItem('createdDefaults') !== 'true') {
+      json.push({
+        "name": "Facebook",
+        "image": "https://besticon.herokuapp.com/icon?size=80..120..200&url=facebook.com",
+        "link": "http://www.facebook.com"
+      });
+
+      json.push({
+        "name": "Instagram",
+        "image": "https://besticon.herokuapp.com/icon?size=80..120..200&url=instagram.com",
+        "link": "http://www.instagram.com"
+      });
+
+      json.push({
+        "name": "Apple",
+        "image": "https://besticon.herokuapp.com/icon?size=80..120..200&url=apple.com",
+        "link": "http://www.apple.com"
+      });
+
+      json.push({
+        "name": "ESPN",
+        "image": "https://besticon.herokuapp.com/icon?size=80..120..200&url=espn.com",
+        "link": "http://www.espn.com"
+      });
+
+      json.push({
+        "name": "Wikipedia",
+        "image": "https://besticon.herokuapp.com/icon?size=80..120..200&url=wikipedia.com",
+        "link": "http://www.wikipedia.com"
+      });
+
+      json.push({
+        "name": "YouTube",
+        "image": "https://besticon.herokuapp.com/icon?size=80..120..200&url=youtube.com",
+        "link": "http://www.youtube.com"
+      });
+
+      localStorage.setItem("createdDefaults", "true");
+    }
+
+    links = json;
+
+    let html = htmlForLinks(links);
+
+    let element = document.getElementById('tiles');
+    element.innerHTML = html;
+    saveLinks();
+  }
+
+  function saveLinks() {
+    localStorage.setItem('links', JSON.stringify(links));
+  }
+
+  loadLinks();
+  </script>
+
+  </div>
+
+  <div class="wrap">
+	 
+    <div id="tiles" style="margin: -33px 0px;"></div>
+
+    <div id="democontainer">
+
+    </div>
+<!--
+<div class="metro-small" style="background-color: transparent;padding:2px">
+    <form action="/dontcrawl/">
+      <input style="
+        margin:15;
+        width: 78px;
+        height:78px;
+        display: block;
+        margin-left: auto;
+        padding:4px;
+        cursor: pointer;
+        color:#2a2b2c;
+        border-radius: 16px;
+        margin-right: auto;" type="submit" onclick="demo_insert_div_block(); return false;" name="demo" id="demo" value="+">
+    </input>
+    </form>
+  </div>
+-->
+</div>
+
+
+    <style>
+      textarea {
+        color: #000;
+        resize: none;
+        width: 50;
+        border-radius: 0px;
+        background-color: transparent;
+        float:left;
+      }
+    </style>
+    <script src="https://www.googletagservices.com/activeview/js/current/osd.js?cb=%2Fr20100101"></script>
+    <script src="https://pagead2.googlesyndication.com/pagead/js/r20190925/r20190131/show_ads_impl.js" id="google_shimpl"></script>
+    <script type="text/javascript">
+    function demo_insert_div_block() {
+      let name = prompt('Name:');
+      let link = prompt('URL:', 'http://www.');
+      links.push({
+        "name": name,
+        "link": link,
+        "image":  "https://besticon.herokuapp.com/icon?size=80..120..200&url=" + link
+      });
+      saveLinks();
+      let element = document.getElementById('tiles');
+      element.innerHTML = htmlForLinks(links);
+    }
+    </script>
+    <style>
+      .democontainer {
+        float: left;
+        margin: 0 10px 10px 0;
+        margin-bottom:-15px
+        height: 95px;
+        width: 95px;
+        position: relative;
+        cursor: pointer;
+        transition: all .4s ease;
+        user-drag: element;
+        border: solid 2px transparent;
+      }
+    </style>
+
+  </div>
+  </div>
+  </div>
+
+  <div class="wrap2">
+<!--
+    <div class="Weatherwindow">
+      <div style="width: 100%;"><iframe style="display: block;" src="https://cdnres.willyweather.com/widget/loadView.html?id=115404" width="100%" height="92" frameborder="0" scrolling="no"></iframe><a style="width: 20px;text-indent: -9999em;z-index: 1;margin: -92px 0 0 0;float: right;height: 92px;position: relative" href="https://www.willyweather.com/tx/harris-county/houston.html" rel="nofollow">Houston Weather</a></div>
+    </div>
+    <br>
+    <meta charset="UTF-8">
+    <meta charset="utf-8">
+    [if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    <style>
+      #notepad {
+        height: 225px;
+        width: 100%;
+        font-size: 100%;
+        line-height: 125%;
+        font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+        color: #000;
+      }
+    </style>
+
+    </head>
+    <div class="window" style="border-radius:14px">
+      <textarea placeholder="Type here and see it later" id="notepad">
+<!--
+  you could do any element w/ contentEditable, but that doesn't fire onchange
+-->
+</textarea>
+      <script>
+        /* localstorage polyfill from https://gist.github.com/350433 */
+        ("undefined" == typeof window.localStorage || "undefined" == typeof window.sessionStorage) && function () {
+          function e(f) {
+            function e(a) {
+              var b;
+              b = new Date;
+              b.setTime(b.getTime() + 31536E6);
+              document.cookie = "localStorage=" + a + ("; expires=" + b.toGMTString()) + "; path=/"
+            }
+            function g(a) {
+              a = JSON.stringify(a);
+              "session" == f ? window.name = a : e(a)
+            }
+            var d = function () {
+              var a;
+              if ("session" == f) a = window.name;
+              else a: {
+                a = document.cookie.split(";");
+                var b, c;
+                for (b = 0; b < a.length; b++) {
+                  for (c = a[b];
+                    " " == c.charAt(0);) c = c.substring(1, c.length);
+                  if (0 == c.indexOf("localStorage=")) {
+                    a =
+                      c.substring(13, c.length);
+                    break a
+                  }
+                }
+                a = null
+              }
+              return a ? JSON.parse(a) : {}
+            }();
+            return {
+              length: 0,
+              clear: function () {
+                d = {};
+                this.length = 0;
+                "session" == f ? window.name = "" : e("")
+              },
+              getItem: function (a) {
+                return void 0 === d[a] ? null : d[a]
+              },
+              key: function (a) {
+                var b = 0,
+                  c;
+                for (c in d) {
+                  if (b == a) return c;
+                  b++
+                }
+                return null
+              },
+              removeItem: function (a) {
+                delete d[a];
+                this.length--;
+                g(d)
+              },
+              setItem: function (a, b) {
+                d[a] = b + "";
+                this.length++;
+                g(d)
+              }
+            }
+          }
+          if ("undefined" == typeof window.localStorage) window.localStorage = new e("local");
+          if ("undefined" == typeof window.sessionStorage) window.sessionStorage =
+            new e("session")
+        }();
+        /* the code */
+        var n = document.getElementById("notepad");
+        /* save */
+        var s = function () {
+          localStorage.setItem("notepad", n.value);
+        }
+        /* retrieve (only on page load) */
+        if (window.localStorage) {
+          n.value = localStorage.getItem("notepad");
+        }
+        /* autosave onchange and every 500ms and when you close the window */
+        n.onchange = s();
+        setInterval(s, 500);
+        window.onunload = s();
+      </script>
+</body>
+</div>
+</div>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-149751742-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-149751742-1');
+</script>
