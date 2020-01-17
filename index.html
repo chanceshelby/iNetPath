@@ -7,72 +7,72 @@
 	}
 	html,
 	html.light {
-	  --background-color: #b1bac8;
+	  --background-image: url("blue-sky-gradient.jpg");
 	  --background-card-color: #ffffff;
 	  --background-success-color: #24a5e7;
 	  --background-toggle-inactive-color: #24a5e7;
 	  --background-toggle-active-color: #24a5e7;
 	  --foreground-color: #fff;
 	  --foreground-success-color: #fff;
-	  --foreground-secondary-color: #090909;
+	  --foreground-secondary-color: #fff;
 	  --focus-color: rgba(0, 0, 0, 0);
 	}
 	html.dark {
-  	    --background-color: #212121;
+  	    --background-image: url("black-chrome-background-2.jpg");
   	    --background-card-color: #362bc4;
   	    --background-success-color: #362bc4;
   	    --background-toggle-inactive-color: #362bc4;
   	    --background-toggle-active-color: #362bc4;
   	    --foreground-color: rgba(255, 255, 255, 0.87);
   	    --foreground-success-color: #ffffff;
-  	    --foreground-secondary-color: rgba(255, 255, 255, 0.56);
+  	    --foreground-secondary-color: #fff;
   	    --focus-color: rgba(255, 255, 255, 0.5);
 	}
 	@media (prefers-color-scheme: light), (prefers-color-scheme: no-preference) {
 	  html {
-		  --background-color: #b1bac8;
+		  --background-image: url("blue-sky-gradient.jpg");
 		  --background-card-color: #ffffff;
 		  --background-success-color: #24a5e7;
 		  --background-toggle-inactive-color: #24a5e7;
 		  --background-toggle-active-color: #24a5e7;
 		  --foreground-color: #fff;
 		  --foreground-success-color: #fff;
-		  --foreground-secondary-color: #090909;
+		  --foreground-secondary-color: #fff;
 		  --focus-color: rgba(0, 0, 0, 0);
 	  }
 	  html.dark {
-  	    --background-color: #212121;
+  	    --background-image: url("black-chrome-background-2.jpg");
   	    --background-card-color: #362bc4;
   	    --background-success-color: #362bc4;
   	    --background-toggle-inactive-color: #362bc4;
   	    --background-toggle-active-color: #362bc4;
   	    --foreground-color: rgba(255, 255, 255, 0.87);
   	    --foreground-success-color: #ffffff;
-  	    --foreground-secondary-color: rgba(255, 255, 255, 0.56);
+  	    --foreground-secondary-color: #fff;
   	    --focus-color: rgba(255, 255, 255, 0.5);
 	  }
 	}
 	@media (prefers-color-scheme: dark) {
 	  html {
-    	    --background-color: #212121;
+    	    --background-image: url("black-chrome-background-2.jpg");
     	    --background-card-color: #362bc4;
     	    --background-success-color: #362bc4;
     	    --background-toggle-inactive-color: #362bc4;
     	    --background-toggle-active-color: #362bc4;
     	    --foreground-color: rgba(255, 255, 255, 0.87);
     	    --foreground-success-color: #ffffff;
-    	    --foreground-secondary-color: rgba(255, 255, 255, 0.56);
+    	    --foreground-secondary-color: #fff;
     	    --focus-color: rgba(255, 255, 255, 0.5);
 	  }
 	  html.light {
-		  --background-color: #b1bac8;
+		  --background-image: url("blue-sky-gradient.jpg");
 		  --background-card-color: #ffffff;
 		  --background-success-color: #24a5e7;
 		  --background-toggle-inactive-color: #24a5e7;
 		  --background-toggle-active-color: #24a5e7;
 		  --foreground-color: #fff;
 		  --foreground-success-color: #fff;
-		  --foreground-secondary-color: #090909;
+		  --foreground-secondary-color: #fff;
 		  --focus-color: rgba(0, 0, 0, 0);
 	  }
 	}
@@ -85,7 +85,7 @@
 	body {
 	  justify-content: center;
 	  font-family: "Roboto", sans-serif;
-	  background-color: var(--background-color);
+	  background-image: var(--background-image);
   }
 	p {
 	  color: var(--foreground-secondary-color);
@@ -302,58 +302,8 @@
 	  font-size: 17px;
 	}
 	</style>
-	<link rel="preload" href="https://adservice.google.com/adsid/integrator.js?domain=iglooed.com" as="script"><script type="text/javascript" src="https://adservice.google.com/adsid/integrator.js?domain=iglooed.com"></script></head><body bgcolor="#c1c8d3"><br style="line-height: 5px">
-	<div class="topnav" style="text-align:center">
-	  <a><img style="margin-top:0;margin-left:15" src="iglooed_final_logo.png" draggable="false" width="70px" height="40px"></a><a style="margin-top:5"><small style="font-size:30px;margin-left:15;margin-right:20;cursor:pointer;color:#fff" id="inet">iglooed</small></a>
-	      <a>
-		  <style>
-		  		  .dropbtn2 {
-		  		    background-color: #6d7d97;
-		  		    color: white;
-		  		    padding: 9px;
-		  		    font-size: 15px;
-		  		    border: none;
-		  			margin-top: -9px;
-	  			  	border-radius: 15px;
-		  		  }
 
-		  		  .dropdown2 {
-		  		  }
-
-		  		  .dropdown-content2 {
-		  		    display: none;
-		  		    background-color: #f1f1f1;
-		  		    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-		  		  }
-
-		  		  .dropdown-content2 a {
-		  		    color: black;
-		  		    padding: 12px 16px;
-		  		    text-decoration: none;
-		  		  }
-		  		  .dropdown2:hover .dropdown-content2 {display: block;}
-		  		  .dropdown2:hover .dropbtn2 {background-color: #6d7d97;}
-		  		  </style>
-		  
-
-		  </a><div class="dropdown2"><a>
-		    <button class="dropbtn2" style="margin-top:4px;margin-left:-8px">☰</button>
-		    </a><div class="dropdown-content2"><a>
-			    </a><a onclick="demo_insert_div_block();" style="cursor:pointer;font-size:18px;color:#fff;margin-left:-30px;margin-top:-13px;">Add Tile</a>
-			    <main class="card" style="background-color:transparent;">
-					<a href="https://chrome.google.com/webstore/detail/iglooed-modern-simple-new/cjmlepalbcpolnnofbiodpbecnfceifb" target="blank_" style="cursor:pointer;font-size:18px;color:#fff;margin-left:0px;margin-top:-13px;">Add To Chrome</a>
-	  <a><label class="header__selection toggle">
-        <input js-toggle="" class="toggle__input" aria-label="toggle dark mode" type="checkbox">
-        <span class="toggle__fake"></span>
-      </label>
-      <button type="switch" js-clearstorage=""></button>
-    
-  </a><footer class="card__footer footer">
-	  </footer></main><a>
-</a>
-
-		    </div>
-		  </div>
+	<body bgcolor="#c1c8d3">
 
   <!--<a href="#about" style="margin: 8 0">About</a>-->
 </div>
@@ -469,21 +419,44 @@
     }
     .dropdown-content a:hover {background-color: #ddd;}
     .dropdown:hover .dropdown-content {display: block;}
-    .dropdown:hover .dropbtn {background-color: #ccc;}
+    .dropdown:hover .dropbtn {background-color: #ccc;;}
     br.tile {
    line-height: 5px;
     }
   </style>
 
+<script>
 
 
-  <center>
+	var app = angular.module('myApp', []);
+
+	app.controller('AppCtrl', ['$scope', '$http', '$timeout', function($scope, $http, $timeout) {
+  
+	  // Load the data
+	  $http.get('http://www.corsproxy.com/loripsum.net/api/plaintext').then(function (res) {
+			$scope.loremIpsum = res.data;
+	    $timeout(expand, 0);
+	  });
+  
+	  $scope.autoExpand = function(e) {
+	        var element = typeof e === 'object' ? e.target : document.getElementById(e);
+	    		var scrollHeight = element.scrollHeight -60; // replace 60 by the sum of padding-top and padding-bottom
+	        element.style.height =  scrollHeight + "px";    
+	    };
+  
+	  function expand() {
+	    $scope.autoExpand('TextArea');
+	  }
+	}]);
+</script>
+
+  <center><br style="line-height: 80px">
     <form action="https://www.google.com/search" class="searchform" method="get" name="searchform" target="_blank">
       <input name="sitesearch" type="hidden" style="height:100%" value="">
-      <input autocomplete="on" class="form-control search" name="q" placeholder="Google Search" required="required" type="text" style="border-radius:5px;height:33px">
-      <button style="border-radius:5px;font-size:18px;height:30px;background-color:#fff;border:5px solid #fff;" class="button" type="submit">Search</button>
+      <input autocomplete="on" class="form-control search" name="q" placeholder="Google Search" required="required" type="text" style="border-radius:5px;height:35px;width:50%;box-shadow:0px 0px 5px 1px rgba(0,0,0,0.1);">
+      <button style="border-radius:5px;font-size:18px;height:35px;background-color:#fff;border:5px solid #fff;box-shadow:0px 0px 5px 1px rgba(0,0,0,0.1);" class="button" type="submit">Search</button>
     </form>
-  </center>
+  </center><br><br><br>
 
   <script>
     function Delete(button) {
@@ -515,7 +488,7 @@
 </div>
 </div>
         <div onclick="window.open( '${i.link}' , '_blank')">
-          ${(i.image !==null && i.image !==undefined) ? `<img src=${i.image} draggable="false" style=";width: 85px; height:85px; display: block;margin-left: auto;margin-right: auto;border-radius: 21px;border: 0px solid silver"></img>` : '<div style="width: 50%; height:50%;"></div>'}
+          ${(i.image !==null && i.image !==undefined) ? `<img src=${i.image} draggable="false" style="box-shadow:0px 0px 5px 1px rgba(0,0,0,0.1);;width: 89px; height:89px; display: block;margin-left: auto;margin-right: auto;border-radius: 15px;border: 0px solid silver"></img>` : '<div style="width: 50%; height:50%;"></div>'}
           <center><p class="body__text" style="line-height:33px;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">${i.name}</p></center>
         </div>
       </div>`;
@@ -685,13 +658,55 @@
         font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
         color: #000;
       }
+	  textarea {
+	    height:auto;
+	    max-width:600px;
+	    color:#999;
+	    font-weight:400;
+	    font-size:20px;
+	    font-family:'Ubuntu', Helvetica, Arial, sans-serif;
+	    width:100%;
+	    background:#fff;
+	    border-radius:8px;
+	    line-height:2em;
+	    border:none;
+	    box-shadow:0px 0px 5px 1px rgba(0,0,0,0.1);
+	    padding:10px;
+		height: 250px;
+	  }
+
+	  * {
+	    -webkit-font-smoothing:antialiased !important;
+	  }
     </style>
+	
+	<script>
+
+		var app = angular.module('myApp', []);
+
+		app.controller('AppCtrl', ['$scope', '$http', '$timeout', function($scope, $http, $timeout) {
+  
+		  // Load the data
+		  $http.get('http://www.corsproxy.com/loripsum.net/api/plaintext').then(function (res) {
+				$scope.loremIpsum = res.data;
+		    $timeout(expand, 0);
+		  });
+  
+		  $scope.autoExpand = function(e) {
+		        var element = typeof e === 'object' ? e.target : document.getElementById(e);
+		    		var scrollHeight = element.scrollHeight -60; // replace 60 by the sum of padding-top and padding-bottom
+		        element.style.height =  scrollHeight + "px";    
+		    };
+  
+		  function expand() {
+		    $scope.autoExpand('TextArea');
+		  }
+		}]);
+	</script>
 
     
-    <div class="window" style="border-radius:14px">
-      <textarea placeholder="Type here and see it later" id="notepad" data-fillr-id="1610435543" data-fillr="bound" autocomplete="off">&lt;!--
-  you could do any element w/ contentEditable, but that doesn't fire onchange
---&gt;
+    <div class="" style="border-radius:10px">
+      <textarea placeholder="Type here and see it later" data-fillr-id="1610435543" data-fillr="bound" autocomplete="off" id="TextArea" ng-model="loremIpsum" ng-keyup="autoExpand($event)">
 </textarea>
       <script>
         /* localstorage polyfill from https://gist.github.com/350433 */
@@ -788,3 +803,64 @@
   gtag('js', new Date());
   gtag('config', 'UA-149751742-1');
 </script>
+  
+  <br style="line-height: 5px">
+  	<div class="topnav" id="footer">
+  	  <a><img style="margin-top:0;margin-left:15;align:center" src="iglooed_final_logo.png" draggable="false" width="70px" height="40px"></a><a style="margin-top:5"><small style="font-size:30px;margin-left:15;margin-right:20;cursor:pointer;color:#fff;display:inline-block" id="">iglooed</small></a>
+  	      <a>
+		  <style>
+		  #footer {
+		     position: fixed;
+		     left: 0;
+		     bottom: 0;
+		     width: 650px;
+		     background-color: transparent;
+		     color: white;
+		     text-align: center;
+		 }
+			  
+  		  		  .dropbtn2 {
+  		  		    background-color: transparent;
+  		  		    color: white;
+  		  		    font-size: 20px;
+  		  		    border: none;
+  		  			margin-top: -10px;
+  	  			  	border-radius: 15px;
+  		  		  }
+
+  		  		  .dropdown2 {
+  		  		  }
+
+  		  		  .dropdown-content2 {
+  		  		    display: none;
+  		  		    background-color: #f1f1f1;
+  		  		    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  		  		  }
+
+  		  		  .dropdown-content2 a {
+  		  		    color: black;
+  		  		    padding: 12px 16px;
+  		  		    text-decoration: none;
+  		  		  }
+  		  		  .dropdown2:hover .dropdown-content2 {display: block;}
+  		  		  .dropdown2:hover .dropbtn2 {background-color: transparent;}
+  		  		  </style>
+		  
+  		  </a><div class="dropdown2"><a>
+  		    <button class="dropbtn2" style="margin-top:10px;margin-left:30px">☰</button>
+  		    </a><div class="dropdown-content2"><a>
+  			    </a><a onclick="demo_insert_div_block();" style="cursor:pointer;font-size:18px;color:#fff;margin-left:-30px;margin-top:-20px;">Add Tile</a>
+  			    <main class="card" style="background-color:transparent;">
+  					<a href="https://chrome.google.com/webstore/detail/iglooed-modern-simple-new/cjmlepalbcpolnnofbiodpbecnfceifb" target="blank_" style="cursor:pointer;font-size:18px;color:#fff;margin-left:0px;margin-top:-20px;">Add To Chrome</a>
+  	  <a><label class="header__selection toggle">
+          <input js-toggle="" class="toggle__input" aria-label="toggle dark mode" type="checkbox">
+          <span class="toggle__fake"></span>
+        </label>
+        <button type="switch" js-clearstorage=""></button>
+    
+    </a><footer class="card__footer footer">
+  	  </footer></main><a>
+  </a>
+
+  		    </div>
+  		  </div>
