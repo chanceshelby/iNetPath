@@ -650,15 +650,7 @@
     <meta charset="utf-8">
     [if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
     <style>
-      #notepad {
-        height: 225px;
-        width: 100%;
-        font-size: 100%;
-        line-height: 125%;
-        font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
-        color: #000;
-      }
-	  textarea {
+	  #textarea {
 	    height:auto;
 	    max-width:600px;
 	    color:#999;
@@ -679,34 +671,10 @@
 	    -webkit-font-smoothing:antialiased !important;
 	  }
     </style>
-	
-	<script>
-
-		var app = angular.module('myApp', []);
-
-		app.controller('AppCtrl', ['$scope', '$http', '$timeout', function($scope, $http, $timeout) {
-  
-		  // Load the data
-		  $http.get('http://www.corsproxy.com/loripsum.net/api/plaintext').then(function (res) {
-				$scope.loremIpsum = res.data;
-		    $timeout(expand, 0);
-		  });
-  
-		  $scope.autoExpand = function(e) {
-		        var element = typeof e === 'object' ? e.target : document.getElementById(e);
-		    		var scrollHeight = element.scrollHeight -60; // replace 60 by the sum of padding-top and padding-bottom
-		        element.style.height =  scrollHeight + "px";    
-		    };
-  
-		  function expand() {
-		    $scope.autoExpand('TextArea');
-		  }
-		}]);
-	</script>
 
     
     <div class="" style="border-radius:10px">
-      <textarea placeholder="Type here and see it later" data-fillr-id="1610435543" data-fillr="bound" autocomplete="off" id="TextArea" ng-model="loremIpsum" ng-keyup="autoExpand($event)">
+      <textarea placeholder="Type here and see it later" id="textarea">
 </textarea>
       <script>
         /* localstorage polyfill from https://gist.github.com/350433 */
@@ -777,21 +745,21 @@
             new e("session")
         }();
         /* the code */
-        var n = document.getElementById("notepad");
+        var n = document.getElementById("textarea");
         /* save */
         var s = function () {
-          localStorage.setItem("notepad", n.value);
+          localStorage.setItem("textarea", n.value);
         }
         /* retrieve (only on page load) */
         if (window.localStorage) {
-          n.value = localStorage.getItem("notepad");
+          n.value = localStorage.getItem("textarea");
         }
         /* autosave onchange and every 500ms and when you close the window */
         n.onchange = s();
         setInterval(s, 500);
         window.onunload = s();
       </script>
-
+	</body>
 </div>
 </div>
 
