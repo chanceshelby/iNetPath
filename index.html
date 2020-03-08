@@ -116,7 +116,7 @@
 	padding-left: 50px;
 	padding-right: -1px;
 	padding-top: 7px;
-	padding-bottom: 30px;
+	padding-bottom: 40px;
 	 background: #141d26;
 	border-radius: 15px;
 	
@@ -137,7 +137,8 @@
     div[class^="metro"] {
       font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
       float: left;
-      margin: 0 21px 21px 0;
+      margin: 0 30px -1px 0;
+	  align: center;
       height: 95px;
       position: relative;
       cursor: pointer;
@@ -149,16 +150,17 @@
       color: #000;
       padding: 3px;
       font-size: 7px;
-      border: none;}
+      border: none;
     }
+
     div[class^="metro"]:active {
     }
     .metro-big {
       width: 200px;
     }
     .metro-small {
-      width: 95px;
-      height: 95px;
+      width: 89px;
+      height: 89px;
 	  
     }
     .dropbtn {
@@ -201,8 +203,6 @@
   </style>
 
 <script>
-
-
 	var app = angular.module('myApp', []);
 
 	app.controller('AppCtrl', ['$scope', '$http', '$timeout', function($scope, $http, $timeout) {
@@ -223,7 +223,24 @@
 	    $scope.autoExpand('TextArea');
 	  }
 	}]);
+
 </script>
+
+<style>
+	.hoverWrapper:hover #hoverShow1 {
+	 display: block;
+	}
+
+	.hoverWrapper #hoverShow1 {
+	 display: none;
+	 position: absolute;
+	 width: 250px;
+	 top: 220px;
+	 font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;;
+	 color: #c51f5d;
+	 font-size: 30px;
+	}
+</style>
 
   <center><br style="line-height: 75px">
     <form action="https://www.google.com/search" spellcheck="false" class="searchform" method="get" name="searchform" target="_blank">
@@ -249,24 +266,25 @@
   </script>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
   <script>
   function htmlForLinks(items) {
     console.log(items.length);
     let html = '';
     items.forEach((i, index) => {
-      html += `<div class="metro-small" style="margin-top:20px;">
+      html += `<div class="hoverWrapper"><div class="metro-small" style="margin-top:20px;">
       <div class="dropdown">
 <button class="dropbtn">&nbsp...&nbsp</button>
 <div class="dropdown-content">
 <button type="button" style="background-color: #ccc;width:100%;height:25px;border:2px solid #fff;border-radius: 5px;" onclick="Delete(${index}) " )>Remove</button>
 </div>
+<p class="link"></p>
 </div>
         <div onclick="window.open( '${i.link}' , '_blank')">
           ${(i.image !==null && i.image !==undefined) ? `<img src=${i.image} draggable="false" style="width: 89px; height:89px; display: block;margin-left: auto;margin-right: auto;border-radius: 15px;border: 0px solid #fff;"></img>` : '<div style="width: 50%; height:50%;"></div>'}
-          <center><p class="body__text" style="line-height:33px;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;color: #fff">${i.name}</p></center>
         </div>
-      </div>`;
+      </div> <center><div id="hoverShow1">${i.link}</div>
+</div></center>`;
+
     });
     return html;
   }
@@ -285,37 +303,31 @@
 
     if (localStorage.getItem('createdDefaults') !== 'true') {
       json.push({
-        "name": "Facebook",
         "image": "https://besticon.herokuapp.com/icon?size=80..120..200&url=facebook.com",
         "link": "http://www.facebook.com"
       });
 
       json.push({
-        "name": "Instagram",
         "image": "https://besticon.herokuapp.com/icon?size=80..120..200&url=instagram.com",
         "link": "http://www.instagram.com"
       });
 
       json.push({
-        "name": "Apple",
         "image": "https://besticon.herokuapp.com/icon?size=80..120..200&url=apple.com",
         "link": "http://www.apple.com"
       });
 
       json.push({
-        "name": "ESPN",
         "image": "https://besticon.herokuapp.com/icon?size=80..120..200&url=espn.com",
         "link": "http://www.espn.com"
       });
 
       json.push({
-        "name": "Wikipedia",
         "image": "https://besticon.herokuapp.com/icon?size=80..120..200&url=wikipedia.com",
         "link": "http://www.wikipedia.com"
       });
 
       json.push({
-        "name": "YouTube",
         "image": "https://besticon.herokuapp.com/icon?size=80..120..200&url=youtube.com",
         "link": "http://www.youtube.com"
       });
@@ -382,10 +394,8 @@
     <script src="https://pagead2.googlesyndication.com/pagead/js/r20190925/r20190131/show_ads_impl.js" id="google_shimpl"></script>
     <script type="text/javascript">
     function demo_insert_div_block() {
-      let name = prompt('Name:');
       let link = prompt('URL:', 'http://www.');
       links.push({
-        "name": name,
         "link": link,
         "image":  "https://besticon.herokuapp.com/icon?size=80..120..200&url=" + link
       });
