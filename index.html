@@ -1,206 +1,4 @@
-<html class="light"><head><style>
-	:focus, .toggle__input:focus-visible ~ .toggle__fake {
-	  outline-color: var(--focus-color);
-	  outline-style: solid;
-	  outline-width: 2px;
-	  outline-offset: 2px;
-	}
-	html,
-	html.light {
-	  --background-image: url("blue-sky-gradient.jpg");
-	  --background-card-color: #ffffff;
-	  --background-success-color: #24a5e7;
-	  --background-toggle-inactive-color: #24a5e7;
-	  --background-toggle-active-color: #24a5e7;
-	  --foreground-color: #fff;
-	  --foreground-success-color: #fff;
-	  --foreground-secondary-color: #fff;
-	  --focus-color: rgba(0, 0, 0, 0);
-	}
-	html.dark {
-  	    --background-image: url("black-chrome-background-2.jpg");
-  	    --background-card-color: #362bc4;
-  	    --background-success-color: #362bc4;
-  	    --background-toggle-inactive-color: #362bc4;
-  	    --background-toggle-active-color: #362bc4;
-  	    --foreground-color: rgba(255, 255, 255, 0.87);
-  	    --foreground-success-color: #ffffff;
-  	    --foreground-secondary-color: #fff;
-  	    --focus-color: rgba(255, 255, 255, 0.5);
-	}
-	@media (prefers-color-scheme: light), (prefers-color-scheme: no-preference) {
-	  html {
-		  --background-image: url("blue-sky-gradient.jpg");
-		  --background-card-color: #ffffff;
-		  --background-success-color: #24a5e7;
-		  --background-toggle-inactive-color: #24a5e7;
-		  --background-toggle-active-color: #24a5e7;
-		  --foreground-color: #fff;
-		  --foreground-success-color: #fff;
-		  --foreground-secondary-color: #fff;
-		  --focus-color: rgba(0, 0, 0, 0);
-	  }
-	  html.dark {
-  	    --background-image: url("black-chrome-background-2.jpg");
-  	    --background-card-color: #362bc4;
-  	    --background-success-color: #362bc4;
-  	    --background-toggle-inactive-color: #362bc4;
-  	    --background-toggle-active-color: #362bc4;
-  	    --foreground-color: rgba(255, 255, 255, 0.87);
-  	    --foreground-success-color: #ffffff;
-  	    --foreground-secondary-color: #fff;
-  	    --focus-color: rgba(255, 255, 255, 0.5);
-	  }
-	}
-	@media (prefers-color-scheme: dark) {
-	  html {
-    	    --background-image: url("black-chrome-background-2.jpg");
-    	    --background-card-color: #362bc4;
-    	    --background-success-color: #362bc4;
-    	    --background-toggle-inactive-color: #362bc4;
-    	    --background-toggle-active-color: #362bc4;
-    	    --foreground-color: rgba(255, 255, 255, 0.87);
-    	    --foreground-success-color: #ffffff;
-    	    --foreground-secondary-color: #fff;
-    	    --focus-color: rgba(255, 255, 255, 0.5);
-	  }
-	  html.light {
-		  --background-image: url("blue-sky-gradient.jpg");
-		  --background-card-color: #ffffff;
-		  --background-success-color: #24a5e7;
-		  --background-toggle-inactive-color: #24a5e7;
-		  --background-toggle-active-color: #24a5e7;
-		  --foreground-color: #fff;
-		  --foreground-success-color: #fff;
-		  --foreground-secondary-color: #fff;
-		  --focus-color: rgba(0, 0, 0, 0);
-	  }
-	}
-	* {
-	  box-sizing: border-box;
-	}
-	html,
-	body {
-	}
-	body {
-	  justify-content: center;
-	  font-family: "Roboto", sans-serif;
-	  background-image: var(--background-image);
-  }
-	p {
-	  color: var(--foreground-secondary-color);
-	  line-height: 1.5;
-	  margin-bottom: 16px;
-	}
-	code {
-	  display: inline-block;
-	  padding: 2px 6px;
-	  background-color: var(--background-toggle-active-color);
-	  border-radius: 2px;
-	}
-	input[type="checkbox"] {
-	  position: absolute;
-	  top: 0;
-	  left: 0;
-	  width: 100%;
-	  height: 100%;
-	  margin: 0;
-	  padding: 0;
-	  opacity: 0;
-	  cursor: inherit;
-	}
-	.card {
-	  margin: 8px 16px;
-	  background-color: var(--background-card-color);
-	  border-radius: 8px;
-	}
-	.card__header {
-	  display: flex;
-	  flex-wrap: wrap;
-	  align-items: center;
-	  justify-content: space-between;
-	}
-	.card__body {
-	  padding-top: 16px;
-	}
-	.card__body--right {
-	  display: flex;
-	  justify-content: flex-end;
-	  padding-top: 0;
-	}
-	.header__text {
-	  padding: 8px 0;
-	  margin-right: 16px;
-	}
-	.footer__p {
-	  padding: 8px 24px;
-	  margin: 0 0 16px -24px;
-	  border-radius: 0 22px 22px 0;
-	  background-color: var(--background-success-color);
-	  color: var(--foreground-success-color);
-	}
-	.toggle {
-	  flex: 1;
-	  position: relative;
-	  display: flex;
-	  flex-wrap: wrap;
-	  align-items: center;
-	  cursor: pointer;
-	}
-	.toggle__input:checked ~ .toggle__fake::after {
-	  left: 30px;
-	  background-color: var(--foreground-color);
-	}
-	.toggle__input:focus ~ .toggle__fake, .toggle__input:not([disabled]):hover ~ .toggle__fake {
-	  background-color: var(--background-toggle-active-color);
-	}
-	.toggle__fake {
-	  will-change: background-color;
-	  position: relative;
-	  display: inline-block;
-	  width: 52px;
-	  height: 24px;
-	  background-color: var(--background-toggle-inactive-color);
-	  border: 1px solid var(--foreground-color);
-	  border-radius: 12px;
-	  transition: background-color 100ms cubic-bezier(0.4, 0, 0.2, 1);
-	  margin-left:0px;
-	  margin-top:-14px;
-	}
-	.toggle__fake::after {
-	  will-change: left;
-	  content: "";
-	  position: absolute;
-	  top: 50%;
-	  left: 4px;
-	  display: block;
-	  width: 15px;
-	  height: 15px;
-	  background-color: var(--background-card-color);
-	  border: 1px solid var(--foreground-color);
-	  border-radius: 8px;
-	  -webkit-transform: translateY(-50%);
-	          transform: translateY(-50%);
-	  transition: left 100ms cubic-bezier(0.4, 0, 0.2, 1);
-	}
-	.toggle__text {
-	  margin-right: 100%;
-	  margin-top: -1.5px;
-	}
-	.switch {
-	  -webkit-appearance: none;
-	     -moz-appearance: none;
-	          appearance: none;
-	  display: inline-flex;
-	  align-items: center;
-	  color: var(--foreground-color);
-	  text-transform: uppercase;
-	  letter-spacing: 0.1em;
-	  background-color: var(--background-color);
-	  border-radius: 4px;
-	  cursor: pointer;
-	}
-</style>
+
 
 <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script src="https://www.googletagservices.com/activeview/js/current/osd.js?cb=%2Fr20100101"></script><script src="https://pagead2.googlesyndication.com/pagead/js/r20200113/r20190131/show_ads_impl_fy2019.js" id="google_shimpl"></script><script>
 	const themePreference = () => {
@@ -285,76 +83,69 @@
 	  }, false);
 	}, false);
 </script>
-	<style>
-	.topnav {
-	  overflow: hidden;
-	  border-radius: 15px;
-	  padding: 8px 16px;
-	  height: 70px;
-	  width:650px;
-	  margin-right: -27;
-	  /*background-color: #303030; */
-	}
-	.topnav a {
-	  float: left;
-	  color: #f2f2f2;
-	  text-align: center;
-	  text-decoration: none;
-	  font-size: 17px;
-	}
-	</style>
-	
-<br style="line-height: 25px">
-    	<div class="topnav">
-    	  <a><img style="margin-top:0;margin-left:15;align:center" src="iglooed_final_logo.png" draggable="false" width="70px" height="40px"></a><a style="margin-top:5"><small style="font-size:30px;margin-left:15;margin-right:20;cursor:pointer;color:#fff;display:inline-block" id="">iglooed</small></a>
-    	      <a>
-  		  <style>
-			  
-    		  		  .dropbtn2 {
-    		  		    background-color: transparent;
-    		  		    color: white;
-    		  		    font-size: 20px;
-    		  		    border: none;
-    		  			margin-top: -10px;
-    	  			  	border-radius: 15px;
-    		  		  }
 
-    		  		  .dropdown2 {
-    		  		  }
+		<style>
+			.appleNav {
+			  max-width: 980px;
+			  margin: 0 auto;
+			}
+		</style>
 
-    		  		  .dropdown-content2 {
-    		  		    display: none;
-    		  		    background-color: #f1f1f1;
-    		  		    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    		  		  }
+				  <style>
 
-    		  		  .dropdown-content2 a {
-    		  		    color: black;
-    		  		    padding: 12px 16px;
-    		  		    text-decoration: none;
-    		  		  }
-    		  		  .dropdown2:hover .dropdown-content2 {display: block;}
-    		  		  .dropdown2:hover .dropbtn2 {background-color: transparent;}
-    		  		  </style>
-		  
-    		  </a><div class="dropdown2"><a>
-    		    <button class="dropbtn2" style="margin-top:10px;margin-left:30px">☰</button>
-    		    </a><div class="dropdown-content2"><a>
-    			    </a><a onclick="demo_insert_div_block();" style="cursor:pointer;font-size:18px;color:#fff;margin-left:-30px;margin-top:-20px;">Add Tile</a>
-    			    <main class="card" style="background-color:transparent;">
-    					<a href="https://chrome.google.com/webstore/detail/iglooed-modern-simple-new/cjmlepalbcpolnnofbiodpbecnfceifb" target="blank_" style="cursor:pointer;font-size:18px;color:#fff;margin-left:0px;margin-top:-20px;">Add To Chrome</a>
-    	  <a><label class="header__selection toggle">
-            <input js-toggle="" class="toggle__input" aria-label="toggle dark mode" type="checkbox">
-            <span class="toggle__fake"></span>
-          </label>
-          <button type="switch" js-clearstorage=""></button>
-    
-      </a><footer class="card__footer footer">
-    	  </footer></main><a>
-    </a>
+				  body {
+				    margin: 0;
+				  }
 
-    		    </div>
-    		  </div>
+				  .nav_1 {
+				    height: 44px;
+				    background: #3b5998;
+				  }
+
+				  .nav_1 ul {
+				    display: flex;
+				    height: 44px;
+				    justify-content: space-around;
+				    align-items: center;
+				    padding: 0;
+				    margin: 0 auto;
+				    list-style-type: none;
+				  }
+
+				  .nav_1 li {}
+
+				  .nav_1 a {
+				    display: block;
+				    color: white;
+				    font-size: 15px;
+				    font-weight: lighter;
+				    text-decoration: none;
+				    transition: 0.3s;
+					font-family: arial;
+					cursor: pointer;
+					font-size:17px;
+					
+				  }
+
+				  .nav_1 a:hover {
+				    color: #B8B8B8;
+				  }
+
+				  .appleNav {
+				    max-width: 980px;
+				    margin: 0 auto;
+				  }
+				  </style>
+				  
+				  <div class="nav_1">
+				      <div class="appleNav">
+				        <ul>
+				          <li>
+				            <a href="#"><img src="iglooed_final_logo.png" height="20"></a>
+  						   <li><a onclick="demo_insert_div_block();">Add Link</a></li>
+  				          <li><a href="https://chrome.google.com/webstore/detail/iglooed-modern-simple-new/cjmlepalbcpolnnofbiodpbecnfceifb" target="blank_">Chrome</a></li>
+				          </li>
+						 
 
 	<body bgcolor="#c1c8d3">
 
@@ -368,6 +159,9 @@
   <script data-ad-client="ca-pub-8622623811810201" async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" data-checked-head="true"></script>
   <title>iglooed - New Tab</title>
   <style>
+	  body {
+	  	background-color: #ccd0da;
+	  }
     input {
       margin: 0px 25px;
       color: #808080;
@@ -506,7 +300,7 @@
   <center><br style="line-height: 40px">
     <form action="https://www.google.com/search" class="searchform" method="get" name="searchform" target="_blank">
       <input name="sitesearch" type="hidden" style="height:100%" value="">
-      <input autocomplete="on" class="form-control search" name="q" placeholder="Google Search" required="required" type="text" style="border-radius:5px;height:35px;width:50%;box-shadow:0px 0px 5px 1px rgba(0,0,0,0.1);">
+      <input autocomplete="on" class="form-control search" name="q" placeholder="Google Search" required="required" type="text" style="border-radius:5px;height:35px;width:50%;box-shadow:0px 0px 5px 1px rgba(0,0,0,0.1);margin-left:100px">
       <button style="border-radius:5px;font-size:18px;height:35px;background-color:#fff;border:5px solid #fff;box-shadow:0px 0px 5px 1px rgba(0,0,0,0.1);" class="button" type="submit">Search</button>
     </form>
   </center><br><br><br>
