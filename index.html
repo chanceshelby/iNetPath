@@ -237,16 +237,8 @@
 	 font-size: 30px;
 	}
 </style>
-
-  <center><br style="line-height: 75px">
-    <form action="https://www.google.com/search" spellcheck="false" class="searchform" method="get" name="searchform" target="_blank">
-      <input name="sitesearch" type="hidden" style="height:100%" value="">
-      <input autocomplete="on" class="form-control-search" name="q" placeholder="Google Search" required="required" type="text" style="border-radius:5px;height:35px;width:50%;margin-left:100px;background-color:#1f2d3e;border:1px solid #fff;padding:3px;color:#fff">
-      <button style="border-radius:5px;font-size:18px;height:35px;background-color:#1f2d3e;border:1px solid #fff;color: #fff;padding:3px;" class="button" type="submit">Search</button>
-    </form>
-  </center>
- 
-  <br><br><br>
+					      
+<br><br><br>
   
   <style>
   #myDIV {
@@ -458,32 +450,32 @@
 
     if (localStorage.getItem('createdDefaults') !== 'true') {
       json.push({
-        "image": "https://besticon.herokuapp.com/icon?size=80..120..200&url=facebook.com",
+        "image": "https://besticon-demo.herokuapp.com/icon?size=80..120..200&url=facebook.com",
         "link": "http://www.facebook.com"
       });
 
       json.push({
-        "image": "https://besticon.herokuapp.com/icon?size=80..120..200&url=instagram.com",
+        "image": "https://besticon-demo.herokuapp.com/icon?size=80..120..200&url=instagram.com",
         "link": "http://www.instagram.com"
       });
 
       json.push({
-        "image": "https://besticon.herokuapp.com/icon?size=80..120..200&url=apple.com",
+        "image": "https://besticon-demo.herokuapp.com/icon?size=80..120..200&url=apple.com",
         "link": "http://www.apple.com"
       });
 
       json.push({
-        "image": "https://besticon.herokuapp.com/icon?size=80..120..200&url=espn.com",
+        "image": "https://besticon-demo.herokuapp.com/icon?size=80..120..200&url=espn.com",
         "link": "http://www.espn.com"
       });
 
       json.push({
-        "image": "https://besticon.herokuapp.com/icon?size=80..120..200&url=wikipedia.com",
+        "image": "https://besticon-demo.herokuapp.com/icon?size=80..120..200&url=wikipedia.com",
         "link": "http://www.wikipedia.com"
       });
 
       json.push({
-        "image": "https://besticon.herokuapp.com/icon?size=80..120..200&url=youtube.com",
+        "image": "https://besticon-demo.herokuapp.com/icon?size=80..120..200&url=youtube.com",
         "link": "http://www.youtube.com"
       });
 
@@ -552,7 +544,7 @@
       let link = prompt('URL:', 'http://www.');
       links.push({
         "link": link,
-        "image":  "https://besticon.herokuapp.com/icon?size=80..120..200&url=" + link
+        "image":  "https://besticon-demo.herokuapp.com/icon?size=80..120..200&url=" + link
       });
       saveLinks();
       let element = document.getElementById('tiles');
