@@ -459,32 +459,32 @@
 
     if (localStorage.getItem('createdDefaults') !== 'true') {
       json.push({
-        "image": "https://besticon.herokuapp.com/icon?size=80..120..200&url=facebook.com",
+        "image": "https://besticon-demo.herokuapp.com/icon?url=facebook.com&size=80..120..200",
         "link": "http://www.facebook.com"
       });
 
       json.push({
-        "image": "https://besticon.herokuapp.com/icon?size=80..120..200&url=instagram.com",
+        "image": "https://besticon-demo.herokuapp.com/icon?url=instagram.com&size=80..120..200",
         "link": "http://www.instagram.com"
       });
 
       json.push({
-        "image": "https://besticon.herokuapp.com/icon?size=80..120..200&url=apple.com",
+        "image": "https://besticon-demo.herokuapp.com/icon?url=apple.com&size=80..120..200",
         "link": "http://www.apple.com"
       });
 
       json.push({
-        "image": "https://besticon.herokuapp.com/icon?size=80..120..200&url=espn.com",
+        "image": "https://besticon-demo.herokuapp.com/icon?url=espn.com&size=80..120..200",
         "link": "http://www.espn.com"
       });
 
       json.push({
-        "image": "https://besticon.herokuapp.com/icon?size=80..120..200&url=wikipedia.com",
+        "image": "https://besticon-demo.herokuapp.com/icon?url=wikipedia.com&size=80..120..200",
         "link": "http://www.wikipedia.com"
       });
 
       json.push({
-        "image": "https://besticon.herokuapp.com/icon?size=80..120..200&url=youtube.com",
+        "image": "https://besticon-demo.herokuapp.com/icon?url=youtube.com&size=80..120..200",
         "link": "http://www.youtube.com"
       });
 
@@ -552,8 +552,8 @@
     function demo_insert_div_block() {
       let link = prompt('URL:', 'http://www.');
       links.push({
-        "link": link,
-        "image":  "https://besticon.herokuapp.com/icon?size=80..120..200&url=" + link
+        "link": link, 
+        "image":  "https://besticon-demo.herokuapp.com/icon?url=" + link + "&size=80..120..200"
       });
       saveLinks();
       let element = document.getElementById('tiles');
