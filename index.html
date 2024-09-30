@@ -1,713 +1,161 @@
-
-<style>
-			.appleNav {
-			  max-width: 980px;
-			  margin: 0 auto;
-			}
-		</style>
-
-				  <style>
-
-				  body {
-				    margin: 0;
-				  }
-
-				  .nav_1 {
-				    height: 44px;
-				    background: #141d26;
-				  }
-
-				  .nav_1 ul {
-				    display: flex;
-				    height: 44px;
-				    justify-content: space-around;
-				    align-items: center;
-				    padding: 0;
-				    margin: 0 auto;
-				    list-style-type: none;
-				  }
-
-				  .nav_1 li {}
-
-				  .nav_1 a {
-				    display: block;
-				    color: white;
-				    font-size: 15px;
-				    font-weight: lighter;
-				    text-decoration: none;
-				    transition: 0.3s;
-					font-family: arial;
-					cursor: pointer;
-					font-size:17px;
-					
-				  }
-
-				  .nav_1 a:hover {
-				    color: #B8B8B8;
-				  }
-
-				  .appleNav {
-				    max-width: 980px;
-				    margin: 0 auto;
-				  }
-				  </style>
-				  
-				  <div class="nav_1">
-				      <div class="appleNav">
-				        <ul>
-				          <li>
-				            <a href="#"><img onclick="myFunction1()" src="iglooed_final_logo.png" height="20"></a>
-</li>
-						
-
-  <!--<a href="#about" style="margin: 8 0">About</a>-->
-</div>
-<button style="cursor:pointer;background: #395371;color:#fff;padding: 4px;font-size:12px" onclick="window.open( 'https://chrome.google.com/webstore/detail/new-tab-page-iglooed/cjmlepalbcpolnnofbiodpbecnfceifb' , '_blank')" >Chrome Extension</button>
-<div style="padding-left:16px">
-</div>
-
-
-  <script data-ad-client="ca-pub-8622623811810201" async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" data-checked-head="true"></script>
-  <title>iglooed - New Tab</title>
-  <style>
-	  body {
-	  	background-color: #243447;
-	  }
-    input {
-      margin: 0px 25px;
-      color: #808080;
-      height: 30px;
-      font-size: 20px;
-      border: 3px solid #fff;
-      width: 40%;
-    }
-    .window {
-      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
-      border: 8px solid #fff;
-      max-width: 100%;
-      margin: 0 auto;
-      background: #7289da;
-      width: 100%;
-      height: 235px;
-      max-height: 235px;
-    }
-    .window:before {
-      border: 3px solid #ccc;
-    }
-    @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,200);
-    * {
-      margin: 0;
-      padding: 0;
-      outline: none;
-      border: none;
-      box-sizing: border-box;
-    }
-    *:before,
-    *:after {
-      box-sizing: border-box;
-    }
-    html {
-      width: 100%;
-    }
-	.wrap {
-	padding-left: 50px;
-	padding-right: -1px;
-	padding-top: 7px;
-	padding-bottom: 40px;
-	 background: #141d26;
-	border-radius: 15px;
-	
-	}
-    .wrap,
-    .wrap2 {
-      width: 40%;
-      height: auto;
-      margin: 60px 25px;
-      float: left;
-      /*border: 3px solid black; */
-    }
-    .wrap2 {
-      width: 40% !important;
-      float: right;
-      display: inline-block;
-    }
-    div[class^="metro"] {
-      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
-      float: left;
-      margin: 0 30px -1px 0;
-	  align: center;
-      height: 95px;
-      position: relative;
-      cursor: pointer;
-	  text-align: left;
-    }
-    div[class^="metro"]:hover .dropbtn {
-      background-color: #fff;
-      margin-bottom:-11px;
-      color: #000;
-      padding: 3px;
-      font-size: 7px;
-      border: none;
-    }
-
-    div[class^="metro"]:active {
-    }
-    .metro-big {
-      width: 200px;
-    }
-    .metro-small {
-      width: 89px;
-      height: 89px;
-	  
-    }
-    .dropbtn {
-      color: transparent;
-      background-color: transparent;
-	  border-radius: 5px;
-    }
-    .dropdown {
-      position: relative;
-      display: inline-block;
-	  border-radius: 5px;
-    }
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      background-color: #f1f1f1;
-      min-width: 100px;
-      z-index: 1;
-	  border-radius: 5px;
-    }
-    .dropdown-content a {
-      color: black;
-      padding: 12px 16px;
-      text-decoration: none;
-      display: block;
-	  border-radius: 5px;
-    }
-    .dropdown-content a:hover {background-color: #ddd;}
-    .dropdown:hover .dropdown-content {display: block;}
-    .dropdown:hover .dropbtn {background-color: #ccc;;}
-    br.tile {
-   line-height: 5px;
-    }
-	.form-control-search::-webkit-input-placeholder {
-	    color: #fff;
-	 }
- 	#textarea::-webkit-input-placeholder {
- 	    color: #fff;
- 	 }
-  </style>
-
-<script>
-	var app = angular.module('myApp', []);
-
-	app.controller('AppCtrl', ['$scope', '$http', '$timeout', function($scope, $http, $timeout) {
-  
-	  // Load the data
-	  $http.get('http://www.corsproxy.com/loripsum.net/api/plaintext').then(function (res) {
-			$scope.loremIpsum = res.data;
-	    $timeout(expand, 0);
-	  });
-  
-	  $scope.autoExpand = function(e) {
-	        var element = typeof e === 'object' ? e.target : document.getElementById(e);
-	    		var scrollHeight = element.scrollHeight -60; // replace 60 by the sum of padding-top and padding-bottom
-	        element.style.height =  scrollHeight + "px";    
-	    };
-  
-	  function expand() {
-	    $scope.autoExpand('TextArea');
-	  }
-	}]);
-
-</script>
-
-<style>
-	.hoverWrapper:hover #hoverShow1 {
-	 display: block;
-	}
-
-	.hoverWrapper #hoverShow1 {
-	 display: none;
-	 position: absolute;
-	 width: 250px;
-	 top: 220px;
-	 font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;;
-	 color: #c51f5d;
-	 font-size: 30px;
-	}
-</style>
-
-  <center><br style="line-height: 75px">
-    <form action="https://www.google.com/search" spellcheck="false" class="searchform" method="get" name="searchform" target="_blank">
-      <input name="sitesearch" type="hidden" style="height:100%" value="">
-      <input autocomplete="on" class="form-control-search" name="q" placeholder="Google Search" required="required" type="text" style="border-radius:5px;height:35px;width:50%;margin-left:100px;background-color:#1f2d3e;border:1px solid #fff;padding:3px;color:#fff">
-      <button style="border-radius:5px;font-size:18px;height:35px;background-color:#1f2d3e;border:1px solid #fff;color: #fff;padding:3px;" class="button" type="submit">Search</button>
-    </form>
-  </center>
- 
-  <br><br><br>
-  
-  <style>
-  #myDIV {
-    width: 100%;
-    padding: 20px 0;
-    text-align: center;
-    background-color: #436185;
-    margin-top: 20px;
-    display: none;
-  }
-  #myDIV1 {
-    display: none;
-  }
-  #myDIV2 {
-    display: none;
-  }
-  #myDIV3 {
-    display: none;
-  }
-  #myDIV4 {
-    display: none;
-  }
-  #myDIV5 {
-    display: none;
-  }
-  #myDIV6 {
-    display: none;
-  }
-  </style>
-  
-  <script>
-  function myFunction1() {
-    var x = document.getElementById("myDIV");
-    if (x.style.display === "block") {
-      x.style.display = "none";
-    } else {
-      x.style.display = "block";
-    }
-  }
-  function myFunction2() {
-    var x1 = document.getElementById("myDIV1");
-    if (x1.style.display === "none") {
-      x1.style.display = "block";
-    } else {
-      x1.style.display = "none";
-    }
-}
-  function myFunction3() {
-    var x2 = document.getElementById("myDIV2");
-    if (x2.style.display === "none") {
-      x2.style.display = "block";
-    } else {
-      x2.style.display = "none";
-    }
-}
-  function myFunction4() {
-    var x3 = document.getElementById("myDIV3");
-    if (x3.style.display === "none") {
-      x3.style.display = "block";
-    } else {
-      x3.style.display = "none";
-    }
-}
-  function myFunction5() {
-    var x4 = document.getElementById("myDIV4");
-    if (x4.style.display === "none") {
-      x4.style.display = "block";
-    } else {
-      x4.style.display = "none";
-    }
-}
-  function myFunction6() {
-    var x5 = document.getElementById("myDIV6");
-    if (x5.style.display === "none") {
-      x5.style.display = "block";
-    } else {
-      x5.style.display = "none";
-    }
-}
-  </script>
-  
-  <style>
-  * {
-    box-sizing: border-box;
-  }
-
-  .row {
-    display: flex;
-  }
-
-  /* Create three equal columns that sits next to each other */
-  .column {
-    flex: 20%;
-    padding: 2px;
-  }
-  </style>
- 
-  
-
-  <script>
-    function Delete(button) {
-      if (typeof button === 'number') {
-        links.splice(button, 1);
-        saveLinks();
-        let element = document.getElementById('tiles');
-        element.innerHTML = htmlForLinks(links);
-      } else {
-        var parent = button.parentNode;
-        var grand_father = parent.parentNode;
-        grand_father.removeChild(parent);
-      }
-    }
-  </script>
-	
-	
-	  <div id="myDIV">
-		  <center>
-	<div class="row">
-	  <div class="column">
-	    <img onclick="myFunction2()" src="https://s3-eu-west-1.amazonaws.com/wanted5games-games-live/game-img/8063.png" alt="" style="width:100px;height:100px;border-radius: 15px;border: 2px solid #fff;">
-	  </div>
-  
-	  <div class="column">
-	    <img onclick="myFunction3()" src="https://s3-eu-west-1.amazonaws.com/wanted5games-games-live/game-img/8120.png" alt="" style="width:100px;height:100px;border-radius: 15px;border: 2px solid #fff;">
-	  </div>
-  
-	  <div class="column">
-	    <img onclick="myFunction4()" src="https://s3-eu-west-1.amazonaws.com/wanted5games-games-live/game-img/8156.png" alt="" style="width:100px;height:100px;border-radius: 15px;border: 2px solid #fff;">
-	  </div>
-	  
-	  <div class="column">
-	    <img onclick="myFunction5()" src="https://s3-eu-west-1.amazonaws.com/wanted5games-games-live/game-img/8204.png" alt="" style="width:100px;height:100px;border-radius: 15px;border: 2px solid #fff;">
-	  </div>
-	  
-	  <div class="column">
-	    <img onclick="myFunction6()" src="https://s3-eu-west-1.amazonaws.com/wanted5games-games-live/game-img/8152.png" alt="" style="width:100px;height:100px;border-radius: 15px;border: 2px solid #fff;">
-	  </div>
-
-	</div>
-		  </center>
-		  <div id="myDIV1">
-			  <br><br>
-		  <iframe src="https://wanted5games.com/games/html5/zombie-road-new-en-s-iga-cloud/index.html?pub=10" name="cloudgames-com" height="450"></iframe>
-		  </div>
-	  
-		  <div id="myDIV2">
-			  <br><br>
-		  <iframe src="https://wanted5games.com/games/html5/checkers-new-en-s-iga-cloud/index.html?pub=10" name="cloudgames-com" width="450" height="450" frameborder="0" scrolling="no"></iframe>
-		  </div>
-	  
-		  <div id="myDIV3">
-			  <br><br>
-		  <iframe src="https://wanted5games.com/games/html5/brick-breaker-2018-new-en-s-iga-cloud/index.html?pub=10" name="cloudgames-com" width="450" height="450" frameborder="0" scrolling="no"></iframe>
-	  </div>
-	  
-		  <div id="myDIV4">
-			  <br><br>
-		  <iframe src="https://wanted5games.com/games/html5/downhill-ski-new-en-s-iga-cloud/index.html?pub=10" name="cloudgames-com" width="450" height="450" frameborder="0" scrolling="no"></iframe>
-	  </div>
-	  
-		  <div id="myDIV5">
-			  <br><br>
-		  <iframe src="" name="cloudgames-com" width="450" height="450" frameborder="0" scrolling="no"></iframe>
-	  </div>
-	  
-		  <div id="myDIV6">
-			  <br><br>
-<iframe src="https://wanted5games.com/games/html5/car-rush-new-en-s-iga-cloud/index.html?pub=10" name="cloudgames-com" width="450" height="450" frameborder="0" scrolling="no"></iframe>
-	  </div>
-  </div>
-	
-	
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script>
-  function htmlForLinks(items) {
-    console.log(items.length);
-    let html = '';
-    items.forEach((i, index) => {
-      html += `<div class="hoverWrapper"><div class="metro-small" style="margin-top:20px;">
-      <div class="dropdown">
-<button class="dropbtn">&nbsp...&nbsp</button>
-<div class="dropdown-content">
-<button type="button" style="background-color: #ccc;width:100%;height:25px;border:2px solid #fff;border-radius: 5px;" onclick="Delete(${index}) " )>Remove</button>
-</div>
-<p class="link"></p>
-</div>
-        <div onclick="window.open( '${i.link}' , '_blank')">
-          ${(i.image !==null && i.image !==undefined) ? `<img src=${i.image} draggable="false" style="width: 89px; height:89px; display: block;margin-left: auto;margin-right: auto;border-radius: 15px;border: 0px solid #fff;"></img>` : '<div style="width: 50%; height:50%;"></div>'}
-        </div>
-      </div> <center><div id="hoverShow1">${i.link}</div>
-</div></center>`;
-
-    });
-    return html;
-  }
-  links = [];
-  function loadLinks() {
-    if (document.getElementById('tiles') === null) {
-      setTimeout(() => loadLinks(), 1000);
-      return;
-    }
-    let tmplinks = localStorage.getItem('links');
-
-    if (tmplinks === undefined || tmplinks === null || tmplinks === '') {
-      tmplinks = '[]';
-    }
-    let json = JSON.parse(tmplinks);
-
-    if (localStorage.getItem('createdDefaults') !== 'true') {
-      json.push({
-        "image": "https://besticon-demo.herokuapp.com/icon?url=facebook.com&size=80..120..200",
-        "link": "http://www.facebook.com"
-      });
-
-      json.push({
-        "image": "https://besticon-demo.herokuapp.com/icon?url=instagram.com&size=80..120..200",
-        "link": "http://www.instagram.com"
-      });
-
-      json.push({
-        "image": "https://besticon-demo.herokuapp.com/icon?url=apple.com&size=80..120..200",
-        "link": "http://www.apple.com"
-      });
-
-      json.push({
-        "image": "https://besticon-demo.herokuapp.com/icon?url=espn.com&size=80..120..200",
-        "link": "http://www.espn.com"
-      });
-
-      json.push({
-        "image": "https://besticon-demo.herokuapp.com/icon?url=wikipedia.com&size=80..120..200",
-        "link": "http://www.wikipedia.com"
-      });
-
-      json.push({
-        "image": "https://besticon-demo.herokuapp.com/icon?url=youtube.com&size=80..120..200",
-        "link": "http://www.youtube.com"
-      });
-
-      localStorage.setItem("createdDefaults", "true");
-    }
-
-    links = json;
-
-    let html = htmlForLinks(links);
-
-    let element = document.getElementById('tiles');
-    element.innerHTML = html;
-    saveLinks();
-  }
-
-  function saveLinks() {
-    localStorage.setItem('links', JSON.stringify(links));
-  }
-
-  loadLinks();
-  </script>
-
-  
-  <div class="wrap">
-	  <a onclick="demo_insert_div_block();" style="margin-left:-20px;font-size:20px">+</a>
-    <div id="tiles" style="margin: -33px 0px;">
-
-    <div id="democontainer">
-
-    </div></div>
-<!--
-<div class="metro-small" style="background-color: transparent;padding:2px">
-    <form action="/dontcrawl/">
-      <input style="
-        margin:15;
-        width: 78px;
-        height:78px;
-        display: block;
-        margin-left: auto;
-        padding:4px;
-        cursor: pointer;
-        color:#2a2b2c;
-        border-radius: 16px;
-        margin-right: auto;" type="submit" onclick="demo_insert_div_block(); return false;" name="demo" id="demo" value="+">
-    </input>
-    </form>
-  </div>
--->
-</div>
-
-
-    <style>
-      textarea {
-        color: #000;
-        resize: none;
-        width: 50;
-        border-radius: 0px;
-        background-color: transparent;
-        float:left;
-      }
-    </style>
-    <script src="https://www.googletagservices.com/activeview/js/current/osd.js?cb=%2Fr20100101"></script>
-    <script src="https://pagead2.googlesyndication.com/pagead/js/r20190925/r20190131/show_ads_impl.js" id="google_shimpl"></script>
-    <script type="text/javascript">
-    function demo_insert_div_block() {
-      let link = prompt('URL:', 'http://www.');
-      links.push({
-        "link": link, 
-        "image":  "https://besticon-demo.herokuapp.com/icon?url=" + link + "&size=80..120..200"
-      });
-      saveLinks();
-      let element = document.getElementById('tiles');
-      element.innerHTML = htmlForLinks(links);
-    }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Start Page</title>
+    <link rel="stylesheet" href="https://cdn.prod.website-files.com/66fa1954e790e2bdb8eaae54/css/start-page-de0f75.webflow.fedd124fb.css">
+    <script>
+        (function(window, document){
+            var docEl = document.documentElement;
+            var modClass = " w-mod-js";
+            docEl.className += modClass;
+            if ('ontouchstart' in window || window.DocumentTouch && document instanceof DocumentTouch) {
+                docEl.className += " w-mod-touch";
+            }
+        })(window, document);
     </script>
     <style>
-      .democontainer {
-        float: left;
-        margin: 0 10px 10px 0;
-        margin-bottom:-15px
-        height: 95px;
-        width: 95px;
-        position: relative;
-        cursor: pointer;
-        transition: all .4s ease;
-        user-drag: element;
-        border: solid 2px transparent;
-      }
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Form containers */
+        .w-form {
+            margin: 20px;
+        }
+
+        textarea {
+            width: 100%;
+            max-width: 100%;
+            height: 300px;
+            resize: none;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+        }
+
     </style>
+</head>
+<body>
 
-  
-  
-  
-  
-
-  <div class="wrap2">
-<!--
-    <div class="Weatherwindow">
-      <div style="width: 100%;"><iframe style="display: block;" src="https://cdnres.willyweather.com/widget/loadView.html?id=115404" width="100%" height="92" frameborder="0" scrolling="no"></iframe><a style="width: 20px;text-indent: -9999em;z-index: 1;margin: -92px 0 0 0;float: right;height: 92px;position: relative" href="https://www.willyweather.com/tx/harris-county/houston.html" rel="nofollow">Houston Weather</a></div>
+    <!-- Form 1 -->
+    <div class="w-form">
+        <form id="email-form-2" name="email-form-2" method="GET">
+            <div class="text-block">Start Page</div>
+        </form>
     </div>
-    <br>
-    <meta charset="UTF-8">
-    <meta charset="utf-8">
-    [if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-    <style>
-	  #textarea {
-		 background: #1f2d3e;
-	    height:auto;
-	    max-width:600px;
-	    color:#fff;
-	    font-weight:335px;
-	    font-size:20px;
-	    font-family:'Ubuntu', Helvetica, Arial, sans-serif;
-	    width:100%;
-	    border-radius:8px;
-	    line-height:1.5em;
-	    border:none;
-	    padding:10px;
-		height: 250px;
-		border: 1px solid #fff;
-	  }
 
-	  * {
-	    -webkit-font-smoothing:antialiased !important;
-	  }
-    </style>
+    <!-- Form 2 -->
+    <div class="w-form">
+        <form id="email-form-4" name="email-form-4" method="GET">
+            <textarea placeholder="List 1"></textarea>
+        </form>
+    </div>
 
-    
-    <div class="notes" style="border-radius:10px">
-      <textarea spellcheck="false" placeholder="Type here and see it later" id="textarea">
-	  </div>
-</textarea>
-      <script>
-        /* localstorage polyfill from https://gist.github.com/350433 */
-        ("undefined" == typeof window.localStorage || "undefined" == typeof window.sessionStorage) && function () {
-          function e(f) {
-            function e(a) {
-              var b;
-              b = new Date;
-              b.setTime(b.getTime() + 31536E6);
-              document.cookie = "localStorage=" + a + ("; expires=" + b.toGMTString()) + "; path=/"
-            }
-            function g(a) {
-              a = JSON.stringify(a);
-              "session" == f ? window.name = a : e(a)
-            }
-            var d = function () {
-              var a;
-              if ("session" == f) a = window.name;
-              else a: {
-                a = document.cookie.split(";");
-                var b, c;
-                for (b = 0; b < a.length; b++) {
-                  for (c = a[b];
-                    " " == c.charAt(0);) c = c.substring(1, c.length);
-                  if (0 == c.indexOf("localStorage=")) {
-                    a =
-                      c.substring(13, c.length);
-                    break a
-                  }
-                }
-                a = null
-              }
-              return a ? JSON.parse(a) : {}
-            }();
-            return {
-              length: 0,
-              clear: function () {
-                d = {};
-                this.length = 0;
-                "session" == f ? window.name = "" : e("")
-              },
-              getItem: function (a) {
-                return void 0 === d[a] ? null : d[a]
-              },
-              key: function (a) {
-                var b = 0,
-                  c;
-                for (c in d) {
-                  if (b == a) return c;
-                  b++
-                }
-                return null
-              },
-              removeItem: function (a) {
-                delete d[a];
-                this.length--;
-                g(d)
-              },
-              setItem: function (a, b) {
-                d[a] = b + "";
-                this.length++;
-                g(d)
-              }
-            }
-          }
-          if ("undefined" == typeof window.localStorage) window.localStorage = new e("local");
-          if ("undefined" == typeof window.sessionStorage) window.sessionStorage =
-            new e("session")
-        }();
-        /* the code */
-        var n = document.getElementById("textarea");
-        /* save */
-        var s = function () {
-          localStorage.setItem("textarea", n.value);
-        }
-        /* retrieve (only on page load) */
-        if (window.localStorage) {
-          n.value = localStorage.getItem("textarea");
-        }
-        /* autosave onchange and every 500ms and when you close the window */
-        n.onchange = s();
-        setInterval(s, 500);
-        window.onunload = s();
-      </script>
-</div>
-</div>
+    <!-- Form 3 -->
+    <div class="form-block w-form">
+        <form id="email-form" name="email-form" method="GET">
+            <textarea placeholder="List 2"></textarea>
+        </form>
+    </div>
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-149751742-1"></script>
+    <!-- Form 4 -->
+    <div class="form-block-2 w-form">
+        <form id="email-form-3" name="email-form-3" method="GET">
+            <textarea placeholder="List 3"></textarea>
+        </form>
+    </div>
+
+
+
+</body>
+</html>
+
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'UA-149751742-1');
-</script>
+       /* localstorage polyfill from https://gist.github.com/350433 */
+       ("undefined" == typeof window.localStorage || "undefined" == typeof window.sessionStorage) && function () {
+         function e(f) {
+           function e(a) {
+             var b;
+             b = new Date;
+             b.setTime(b.getTime() + 31536E6);
+             document.cookie = "localStorage=" + a + ("; expires=" + b.toGMTString()) + "; path=/"
+           }
+           function g(a) {
+             a = JSON.stringify(a);
+             "session" == f ? window.name = a : e(a)
+           }
+           var d = function () {
+             var a;
+             if ("session" == f) a = window.name;
+             else a: {
+               a = document.cookie.split(";");
+               var b, c;
+               for (b = 0; b < a.length; b++) {
+                 for (c = a[b];
+                   " " == c.charAt(0);) c = c.substring(1, c.length);
+                 if (0 == c.indexOf("localStorage=")) {
+                   a =
+                     c.substring(13, c.length);
+                   break a
+                 }
+               }
+               a = null
+             }
+             return a ? JSON.parse(a) : {}
+           }();
+           return {
+             length: 0,
+             clear: function () {
+               d = {};
+               this.length = 0;
+               "session" == f ? window.name = "" : e("")
+             },
+             getItem: function (a) {
+               return void 0 === d[a] ? null : d[a]
+             },
+             key: function (a) {
+               var b = 0,
+                 c;
+               for (c in d) {
+                 if (b == a) return c;
+                 b++
+               }
+               return null
+             },
+             removeItem: function (a) {
+               delete d[a];
+               this.length--;
+               g(d)
+             },
+             setItem: function (a, b) {
+               d[a] = b + "";
+               this.length++;
+               g(d)
+             }
+           }
+         }
+         if ("undefined" == typeof window.localStorage) window.localStorage = new e("local");
+         if ("undefined" == typeof window.sessionStorage) window.sessionStorage =
+           new e("session")
+       }();
+       /* the code */
+       var n = document.getElementById("textarea");
+       /* save */
+       var s = function () {
+         localStorage.setItem("textarea", n.value);
+       }
+       /* retrieve (only on page load) */
+       if (window.localStorage) {
+         n.value = localStorage.getItem("textarea");
+       }
+       /* autosave onchange and every 500ms and when you close the window */
+       n.onchange = s();
+       setInterval(s, 500);
+       window.onunload = s();
+     </script>
